@@ -1,0 +1,29 @@
+<nav ng-include="'views/headerRegistration.html'" ng-controller="HeaderCtrl as header"></nav>
+<section id="regwiz01" class="loginNew">
+  <div class="container container--promotion">
+    <article class="row promotion">
+      <header class="col-xs-12 promotion__header">
+          <!-- mobile -->
+          <h4 class="seccion__titulos seccion__titulos--mobile">Rombus + <br><strong>Suma tu talento</strong></h4>
+          <!-- desktop -->
+          <h4 class="seccion__titulos seccion__titulos--desktop">Rombus + <strong>Suma tu talento</strong></h4>
+      </header>
+      <div class="col-xs-12 promotion__information">
+        <ul class="list-unstyled list-check">
+          <li>{{'registerView.p1Promotion' | translate}}</li>
+          <li>{{'registerView.p2Promotion' | translate}}</li>
+          <li>{{'registerView.p3Promotion' | translate}}</li>
+          <li>{{'registerView.p4Promotion' | translate}}</li>
+          <li>{{'registerView.p5Promotion' | translate}}</li>
+          <li>{{'registerView.p6Promotion' | translate}}</li>
+          <li>{{'registerView.p7Promotion' | translate}}</li>
+          <li>{{'registerView.p9Promotion' | translate}}</li>
+        </ul>
+      </div>
+      <div class="col-xs-12 promotion__information promotion__information--footer">
+        <a ng-click="changeViewWithSpecElement('register','')"href="#" class="btn btn-primary border-0 margin-top--small">{{'registerView.span2Promotion' | translate}}</a>
+      </div>
+    </article>
+  </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

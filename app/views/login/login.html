@@ -1,0 +1,78 @@
+<nav scroll ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- <img src="images/fondo_login.png" class="img-responsive" /> -->
+<section id="login" class="loginNew">
+  <div class="container">
+      <div class="row">
+        <div class="texto col-sm-5 col-md-4" ng-show="login.passRestored === false">
+          <!-- mobile -->
+          <h4 class="mobile">{{'loginView.login' | translate}} Rombus Global</h4>
+          <!-- desktop -->
+          <h4 class="hidden-xs">{{'loginView.login' | translate}}<br>Rombus Global</h4>
+          <!-- {{'loginView.p1' | translate}} <strong>{{'loginView.p2' | translate}}</strong> -->
+          <!-- No concueda el ultimo parrafo con el strong con el diseño, por ende se debe colocar solamente el regístrate ahora en negrita -->
+          <p>Espacio de trabajo, creatividad y encuentro para empresas y profesionales de todo el Mundo.</p>
+          <p class="login--texto">Si aún no eres miembro, <strong ng-click="changeViewWithSpecElement('register','')" class="cursor-pointer">regístrate ahora.</strong> </p>
+          <div class="redes" ng-show="login.passRestored === false">
+              <span class="mensaje-acceder">
+                {{'loginView.accessWith' | translate}}
+              </span>
+              <div class="clearfix"></div>
+              <div class="redes--sociales">
+                <div class="social-login">
+                  <i class="global-linkedin" ng-click="login.linkedInOauth()"></i>
+                </div>
+                <div class="social-login">
+                  <i fb-login class="global-facebook"></i>
+                </div>
+                <div class="social-login">
+                  <i g-login class="google-google3"></i>
+                </div>
+              </div>
+            </div>
+
+          <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+      </div>
+        <!-- Esto no supe como testearlo para verlo dentro del navegador -->
+         <div class="texto col-sm-5 col-sm-offset-2" ng-show="login.passRestored === true">
+          <h4>{{'loginView.passUpdated' | translate}}</h4>
+          <p>{{'loginView.canLoginAgain' | translate}}</p>
+        </div>
+        <div class="inputs col-sm-6 col-sm-offset-1 col-lg-offset-2">
+          <div class="box">
+            <div class="hidden-xs logo">
+              <img src="../../images/logorombus_negro.png" class="img-responsive">
+            </div>
+            <div class="formulario">
+              <form ng-submit="login.doLogin()" class="container">
+                <div class="">
+                  <i class="fa fa-envelope"></i>
+                  <input class="icon loginplaceholder" type="email"  placeholder="{{'loginView.email' | translate}}" ng-model="login.email" required>
+                </div>
+                <div class="">
+                  <i class="fa fa-lock"></i>
+                  <input class="icon loginplaceholder" type="password" placeholder="{{'loginView.password' | translate}}" ng-model="login.pass" minlength="8" required>
+                </div>
+                <div class="">
+                  <input type="submit" class="button primary" value="Inicia Sesión">
+                </div>
+
+              </form>
+            </div>
+
+            <div class="footer" ng-show="login.passRestored === false">
+              <span class="container--footer">
+                <div class="col-xs-6">
+                  <a ng-click="changeViewWithSpecElement('login/forgotPass','')">{{'loginView.forgotPass' | translate}}</a>
+                </div>
+                <div class="col-xs-6">
+                  <a ng-click="changeViewWithSpecElement('register','')">{{'loginView.haveAnAccount' | translate}}</a>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

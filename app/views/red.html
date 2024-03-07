@@ -1,0 +1,79 @@
+<nav scroll ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel-fade slide carousel--borderbottom carousel--porftolio jmpa_myCarousel header_home addred">
+
+  <div class="bgzonesolutions jmpa_view_pc">
+    <div class="bgdifuminado"></div>
+</div>
+<div class="jmp_fondo_cell_sol_slider jmpa_view_cell">
+  <div class="difuminado_cell"></div>
+  <img src="../images/fondo_red_cell.jpg" alt="" width="100%">
+</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+          <div class="jmpa_carousel">
+            <div class="carousel-caption__principal">
+              <h2 class="agencia-slider">Alcance global,<br><span>atención local</span></h2>
+              
+
+              <h4 class="informacion_agencia jmpa_view_pc">La presencia de Rombus Global se extiende en numerosas<br>ciudades del mundo, con especialistas que aportan su<br>experiencia y cercanía para trabajar junto a las empresas y<br>organizaciones en el desarrollo de sus planes locales,<br>regionales e internacionales.</h4>
+              <h4 class="informacion_agencia jmpa_view_cell">La presencia de Rombus Global se extiende en numerosas ciudades del mundo, con especialistas que aportan su experiencia y cercanía para trabajar junto a las empresas y organizaciones en el desarrollo de sus planes locales, regionales e internacionales.</h4>
+              
+              <div class="vinetasred">
+                <div class="itenvred"><img src="../images/vineta_red_azul.jpg" alt=""><div class="text">Miembros en <span>22</span> países</div></div>
+                <div class="itenvred"><img src="../images/vineta_red_yellow.jpg" alt=""><div class="text">Coworking en <span>5</span> países</div></div>
+                <div class="itenvred"><img src="../images/vineta_red_red.jpg" alt=""><div class="text">Oficina Central Latam</div></div>
+              </div>
+              
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+
+<main class="main jp_rhp_main jmpa_home_main addred">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <section class="jp_rhp_impulsa">
+          
+          <div class="fondoimpulsa jmpa_view_pc"></div>
+          <div class="row justify-content-center">
+            <div class="col-xs-12 col-md-10">
+              <div class="row">
+                <div class="col-xs-12">
+                  <h1>Somos 1# agencia<br>global abierta</h1>
+                </div>
+                <div class="col-xs-12">
+                    <p class="jmpa_view_pc">Rombus Global es la primera agencia construida por freelancers que conforma<br>una comunidad de talento independiente, en la que es posible vincularse,<br>colaborar, crear soluciones e innovar. Si quieres desarrollar tus proyectos,<br>aprovechar nuestros espacios, agregar tu producto o servicio al portafolio de<br>beneficios o representar a nuestra organización, no te pierdas esta oportunidad.</p>
+                    <p class="jmpa_view_cell">Rombus Global es la primera agencia construida por freelancers que conforma una comunidad de talento independiente, en la que es posible vincularse, colaborar, crear soluciones e innovar. Si quieres desarrollar tus proyectos, aprovechar nuestros espacios, agregar tu producto o servicio al portafolio de beneficios o representar a nuestra organización, no te pierdas esta oportunidad.</p>
+                  <a ng-click="changeViewWithSpecElement('login','')" class="jmpa_linkred">¡Ingresa ahora!</a>
+
+                </div>                
+              </div>
+            </div>
+          </div>
+      
+        </section>
+        <img src="../images/red_agencia.jpg" alt="" width="100%" class="jmpa_view_cell round10">
+      </div>
+      <div class="col-xs-12 text-center">
+        <section class="redrombuslinks">
+            <h4 class="jmpa_view_pc">Conoce más sobre los recursos y beneficios que tenemos para darte:</h4>
+        <h4 class="jmpa_view_cell">Conoce más sobre los recursos y beneficios que tenemos para darte:</h4>
+        <div class="linksred">
+            <a ng-click="changeViewWithSpecElement('staff','')" class="clred_azul">Talentos</a>
+            <a ng-click="changeViewWithSpecElement('representatives','')" class="clred_rojo">Representantes</a>
+            <a ng-click="changeViewWithSpecElement('cowork','')" class="clred_amarillo">Coworking</a>
+        </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer ng-include="'views/footer.html'"></footer>
+

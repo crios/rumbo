@@ -1,0 +1,141 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav><section id="dashboard" >
+	<div class="container">
+		<div class="row flexbox">
+			<section class="flexbox__sidebar dashboard__sidebar" id="profileSideBar" ng-include="'views/profile-company/sideBar.html'"></section>
+
+
+			<!--1 primer bloque-->
+			<div class="col-sm-7 flexbox__information dashboard__information">
+				<div class="dashboard__header">
+					<h1 class="titulo--dashboard ">Hola, ya eres parte de Rombus Global</h1>
+					<h2 class="subtitulo--dashboard ">¡Ahora aprovecha los beneficios que te brinda tu Perfil Empresa!</h2>
+					<div class="sugerencias-carousel">
+						<div id="carousel-example-generic" class="carousel carousel--dashboard slide" data-ride="carousel" data-interval="8000">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<div class="carousel-caption">
+										En “Mis Proyectos” figura el listado de tus proyectos, en el estado correspondiente de cada uno. En los que está indicado,
+										puedes abrir la ficha, editar su contenido y volver a publicarlo, guardarlo como borrador o cerrarlo.
+									</div>
+								</div>
+								<div class="item">
+									<div class="carousel-caption">
+										Para publicar un nuevo Proyecto, cliquea el botón superior de menú o en el título “Publicar nuevo Proyecto” y te abrirá la guía de carga.
+									</div>
+								</div>
+								<div class="item">
+									<div class="carousel-caption">
+										Cuando publiques proyectos y contrates servicios, estos se irán indicando automáticamente en el sidebar, para tu control.
+									</div>
+								</div>
+								<div class="item">
+									<div class="carousel-caption">
+										Y si quieres darte un rato de lectura, al pie encontrarás notas de interés y novedades publicadas en nuestro Blog.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <p>
+										{{'dashboard.textLast' | translate}}
+									</p> -->
+				</div>
+
+
+				<!--				<div class="dashboard__"></div>-->
+
+				<!--<div style="display: none" class="col-sm-7 extracto__wrapper">-->
+				<div class="dashboard__projects" style="margin-bottom: 0">
+					<article class="row-fluid projects__item">
+						<div class="extracto wrapper">
+							<div class="box">
+								<div class="section-header">
+									<h4 class="title">Mis Proyectos</h4>
+									<a class="new-project" ng-click="changeViewWithSpecElement('project-wizard/step1','')">Publicar nuevo proyecto</a>
+								</div>
+								<div class="divider"></div>
+								<div class="box-list">
+									<ul>
+										<li ng-repeat="pj in das.projectList | orderBy: 'sortValue'">
+											<span class="ellipsis project-title">
+												<i ng-class="{ 'dot user__especialidadBoton--estrategia': pj.specialtyId === 2,
+														'dot user__especialidadBoton--creatividad':  pj.specialtyId === 3,
+														'dot user__especialidadBoton--desarrollo': pj.specialtyId === 4,
+														'dot user__especialidadBoton--posicionamiento': pj.specialtyId === 5,
+														'dot user__especialidadBoton--difusion': pj.specialtyId === 6}"></i>
+												<span class="hide-on-mobile">{{pj.title}}</span>
+												<a ng-click="das.loadProjectDetails(pj)" class="hide-on-desktop">{{pj.title}}</a>
+											</span>
+											<div class="project-details">
+												<a ng-click="das.loadProjectDetails(pj)" class="see-file">Ver ficha</a>
+												<p ng-class="{	'project-status draft': pj.status === 1,
+																'project-status open': pj.status === 2,
+																'project-status assigned': pj.status === 3,
+																'project-status rejected': pj.status === 4,
+																'project-status closed': pj.status === 5,
+																'project-status cancelled': pj.status === 6
+															}"
+												>
+												<span ng-if="pj.status === 1" >Borrador</span>
+												<span ng-if="pj.status === 2" >Publicado</span>
+												<span ng-if="pj.status === 3" >Asignado</span>
+												<span ng-if="pj.status === 4" >Rechazado</span>
+												<span ng-if="pj.status === 5" >Cerrado</span>
+												<span ng-if="pj.status === 6" >Cancelado</span>
+												</p>
+												<div class="icons">
+													<div class="icon-container">
+														<a ng-click="das.editProject(pj)" ng-if="pj.status !== 3 && pj.status !== 4">
+															<i class="fa fa-pencil"></i>
+														</a>
+													</div>
+													<div class="icon-container">
+														<a ng-click="das.deleteProject(pj)" ng-if="pj.status !== 3">
+															<i class="fa fa-times light"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<button class="primary-button-block hide-on-desktop" ng-click="changeViewWithSpecElement('project-wizard/step1','')">
+										Publicar nuevo proyecto
+									</button>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+
+				<div class="dashboard__projects">
+					<article class="row-fluid projects__item" ng-repeat="fd in das.feeds | orderBy:'activationDate':true">
+						<div class="hidden-xs col-sm-6 projects__item--image novedad--image">
+							<a ng-href="{{fd.link}}" target="_blank">
+								<img ng-src="{{fd.image}}" alt="" class="img-responsive" style="max-width: 100%">
+							</a>
+						</div>
+						<div class="col-xs-12 col-sm-6 projects__item--information projects__item--novedades">
+							<h4 class="project__titulo">Novedades</h4>
+							<!-- <h4 class="project__titulo">{{fd.title}}</h4> -->
+							<a ng-href="{{fd.link}}" target="_blank"><h3 class="project__tituloMain">{{fd.title}}</h3></a>
+							<a ng-href="{{fd.link}}" target="_blank"><p class="project__description">{{fd.description}}</p></a>
+							<!--<a ng-href="{{fd.link}}" target="_blank">Leer más</a>-->
+						</div>
+
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

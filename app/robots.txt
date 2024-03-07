@@ -1,0 +1,4 @@
+# robotstxt.org
+Sitemap: http://ambienteuat.rombusglobal.com/sitemap.xml
+User-agent: *
+Disallow:

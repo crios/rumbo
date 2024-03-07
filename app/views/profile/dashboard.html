@@ -1,0 +1,144 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<section id="dashboard" >
+	<div class="container">
+		<div class="row flexbox">
+			<section class="flexbox__sidebar dashboard__sidebar" id="dashboardSideBar" ng-include="'views/profile/sideBar.html'"></section>
+
+
+			<!--1 primer bloque-->
+			<div class="col-sm-7 flexbox__information dashboard__information">
+				<div class="dashboard__header">
+					<h1 class="titulo--dashboard ">{{'dashboard.h1_1' | translate}}</h1>
+					<h2 class="subtitulo--dashboard ">{{'dashboard.h1_2' | translate}}</h2>
+					<div class="sugerencias-carousel">
+						<div id="carousel-example-generic" class="carousel carousel--dashboard slide" data-ride="carousel" data-interval="8000">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="6"></li>
+                				<li data-target="#carousel-example-generic" data-slide-to="7"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<div class="carousel-caption">
+                    					{{'dashboard.text1' | translate}}
+										<a ng-href="/profile/config">{{'dashboard.text1_1' | translate}}</a>
+									</div>
+								</div>
+								<div class="item">
+									<div class="carousel-caption">
+                    					{{'dashboard.text2' | translate}}
+										<a ng-href="/profile">{{'dashboard.text2_1' | translate}}</a>
+									</div>
+								</div>
+								<div class="item">
+									<div class="carousel-caption">
+					                    {{'dashboard.text3' | translate}}
+					                    <a ng-click="contactUsDialog('Postular a Staff Corporativo/Project Manager')">{{'dashboard.text3_1' | translate}}</a>
+									</div>
+								</div>
+								<div class="item">
+									<div class="carousel-caption">
+                    					{{'dashboard.text4' | translate}}
+										<a ng-href="/representatives">{{'dashboard.text4_1' | translate}}</a>
+									</div>
+								</div>
+								<div class="item">
+									<div class="carousel-caption">
+                    					{{'dashboard.text5' | translate}}
+										<a ng-href="/cowork">{{'dashboard.text5_1' | translate}}</a>
+									</div>
+								</div>
+				                <div class="item">
+				                  <div class="carousel-caption">
+				                    {{'dashboard.text6' | translate}}
+				                  </div>
+				                </div>
+								<div class="item">
+									<div class="carousel-caption">
+                    					{{'dashboard.text7' | translate}}
+										<a ng-href="/staff">{{'dashboard.text7_1' | translate}}</a>
+									</div>
+								</div>
+								<div class="item">
+				                  <div class="carousel-caption">
+				                    {{'dashboard.textLast' | translate}}
+				                  </div>
+				                </div>
+							</div>
+						</div>
+					</div>
+					<!-- <p>
+										{{'dashboard.textLast' | translate}}
+									</p> -->
+				</div>
+
+
+<!--				<div class="dashboard__"></div>-->
+
+				<!--<div style="display: none" class="col-sm-7 extracto__wrapper">-->
+					<div class="dashboard__projects" style="margin-bottom: 0" >
+						<article class="row-fluid projects__item">
+							<div class="extracto wrapper">
+								<div class="box">
+									<div class="section-header">
+										<h4 class="title">Proyectos <span class="hide-on-mobile">de trabajo </span>abiertos en tu área de especialidad</h4>
+									</div>
+									<div class="divider"></div>
+									<div class="box-list" ng-show="das.projectList.length > 0">
+										<ul>
+											<li ng-click="das.openProjectUserOffer(pj)" class="pointer" ng-repeat="pj in das.projectList">
+												<span class="ellipsis project-title">
+													<i ng-class="{ 'dot user__especialidadBoton--estrategia': pj.specialtyId === 2,
+															'dot user__especialidadBoton--creatividad':  pj.specialtyId === 3,
+															'dot user__especialidadBoton--desarrollo': pj.specialtyId === 4,
+															'dot user__especialidadBoton--posicionamiento': pj.specialtyId === 5,
+															'dot user__especialidadBoton--difusion': pj.specialtyId === 6}"></i>
+													<a class="fz-1-6rem" ng-click="das.openProjectUserOffer(pj)">{{pj.title}}</a>
+												</span>
+												<div class="project-details">
+													<button ng-click="das.openProjectUserOffer(pj)" class="r-button button-secondary">Leer más</button>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="jmpa_MsjProfile" ng-hide="das.projectList.length > 0">
+										<p>¡¡Oops!! ¿Todavía no cargaste tu perfil?<br>¡Complétalo al 80% para poder ver los proyectos disponibles en tu área de especialidad!</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+
+				
+
+				<div class="dashboard__projects">
+					<article class="row-fluid projects__item" ng-repeat="fd in das.feeds | orderBy:'activationDate':true">
+						<div class="hidden-xs col-sm-6 projects__item--image novedad--image">
+							<a ng-href="{{fd.link}}" target="_blank">
+								<img ng-src="{{fd.image}}" alt="" class="img-responsive" style="max-width: 100%">
+							</a>
+						</div>
+						<div class="col-xs-12 col-sm-6 projects__item--information projects__item--novedades">
+							<h4 class="project__titulo">Novedades</h4>
+							<!-- <h4 class="project__titulo">{{fd.title}}</h4> -->
+							<a ng-href="{{fd.link}}" target="_blank"><h3 class="project__tituloMain">{{fd.title}}</h3></a>
+							<a ng-href="{{fd.link}}" target="_blank"><p class="project__description">{{fd.description}}</p></a>
+							<!--<a ng-href="{{fd.link}}" target="_blank">Leer más</a>-->
+						</div>
+
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--<section id="emblemas" ng-include="'views/platform/emblemas.html'"></section>-->
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

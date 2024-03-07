@@ -1,0 +1,23 @@
+<section id="sideBarRemoveGroupUser">
+  <div class="modal-body row" id="modal-body">
+    <div class="col-sm-12">
+      <button type="button" class="close" aria-label="Close" ng-click="sibaModal.ok()">
+        <span aria-hidden="true" class="modalCloseBtn">&times;</span>
+      </button>
+    </div>
+    <form class="form-horizontal" ng-submit="sibaModal.removeGroupMember()">
+      <div class="col-sm-3">
+        <img ng-src="{{sibaModal.memberInfo.user.image}}" style="width: 100%;">
+      </div>
+      <div class="col-sm-9">
+        <p class="text-uppercase">Eliminar a este miembro de mi equipo</p>
+        <p>Motivo de la eliminación</p>
+        <textarea maxlength="200" placeholder="Completar Motivo" ng-model="sibaModal.message"></textarea>
+      </div>
+      <div class="col-sm-12">
+        <button style="float: right;" class="btn btn-default" type="button" ng-click="sibaModal.ok()">{{'btn.cancel' | translate}}</button>
+        <button style="float: right;" class="btn btn-primary" type="submit">{{'btn.remove' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</section>

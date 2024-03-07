@@ -1,0 +1,215 @@
+<nav scroll ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel-fade slide carousel--borderbottom carousel--porftolio jmpa_myCarousel header_staff addcowork">
+
+<div class="carouselcowork slide jmpa_view_pc">
+  <div class="carousel-inner">
+  <div class="bgzonesolutions jmpa_view_pc item" ng-class="{active:!$index}" ng-repeat="slide in slides track by slide.id" index="slide.id"
+       ng-click="cowork.linkToCowork(slide.coworkId)" style="background-image: url('{{ slide.ref }}');">
+  </div>
+</div>
+</div>
+
+<div class="jmp_fondo_cell_sol_slider jmpa_view_cell">
+  <div class="difuminado_cell"></div>
+  
+  <div class="carouselcowork slide">
+    <div class="carousel-inner">
+      <div class="item" ng-class="{active:!$index}" ng-repeat="slide in slides track by slide.id">
+        <img src="{{ slide.ref }}" alt="" width="100%" >
+      </div>
+    </div>
+  </div>
+
+
+</div>
+  <div class="container ">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+          <div class="jmpa_carousel">
+            <div class="carousel-caption__principal">
+              <h2 class="agencia-slider">Tu oficina<br><span>compartida con</span><br><span>el Mundo</span></h2>                     
+
+              <h4 class="informacion_agencia jmpa_view_pc">Te ofrecemos espacios motivadores para trabajar,<br>capacitarse, conocerse y divertirse. Porque la mejor<br>manera de progresar es hacerlo juntos, te invitamos<br>a ser coworker de Rombus Global.</h4>
+              <h4 class="informacion_agencia jmpa_view_cell">Te ofrecemos espacios motivadores para trabajar, capacitarse, conocerse y divertirse. Porque la mejor manera de progresar es hacerlo juntos, te invitamos a ser coworker de Rombus Global.</h4>
+              
+              <div class="tupagotucobro">
+                <div class="jmpa_selector">
+                  <a class="selTitulo" selOpen="selCowork">Ver más espacios de la Red</a>
+                  <ul id="selCowork" class="selOptions" style="display: none;">
+                    <li ng-repeat="cwk in cowork.coworks track by cwk.id" ><a ng-click="changeViewWithSpecElement('cowork/'+cwk.id,'')">{{  cwk.name + ' / ' + cwk.city + ', ' + cwk.country  | translate }}</a></li>
+                  </ul>
+                </div>
+
+              </div>
+               
+              
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main jp_rhp_main jmpa_home_main addcowork">
+  <section class="jp_rhp_soluciones">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <img src="../images/icon_cowork_plan.jpg" class="icon_cowork_plan" alt="" width="105px">
+        </div>
+        <div class="col-xs-12 text-center titular_plan">
+          <h1 class="jmpa_view_pc">Plan de Coworking de Rombus Global</h1>
+          <h1 class="jmpa_view_cell">Plan de Coworking<br>de Rombus Global</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container">
+      <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-10">
+        <div class="row jp_rhp_items_rfs links">
+          <div class="col-md-4">
+            <h2>Fácil</h2>
+            <p>Para acceder a los espacios de la red sólo debes buscar el lugar de cercanía, informarte y contratarlo, ¡así de fácil!. Y si no contamos con un lugar en tu ciudad, cuéntanos dónde estás y lo incluiremos.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Económico</h2>
+            <p>Nuestros Coworking amigos ofrecen importantes descuentos para los miembros del Plan Full. Aprovéchalos ahora y obtiene este beneficio exclusivo para los coworkers de Rombus Global.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Global</h2>
+            <p>Al ser coworker de Rombus recibes una credencial y pasaporte internacional que te identifica como tal, para acceder a todos los espacios que se vayan agregando a la red de Rombus en el mundo.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <span class="jp_ofreciendo">Ventajas de ser Coworker:</span>
+        </div>
+      </div>  
+    </div>
+  </section>
+
+  <section class="cowor_bloques cowor_ventajas">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-10">
+      <div class="row">
+        <div class="col-xs-12 jmpa_view_cell">
+          <img src="../images/icon_ventaja_cw_1_cell.png" alt="" class="picventajas_cell">
+        </div>
+        <div class="col-md-6">
+          <div class="item">
+            <div class="pic">
+              <img src="../images/icon_ventaja_cw_1.jpg" alt="">
+            </div>
+            <div class="zona_detalles">
+              
+            <div class="title">
+              Espacios
+            </div>
+            <p>Escritorios fijos o flexibles, oficinas privadas, salas de reuniones. Todas las opciones para que tengas tu oficina integrada a la experiencia de ser miembro de Rombus Global.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 jmpa_view_cell">
+          <img src="../images/icon_ventaja_cw_2_cell.png" alt="" class="picventajas_cell">
+        </div>
+        <div class="col-md-6">
+          <div class="item">
+            <div class="pic">
+              <img src="../images/icon_ventaja_cw_2.jpg" alt="">
+            </div>
+            <div class="zona_detalles">
+              
+            <div class="title">
+              Comunidad
+            </div>
+            <p>Integramos una comunidad de profesionales, creativos y emprendedores con ideas e intereses comunes. Los espacios Rombus son nuestro mejor lugar de encuentro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 jmpa_view_cell">
+          <img src="../images/icon_ventaja_cw_3_cell.png" alt="" class="picventajas_cell">
+        </div>
+        <div class="col-md-6">
+          <div class="item">
+            <div class="pic">
+              <img src="../images/icon_ventaja_cw_3.jpg" alt="">
+            </div>
+            <div class="zona_detalles">
+              
+            <div class="title">
+              Equipos
+            </div>
+            <p>Promovemos el trabajo colaborativo porque creemos que es la mejor forma de crecer. En los coworking de la red los miembros desarrollan sus proyectos con colegas de la Agencia.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 jmpa_view_cell">
+          <img src="../images/icon_ventaja_cw_4_cell.png" alt="" class="picventajas_cell">
+        </div>
+        <div class="col-md-6">
+          <div class="item">
+            <div class="pic">
+              <img src="../images/icon_ventaja_cw_4.jpg" alt="">
+            </div>
+            <div class="zona_detalles">
+              
+            <div class="title">
+              Eventos
+            </div>
+            <p>Participa de nuestro networking y te invitaremos a eventos que iremos desarrollando en los espacios de la red. Para estar actualizado, capacitarte y agregarle valor a tu oferta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> </div> </div>
+  </section>
+
+
+  <div class="bloque_ready coworkfoot">
+    <div class="bgs colors1"><div><h1>Busco un espacio de Coworking</h1>
+      <a ng-click="contactUsDialog('Busco un espacio de coworking')">Súmate a Rombus</a></div></div>
+    <div class="bgs colors2"><div>
+        <h1>Soy un espacio de Coworking</h1>
+        <a ng-click="contactUsDialog('Soy un espacio de coworking')">Súmate a la Red</a>
+        </div></div>
+    
+    </div>
+
+
+</div>
+
+</main>
+
+<footer ng-include="'views/footer.html'"></footer>
+<script>
+  $('.carouselcowork').carousel({
+    interval: 3000, //changes the speed
+    keyboard: true,
+    cycle: true,
+  });
+  $('.carouselcoworkcell').carousel({
+    interval: 3000, //changes the speed
+    keyboard: true,
+    cycle: true,
+  });
+
+  $('.selTitulo').on('click',function(){
+    var select = '#'+$(this).attr('selOpen');
+    if($(select).css('display')=='none'){$(select).show();}else{$(select).hide();}
+  });
+</script>
+
+

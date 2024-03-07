@@ -1,0 +1,485 @@
+<div id="sidebar" ng-controller="SideBarCtrl as siba">
+  <div class="bg-blueMedium" data-progress="80%">
+
+    <!-- Aqui esta la lista del perfil de un usuario normal -->
+    <div ng-hide="siba.modeMain === 1" class="edit__perfil">
+      <div class="user--editar" ng-show="siba.isSelfUser === true">
+        <i class="fa fa-camera" ng-click="siba.togglePicture()"></i>
+        <i class="fa fa-pencil" ng-click="siba.toggleMain()"></i>
+      </div>
+      <figure class="avatar">
+        <img ng-if="siba.userPicture !== null" ng-src="{{siba.userPicture}}" class="img-responsive profile-pic">
+        <img ng-if="siba.userPicture === null" src="../../images/avatar.png" class="img-responsive profile-pic">
+      </figure>
+      <h3 class="nombrePerfil">{{siba.firstName}} {{siba.lastName}}</h3>
+      <h3 class="nombreJob">{{siba.jobTitle}}</h3>
+      <div class="user__especialidad">
+        <span class="user__especialidadBoton"
+              ng-class="{ 'user__especialidadBoton--estrategia': siba.specArea1.id === 2,
+                          'user__especialidadBoton--creatividad':  siba.specArea1.id === 3,
+                          'user__especialidadBoton--desarrollo': siba.specArea1.id === 4,
+                          'user__especialidadBoton--posicionamiento': siba.specArea1.id === 5,
+                          'user__especialidadBoton--difusion': siba.specArea1.id === 6}">
+            {{siba.specArea1.description}}
+        </span>
+        <span ng-hide="siba.specArea2 === undefined" class="user__especialidadBoton"
+              ng-class="{ 'user__especialidadBoton--estrategia': siba.specArea2.id === 2,
+                        'user__especialidadBoton--creatividad':  siba.specArea2.id === 3,
+                        'user__especialidadBoton--desarrollo': siba.specArea2.id === 4,
+                        'user__especialidadBoton--posicionamiento': siba.specArea2.id === 5,
+                        'user__especialidadBoton--difusion': siba.specArea2.id === 6}">
+          {{siba.specArea2.description}}
+        </span>
+      </div>
+      <div class="user__nacionalidad">
+        <span ng-show="siba.location !== undefined || siba.country !== undefined">
+            {{siba.location}}, {{siba.country}}
+        </span>
+      </div>
+      <div class="user__miembro">
+          <span>{{'profileView.memberSince' | translate}} {{siba.memberSince | date: 'MMMM yyyy'}}
+          </span>
+      </div>
+    </div>
+
+    <!-- Aqui cuando se presione en el icono de editar -->
+    <div ng-hide="siba.modeMain !== 1">
+      <div class="user--editar">
+        <i class="fa fa-camera" ng-click="siba.togglePicture()"></i>
+        <i class="fa fa-floppy-o" ng-click="siba.saveBasicInfo()"></i>
+      </div>
+      <figure class="avatar">
+        <img ng-if="siba.userPicture !== null" ng-src="{{siba.userPicture}}" class="img-responsive profile-pic">
+        <img ng-if="siba.userPicture === null" src="../../images/avatar.png" class="img-responsive profile-pic">
+      </figure>
+      <form class="formNew">
+        <input type="text" class="inputEdit--new" ng-model="siba.tempFirstName" placeholder="Nombre">
+        <input type="text" class="inputEdit--new" ng-model="siba.tempLastName" placeholder="Apellido">
+        <input type="text" class="inputEdit--new inputEdit--new--especialidad" ng-model="siba.tempJobTitle" placeholder="Especialidad">
+        <input type="text" class="inputEdit--new inputEdit--new--especialidad" ng-model="siba.tempLocation" placeholder="Ciudad">
+        <select class="inputEdit--new inputEdit--new--especialidad" ng-model="siba.tempCountry" rombus-country-picker="name">
+          <option value="">{{'profileView.selectCountry' | translate}}</option>
+        </select>
+
+      </form>
+      <div class="user__especialidad">
+        <span class="user__especialidadBoton"
+              ng-class="{ 'user__especialidadBoton--estrategia': siba.specArea1.id === 2,
+                          'user__especialidadBoton--creatividad':  siba.specArea1.id === 3,
+                          'user__especialidadBoton--desarrollo': siba.specArea1.id === 4,
+                          'user__especialidadBoton--posicionamiento': siba.specArea1.id === 5,
+                          'user__especialidadBoton--difusion': siba.specArea1.id === 6}">
+            {{siba.specArea1.description}}
+        </span>
+        <span ng-hide="siba.specArea2 === undefined" class="user__especialidadBoton"
+              ng-class="{ 'user__especialidadBoton--estrategia': siba.specArea2.id === 2,
+                        'user__especialidadBoton--creatividad':  siba.specArea2.id === 3,
+                        'user__especialidadBoton--desarrollo': siba.specArea2.id === 4,
+                        'user__especialidadBoton--posicionamiento': siba.specArea2.id === 5,
+                        'user__especialidadBoton--difusion': siba.specArea2.id === 6}">
+          {{siba.specArea2.description}}
+        </span>
+        <div class="formNew user__especialidad--editar">
+          <span ng-show="siba.specArea1 === undefined" type="text" class="inputEdit--new inputEdit--new--especialidad">Area de especialidad</span>
+          <i class="fa fa-pencil pull-right" ng-click="siba.toggleSpecAreas()"></i>
+        </div>
+      </div>
+      <div class="user__nacionalidad">
+    </div>
+  </div>
+  <!-- Aqui termina la vista del usuario cuando presiona en el icono de editar -->
+    <!-- @Tomas esta sección la movi, ya que @abel solicita que este apartado aparezca en el dashboard,  REVISAR POR FAVOR -->
+    <div class="avatar__information" ng-hide="siba.isSelfUser !== true">
+      <div>
+        <span>Perfil:</span> <strong>{{siba.percentProfCompleted}}%</strong>
+      </div>
+      <div class="avatar__complet" ng-if="siba.percentProfCompleted !== 100">
+        <!-- @tomas Esta parte quedo estatica para que lo cambie por lo que tengas que consumir de data para mostrar los Valores de acuerdo al porcentaje, Saludos -->
+        <a class="colorMain" data-toggle="dropdown" ng-if="siba.percentProfCompleted !== 100">Completar <i class="fa fa-angle-down" ></i></a>
+        <ul class="dropdown-menu dropdown-menu--sidebar ng-scope" ng-if="siba.percentProfCompleted !== 100">
+           <li>
+              <a ng-click="changeViewWithSpecElement('profile','')" class="dropdown-menu--porcentajes">
+                  <div class="dropdown-menu--porcentajesItem ng-binding">
+                    <div class="dropdown-menu--porcentajesItemText">
+                      {{'sideBar.personalInfo' | translate}} *
+                    </div>
+                    <div class="dropdown-menu--porcentajesItemNumero">
+                      20%
+                    </div>
+                  </div>
+                  <div class="dropdown-menu--porcentajesItem ng-binding">
+                    <div class="dropdown-menu--porcentajesItemText">
+                      {{'sideBar.extract' | translate}}
+                    </div>
+                    <div class="dropdown-menu--porcentajesItemNumero">
+                      20%
+                    </div>
+                  </div>
+                  <div class="dropdown-menu--porcentajesItem ng-binding">
+                    <div class="dropdown-menu--porcentajesItemText">
+                      {{'sideBar.portfolio' | translate}}
+                    </div>
+                    <div class="dropdown-menu--porcentajesItemNumero">
+                      20%
+                    </div>
+                  </div>
+                  <div class="dropdown-menu--porcentajesItem ng-binding">
+                    <div class="dropdown-menu--porcentajesItemText">
+                      {{'sideBar.skills' | translate}}
+                    </div>
+                    <div class="dropdown-menu--porcentajesItemNumero">
+                      20%
+                    </div>
+                  </div>
+                  <div class="dropdown-menu--porcentajesItem ng-binding">
+                    <div class="dropdown-menu--porcentajesItemText">
+                      {{'sideBar.cv' | translate}}
+                    </div>
+                    <div class="dropdown-menu--porcentajesItemNumero">
+                      20%
+                    </div>
+                  </div>
+                  <div class="ng-binding dropdown-menu--porcentajesInformation">
+                     <p>{{'sideBar.80message' | translate}} <a ng-click="changeViewWithSpecElement('memberships','')" class="dropdown-menu--porcentajes">{{'sideBar.verMembresia' | translate}}.</a> </p>
+                  </div>
+              </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div style="width: 100%;" ng-hide="siba.isSelfUser !== true">
+      <uib-progressbar value="siba.percentProfCompleted" class="profCompletedBar" type="profile"></uib-progressbar>
+    </div>
+    <div class="avatar__information" ng-hide="siba.isSelfUser === true">
+      <div>
+        <span class="hoverCursor" ng-click="siba.contractUser()">{{'btn.contract' | translate}}</span>
+      </div>
+      <div class="avatar__complet">
+        <span class="hoverCursor" ng-click="siba.reportUser()">{{'btn.report' | translate}}</span>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-xs-12 sidebar-background">
+      <div class="row" ng-if="siba.isSelfUser === true || siba.hourPrice !== undefined">
+        <div class="col-xs-12 sidebar-detail-title">
+          <h5>{{'sideBar.valorHora' | translate}}</h5>
+        </div>
+        <div class="col-xs-12 padding-left">
+          <div class="row sidebar-container-detail" ng-show="siba.modeSidePrice === 0">
+            <div class="col-xs-12 detail">
+              <span class="sidebar--hourprice">{{siba.hourPrice | currency: '': 2}}</span>
+              <span class="sidebar--currency"> US$</span>
+              <i ng-if="siba.isSelfUser === true" class="edit fa fa-pencil pull-right-all" ng-click="siba.toggleSidePrice()"></i>
+            </div>
+          </div>
+          <div class="row sidebar-container-detail" ng-show="siba.modeSidePrice === 1">
+            <div class="col-xs-12 detail">
+              <input type="number" ng-model="siba.tempHourPrice">
+              <span> US$.</span>
+            </div>
+            <div class="col-xs-12">
+              <div class="editPrice">
+                <input type="button" value="{{'btn.cancel' | translate}}" class="cancelBtn" ng-click="siba.toggleSidePrice()" >
+                <input type="button" value="{{'btn.save' | translate}}" class="btn-guardar " ng-click="siba.saveSidePrice()" >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12" ng-if="siba.isSelfUser === true || (siba.membership.description !== undefined && siba.membership.description !== null)">
+          <div class="border--bottomSidebar"></div>
+        </div>
+      </div>
+      <!-- hourPrice -->
+      <div class="row" ng-if="siba.membership !== null && (siba.isSelfUser === true || (siba.membership.description !== undefined && siba.membership.description !== null))">
+        <div class="col-xs-12 sidebar-detail-title">
+          <h5> {{'sideBar.membership' | translate}}</h5>
+        </div>
+        <div class="col-xs-12 padding-left">
+          <div class="row sidebar-container-detail">
+            <div class="col-xs-12 detail membresia-moderna">
+              <span class="descripcion-membresia">{{siba.membership.description}}</span>
+              <img ng-src="{{siba.membershipIcon}}" class="icon padding-right" />
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="border--bottomSidebar"></div>
+        </div>
+      </div>
+      <!-- membership -->
+      <div class="row" ng-if="siba.userFunction !== null && (siba.isSelfUser === true || (siba.userFunction.description !== undefined && siba.userFunction.description !== null))">
+        <div class="col-xs-12 sidebar-detail-title">
+          <h5>{{'sideBar.function' | translate}}</h5>
+        </div>
+        <div class="col-xs-12 padding-left">
+          <div class="row sidebar-container-detail">
+            <div class="col-xs-12 detail membresia-moderna">
+              <span class="descripcion-membresia">{{siba.userFunction.description}}</span>
+              <img ng-src="{{siba.functionIcon}}" class="icon padding-right" />
+             </div>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="border--bottomSidebar"></div>
+        </div>
+      </div>
+      <!-- función -->
+      <div class="row" ng-if="siba.isSelfUser === true && siba.canCreateGroup === true">
+        <div class="col-xs-12 sidebar-detail-title">
+          <h5 ng-if="siba.isCreatingGroup !== true">
+            <span class="fuenteOscura">Crear equipo</span>
+            <i class="edit fa fa-pencil pull-right faWhite" ng-click="siba.toggleGroup()"></i>
+          </h5>
+          <h5 ng-if="siba.isCreatingGroup === true">
+            <span>Mi equipo</span>
+          </h5>
+          <h5 ng-if="siba.isCreatingGroup === true">
+            <input class="groupName" ng-if="siba.isCreatingGroup === true" type="text" ng-model="siba.newGroupName"
+                   placeholder="Crear Equipo"/>
+            <i ng-if="siba.isCreatingGroup === true" class="edit fa fa-save pull-right-all faWhite" ng-click="siba.createGroup()"></i>
+          </h5>
+        </div>
+        <div class="col-xs-12">
+          <div class="border--bottomSidebar"></div>
+        </div>
+      </div>
+      <!-- Crear Equipo -->
+      <div class="row bg-notification bg-notification--transparent" ng-if="siba.userGroups.length > 0">
+        <div ng-repeat="grp in siba.userGroups">
+          <div class="col-xs-12 sidebar-container-detail">
+            <h5>
+              <span ng-if="siba.isSelfUser === true">Mi Equipo</span>
+              <span ng-if="siba.isSelfUser !== true" class="text-uppercase">  Equipo de {{grp.nameForGroup}}</span>
+              <i ng-if="siba.isSelfUser === true && siba.isGroupOwner(grp) && grp.editable !== true && grp.userGroup.length < 13"
+                 class="edit fa fa-pencil pull-right-all faWhite" ng-click="siba.toggleGroup(grp)"></i>
+              <i ng-if="siba.isSelfUser === true && grp.editable === true" class="edit fa fa-save pull-right faWhite" ng-click="siba.saveGroupChanges(grp)"></i>
+              <i ng-if="siba.isSelfUser === true && grp.editable === true" class="edit fa fa-undo pull-right faWhite" ng-click="siba.discardGroupChanges(grp)"></i>
+            </h5>
+            <h5 class="titulo--grupo">
+              <span ng-if="grp.editable !== true && grp.name !== undefined">{{grp.name}}</span>
+              <input class="groupName" ng-if="siba.isSelfUser === true && grp.editable === true" type="text" ng-model="siba.tempGroupName"/>
+            </h5>
+          </div>
+          <div class="col-xs-12">
+            <div class="row sidebar-container-detail">
+              <div class="usergroup">
+                <div class="col-xs-3 member" ng-repeat="mem in grp.userGroup">
+                  <span class="member-close fa fa-close" ng-if="grp.editable === true" ng-click="siba.removeGroupMember(grp, mem)"></span>
+                  <img ng-if="mem.user.image !== undefined" class="group-member-pic" ng-src="{{mem.user.image}}" ng-click="siba.showUser(mem.user)">
+                  <img ng-if="mem.user.image === undefined" class="group-member-pic" src="../../images/avatar.png" ng-click="siba.showUser(mem.user)">
+                </div>
+                <div class="col-xs-3 member boxFaPlus" ng-if="grp.editable === true && grp.userGroup.length < 12">
+                  <div class="group-member-pic">
+                    <a ng-click="changeViewWithSpecElement('staff','')" class="fa fa-plus" style="padding: 13px 0" uib-tooltip="Agregar"></a>
+                  </div>
+                </div>
+                <!-- Aqui Tomas debe colocar una funcionalidad para que solo aparezca si no hay miembros vinculados al equipo, esto es como lo desea Abel -->
+                <div class="col-xs-9 margin-top--staff" ng-if="grp.editable === true && grp.userGroup.length === 0">
+                    <span>Abrir STAFF para agregar miembros a mi equipo</span>
+                </div>
+              </div>
+              <div class="col-xs-12" ng-if="grp.editable === true">
+                <a class="close-team" ng-click="siba.closeGroup(grp)">
+                   <i class="fa fa-close"></i> Eliminar este equipo</a>
+              </div>
+            </div>
+            <div class="row sidebar-container-detail" ng-if="siba.checkPresentMyself(grp) === true">
+              <div class="col-xs-12 text-center joinGroup">
+                <span>Quieres ser parte de este equipo?</span>
+              </div>
+              <div class="col-xs-12">
+                <button class="fullWidthBtn" ng-click="siba.presentMyself(grp)">Presentarme</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" ng-if="siba.userGroupParticipant.length > 0">
+         <div class="col-xs-12 sidebar-container-detail">
+          <h5 class="margin-bottom--sidebar">
+            <span ng-if="siba.isSelfUser === false"> Grupos que integra </span><span class="text-uppercase" ng-if="siba.isSelfUser === false"><!--{{siba.nameForGroups}}--></span>
+            <span ng-if="siba.isSelfUser === true"> Grupos que integro </span><span class="text-uppercase" ng-if="siba.isSelfUser === true">{{siba.nameForGroups}}</span>
+          </h5>
+        </div>
+        <div ng-repeat="grp in siba.userGroupParticipant" ng-init="show = true" >
+          <div class="notificacition--group">
+            <div class="col-xs-12 sidebar-detail-title bg-notification--padding">
+              <h5 class="color-white color--primary nombre-equipo-pertenezco">
+                <span ng-if="grp.name === undefined">Equipo de <a ng-click="siba.showGroupOwner(grp)">{{grp.nameForGroup}}</a></span>
+                <span ng-if="grp.name !== undefined">  <a ng-click="siba.showGroupOwner(grp)" class="colorOscuro">{{grp.name}}</a></span>
+                <a ng-show="show === false" ng-click="show = true" class="ver-mas-pequeno">(Ver)</a>
+                <a class="ver-mas-pequeno" ng-show="show === true" ng-click="show = false">(Ocultar)</a>
+              </h5>
+            </div>
+            <div class="col-xs-12" ng-show="show === true">
+              <div class="row sidebar-container-detail bg-notification--padding">
+                <div class="usergroup">
+                  <div class="col-xs-3 member" ng-repeat="mem in grp.userGroup">
+                    <img ng-if="mem.user.image !== undefined" class="group-member-pic" ng-src="{{mem.user.image}}" ng-click="siba.showUser(mem.user)">
+                    <img ng-if="mem.user.image === undefined" class="group-member-pic" src="../../images/avatar.png" ng-click="siba.showUser(mem.user)">
+                  </div>
+                </div>
+              </div>
+              <div class="row sidebar-container-detail retirarme-grupo">
+                <a ng-if="siba.isSelfUser === true" ng-click="siba.removeMeFromGroup(grp)"> <i class="fa fa-close"></i> Retirarme de este grupo</a>
+              </div>
+              <div class="row sidebar-container-detail" ng-if="siba.checkPresentMyself(grp) === true">
+                <div class="col-xs-12 text-center joinGroup">
+                  <span>Quieres ser parte de este equipo?</span>
+                </div>
+                <div class="col-xs-12">
+                  <button class="fullWidthBtn" ng-click="siba.presentMyself(grp)">Presentarme</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- End User Group Participant -->
+      <div class="row" ng-if="siba.isSelfUser !== true && siba.canInviteToGroup === true && siba.inviteSent !== true">
+        <div class="col-xs-12">
+          <div class="row sidebar-container-detail" ng-if="siba.isSelfUser !== true">
+            <div class="col-xs-12 text-center joinGroup">
+              <span>Te ha gustado el perfil y quieres agregarlo a tu grupo?</span>
+            </div>
+            <div class="col-xs-12">
+              <button class="fullWidthBtn" ng-click="siba.inviteUser()">Invitar a mi equipo</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+       <!-- End canInviteToGroup -->
+      <div class="row" ng-if="siba.isSelfUser === true && siba.receiveNotifications.length > 0">
+        <div class="col-xs-12 sidebar-detail-title titileNotification">
+          <h5>{{'sideBar.notifications' | translate}} <span class="pull-right">({{siba.receiveNotifications.length}})</span></h5>
+        </div>
+        <div class="col-xs-12 notificacionBox">
+          <div ng-repeat="notif in siba.receiveNotifications">
+            <div class="row sidebar-container-detail-notif" ng-switch on="notif.notificationType">
+              <div class="col-xs-12 detail-notif bg-tituloNotification notificationBox">
+                <figure class="notificationBox__image">
+                  <img class="notifImg" ng-src="{{notif.image}}">
+                </figure>
+                <div class="notificationBox__information">
+                  <span class="nombreNotificacion text-capitalize">{{notif.userName}}</span>
+                  <!-- Tomas Aqui se debe cambiar lo relacionado a Angular para llamar el perfil del miembro -->
+                 <!-- <span class="nombreNotificacion text-capitalize fuenteOscura">Diseñador Gráfico</span>-->
+                </div>
+              </div>
+              <div ng-switch-when="1">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.USER_REQUEST_PERMISSION_GROUP' | translate}}</span>
+                </div>
+
+                <div class="col-xs-6 sin-padding--leftNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.accept' | translate}}</button>
+                </div>
+                <div class="col-xs-6 sin-padding-rightNotification">
+                  <button class="btn btn-block btn-transparente" type="button" ng-click="siba.rejectNotification(notif)">{{'btn.reject' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="2">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.USER_REQUEST_PERMISSION_ACCEPTED' | translate}}</span>
+                </div>
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="3">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.USER_REQUEST_PERMISSION_REJECTED' | translate}}</span>
+                </div>
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="4">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>Desea sumarte a su equipo</span>
+                  <!-- <span>{{'notifications.PM_INVITE_USER_GROUP' | translate}}</span> -->
+                </div>
+
+                <div class="col-xs-6 sin-padding--leftNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.accept' | translate}}</button>
+                </div>
+                <div class="col-xs-6 sin-padding-rightNotification">
+                  <button class="btn btn-block btn-transparente" type="button" ng-click="siba.rejectNotification(notif)">{{'btn.reject' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="5">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.USER_DELETED_FROM_GROUP' | translate}}</span>
+                </div>
+
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="6">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.USER_EXIT_GROUP' | translate}}</span>
+                </div>
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="7">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.USER_REQUEST_PROFILE_VIEW' | translate}}</span>
+                </div>
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="8">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.GROUP_CLOSED' | translate}}</span>
+                </div>
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="9">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.PM_INVITE_ACCEPTED' | translate}}</span>
+                </div>
+
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+              <div ng-switch-when="10">
+                <div class="col-xs-12 detail-notif d-flex flex-start">
+
+                  <span>{{'notifications.PM_INVITE_DECLINED' | translate}}</span>
+                </div>
+                <div class="col-xs-6 pull-right sin-padding-rightNotification">
+                  <button class="btn btn-primary btn-block" type="button" ng-click="siba.replyNotification(notif)">{{'btn.ok' | translate}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('div.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+</script>

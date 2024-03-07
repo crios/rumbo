@@ -1,0 +1,215 @@
+<div id="sidebar" ng-controller="CompanySideBarCtrl as siba">
+  
+  <!-- PENDIENTE DE BACKEND - TARJETA PERFIL CELULAR -->
+  <div class="jmpa_card_perfil_postular_por">
+    <span>Publicado por</span>
+  </div>
+  <div class="jmpa_card_perfil_postular">
+      <div class="row">
+        <div class="col-xs-4">
+          <figure class="avatar">
+            <img ng-if="siba.userPicture !== null" ng-src="{{siba.userPicture}}" class="img-responsive profile-pic" alt="">
+            <img ng-if="siba.userPicture === null" src="../../images/avatar.png" class="img-responsive profile-pic" alt="">
+          </figure>
+        </div>
+        <div class="col-xs-8">
+          <span class="jmpa_card_cell_user_name">{{siba.firstName}} {{siba.lastName}}</span>
+
+          <span class="jmpa_card_cell_user_cargo">{{siba.companyJobTitle}}</span>
+          
+          <span ng-show="siba.city !== undefined || siba.country !== undefined">
+            <span class="jmpa_card_cell_user_nacionalidad" >{{siba.city}}, {{siba.country}}</span>
+          </span>
+          
+          <span class="jmpa_card_cell_user_fecha_registro">{{'profileView.memberSince' | translate}} {{siba.memberSince | date: 'MMMM yyyy'}}</span>
+          
+          <a class="jmpa_card_cell_user_fecha_link" ng-click="siba.viewProfile()">Ver perfil</a>
+        </div>
+      </div>
+  </div>
+  <!-- END PENDIENTE DE BACKEND - TARJETA PERFIL CELULAR -->
+
+
+  <div class="bg-blueMedium jmpa_psummary_user_post" >
+    <!-- Aqui esta la lista del perfil de una empresa normal -->
+    <div ng-hide="siba.modeMain === 1" class="edit__perfil edit__perfil--company" >
+      <!-- Aca se debe ocultar este div completo user--editar para el user.html -->
+      <div class="user--editar" ng-show="siba.isSelfUser === true">
+        <i class="fa fa-camera" style="color: #ffffff !important" ng-click="siba.togglePicture()"></i>
+        <i class="fa fa-pencil" ng-click="siba.toggleMain()"></i>
+      </div>
+      <div ng-if="siba.showViewProfileLink" class="view-profile">
+        <span>Publicado por / </span><a href="#" ng-click="siba.viewProfile()">Ver perfil</a>
+      </div>
+      <figure class="avatar">
+        <img ng-if="siba.userPicture !== null" ng-src="{{siba.userPicture}}" class="img-responsive profile-pic" alt="">
+        <img ng-if="siba.userPicture === null" src="../../images/avatar.png" class="img-responsive profile-pic" alt="">
+      </figure>
+      <h3 class="nombrePerfil">{{siba.firstName}} {{siba.lastName}}</h3>
+      <h3 class="nombreJob">{{siba.companyJobTitle}}</h3>
+      <div class="user__nacionalidad">
+        <span ng-show="siba.location !== undefined || siba.country !== undefined">
+            {{siba.city}}, {{siba.country}}
+        </span>
+      </div>
+      <div class="user__miembro">
+        <span>{{'profileView.memberSince' | translate}} {{siba.memberSince | date: 'MMMM yyyy'}}</span>
+      </div>
+    </div>
+    <div ng-hide="siba.modeMain !== 1" class="">
+      <div class="user--editar">
+        <i class="fa fa-camera" ng-click="siba.togglePicture()"></i>
+        <i class="fa fa-floppy-o" ng-click="siba.saveBasicInfo()"></i>
+      </div>
+      <div ng-if="siba.showViewProfileLink" class="view-profile">
+        <span>Publicado por / </span><a href="#" ng-click="siba.viewProfile()">Ver perfil</a>
+      </div>
+      <figure class="avatar">
+        <img ng-if="siba.userPicture !== null" ng-src="{{siba.userPicture}}" class="img-responsive profile-pic" alt="">
+        <img ng-if="siba.userPicture === null" src="../../images/avatar.png" class="img-responsive profile-pic" alt="">
+      </figure>
+      <form class="formNew">
+        <input type="text" class="inputEdit--new" ng-model="siba.tempFirstName" placeholder="Nombre">
+        <input type="text" class="inputEdit--new" ng-model="siba.tempLastName" placeholder="Apellido">
+        <input type="text" class="inputEdit--new inputEdit--new--especialidad" ng-model="siba.tempCompanyJobTitle" placeholder="Cargo">
+        <input type="text" class="inputEdit--new inputEdit--new--especialidad" ng-model="siba.tempCity" placeholder="Ciudad">
+        <select class="inputEdit--new inputEdit--new--especialidad" ng-model="siba.tempCountry" rombus-country-picker="name">
+          <option value="">{{'profileView.selectCountry' | translate}}</option>
+        </select>
+
+      </form>
+    </div>
+  </div>
+  <div class="row jmpa_psummary_user_post" ng-hide="siba.hideDetails === true">
+    <div class="col-xs-12 sidebar-background">
+      <!--<div class="row">
+          <div class="col-xs-12 padding-left margin-bottom">
+            <div class="row sidebar-container-detail">
+              <div class="col-xs-12 detail">
+                <span class="sidebar--hourprice sidebar--titleWhite">Idioma:</span>
+                <i class="edit fa fa-pencil pull-right-all edit--idioma" ng-show="siba.isSelfUser === true"></i>
+              </div>
+            </div>
+          </div>
+        <div class="col-xs-12">
+          <div class="border--bottomSidebar"></div>
+        </div>
+     </div>end idioma-->
+     <div class="row" ng-hide="siba.publishProjectAmount < 1">
+          <div class="col-xs-12 padding-left margin-bottom">
+            <div class="row sidebar-container-detail">
+              <div class="col-xs-12 detail">
+                <span class="sidebar--titleWhite">Proyectos publicados: {{siba.publishProjectAmount}}</span>
+              </div>
+            </div>
+          </div>
+        <div class="col-xs-12">
+          <div class="border--bottomSidebar"></div>
+        </div>
+     </div><!--end Proyecto publicados-->
+
+     <div class="row" ng-hide="siba.hiredServicesAmount < 1">
+          <div class="col-xs-12 padding-left margin-bottom">
+            <div class="row sidebar-container-detail">
+              <div class="col-xs-12 detail">
+                <span class="sidebar--titleWhite">Servicios contratados: {{siba.hiredServicesAmount}}</span>
+              </div>
+            </div>
+          </div>
+        <div class="col-xs-12">
+          <div class="border--bottomSidebar"></div>
+        </div>
+     </div><!--end Servicios contratados-->
+
+     <div class="row bg-notification bg-notification--transparent pl-3" ng-show="siba.companyFavouriteResources.length > 0">
+        <div>
+          <div class="col-xs-12 sidebar-container-detail">
+            <h4 class="company__title">Mis Recursos</h4>
+          </div>
+          <div class="col-xs-12">
+            <div class="row sidebar-container-detail">
+              <div class="usergroup usergroup--company">
+                <div class="col-xs-3 member">
+                  <img class="group-member-pic" src="https://i.pravatar.cc/200?img=4" alt="">
+                </div>
+                <div class="col-xs-3 member">
+                  <img class="group-member-pic" src="https://i.pravatar.cc/200?img=7" alt="">
+                </div>
+                <div class="col-xs-3 member">
+                  <img class="group-member-pic" src="https://i.pravatar.cc/200?img=1" alt="">
+                </div>
+                <i ng-show="siba.isSelfUser === true" class="edit fa fa-pencil pull-right-all editmember-company"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End  mis recursos -->
+      <div class="row " ng-show="siba.projectManager !== null">
+         <div class="col-xs-12 sidebar-container-detail margin-bottom--sidebar">
+            <h4 class="company__title pl-3">Project Manager</h4>
+          </div>
+          <div class="notificacition--group notificacition--groupCompany ">
+            <div class="col-xs-12 company__teamMain ">
+             <figure class="company__teamMain--image">
+               <img class="group-member-pic" src="https://i.pravatar.cc/200?img=9">
+             </figure>
+             <div class="company__teamMain--information">
+               <h4 class="color--primary company__teamMain--title">Sergio Antonio</h4>
+               <h4 class="company__teamMain--title company__teamMain--perfil">Diseñador Gràfico</h4>
+             </div>
+             <div ng-show="siba.isSelfUser === true" class="company__teamMain--edit">
+               <i class="edit fa fa-pencil"></i>
+              </div>
+            </div>
+            <div class="col-xs-12 sidebar-detail-title bg-notification--padding">
+              <h4 class="color-white color--primary nombre-equipo-pertenezco company__title">Equipo de Sergio</h4>
+            </div>
+            <div class="col-xs-12">
+              <div class="row sidebar-container-detail bg-notification--padding">
+                <div class="usergroup usergroup--company">
+                  <div class="col-xs-3 member">
+                    <img class="group-member-pic" src="https://i.pravatar.cc/200?img=19" alt="">
+                  </div>
+                  <div class="col-xs-3 member">
+                    <img class="group-member-pic" src="https://i.pravatar.cc/200?img=18" alt="">
+                  </div>
+                  <div class="col-xs-3 member">
+                    <img class="group-member-pic" src="https://i.pravatar.cc/200?img=12" alt="">
+                  </div>
+                </div>
+              </div>
+             </div>
+          </div>
+      </div><!--end Project manager-->
+      <div class="row " ng-show="siba.representative !== null">
+         <div class="col-xs-12 sidebar-container-detail margin-bottom--sidebar">
+            <h4 class="company__title pl-3">Representante</h4>
+          </div>
+          <div class="notificacition--group notificacition--groupCompany ">
+            <div class="col-xs-12 company__teamMain ">
+             <figure class="company__teamMain--image">
+               <img class="group-member-pic" src="https://i.pravatar.cc/200?img=2?img=3" alt="">
+             </figure>
+             <div class="company__teamMain--information">
+               <h4 class="color--primary company__teamMain--title">Sergio Antonio</h4>
+               <h4 class="company__teamMain--title company__teamMain--perfil">Diseñador Gràfico</h4>
+             </div>
+             <div ng-show="siba.isSelfUser === true" class="company__teamMain--edit">
+               <i class="edit fa fa-pencil"></i>
+              </div>
+            </div>
+            <div class="col-xs-12 sidebar-detail-title bg-notification--padding margin-bottom--sidebar">
+              <h4 class="color-white color--primary nombre-equipo-pertenezco company__title">Ciudad, Pais</h4>
+            </div>
+          </div>
+      </div><!--end Representante-->
+    </div>
+  </div>
+</div>
+<script>
+  $('div.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
+</script>

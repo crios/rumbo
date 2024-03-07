@@ -1,0 +1,69 @@
+<nav ng-include="'views/headerRegistration.html'" ng-controller="HeaderCtrl as header"></nav>
+<section id="regwiz01" class="loginNew" >
+	<div class="container">
+		<div class="row">
+			<div class="texto col-sm-5 col-md-4 registerNew__text">
+				<h4>{{'registerView.h2' | translate}}</h4>
+				<div class="redes--sociales">
+					<div class="social-login">
+						<i linked-in class="global-linkedin"></i>
+					</div>
+					<div class="social-login">
+						<i fb-login class="global-facebook"></i>
+					</div>
+					<div class="social-login">
+						<i g-login class="google-google3"></i>
+					</div>
+				</div>
+				<br>
+				<p class="login--texto">O completa el formulario.</p>
+			</div>
+			<div class="inputs col-sm-6 col-sm-offset-1 col-lg-offset-2">
+					<div class="box">
+						<div class="hidden-xs logo">
+						  <img src="../../images/logorombus_negro.png" class="img-responsive">
+						</div>
+						<div class="formulario formularioRegister">
+							<form ng-submit="register.registration(profile)" class="formFull">
+								<div class="container formRegister">
+									<div class="">
+										<input type="text" name="nombre" class="loginplaceholder registerplaceholder" placeholder="{{'registerView.name' | translate}}" ng-model="profile.firstName" required>
+									</div>
+									<div class="">
+										<input type="text" class="loginplaceholder registerplaceholder" placeholder="{{'registerView.lastName' | translate}}" ng-model="profile.lastName" required>
+									</div>
+									<div class="">
+										<input type="email" class="loginplaceholder registerplaceholder" placeholder="{{'registerView.email' | translate}}" ng-model="profile.email" required>
+									</div>
+									<div class="" >
+										<input type="email" class="loginplaceholder registerplaceholder" placeholder="{{'registerView.confirmEmail' | translate}}" ng-model="profile.email2" required>
+									</div>
+									<div class="" >
+										<input type="password" class="loginplaceholder registerplaceholder" placeholder="{{'registerView.pass' | translate}}" ng-model="profile.pass" minlength="8" required>
+									</div>
+									<div class="">
+										<input type="password" class="loginplaceholder registerplaceholder" placeholder="{{'registerView.pass2' | translate}}" ng-model="profile.pass2" minlength="8" required>
+									</div>
+									<div class="checks">
+										<div class="checks-div">
+											<input type="checkbox" ng-model="accepted" ng-true-value="1" required>{{'registerView.iRead1' | translate}}  <a class="color--azul" ng-click="changeViewWithSpecElement('termsAndConditions','')">{{'registerView.terms' | translate}}</a> {{'registerView.and' | translate}}<a class="color--azul" ng-click="changeViewWithSpecElement('privacyPolicy','')">{{'registerView.privatePol' | translate}}</a>
+										</div>
+										<div class="checks-div">
+											<input type="checkbox" ng-model="profile.receiveInfo" ng-init="profile.receiveInfo = true"> {{'registerView.keepMePosted' | translate}}
+										</div>
+									</div>
+								</div>
+								<div class="footer footerRegister">
+									<input type="submit" class="registrarse" value="Registrarse">
+								</div>
+							</form>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>
+<script>
+  fbq('track', 'CompleteRegistration');
+</script>

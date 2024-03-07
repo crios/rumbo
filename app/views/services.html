@@ -1,0 +1,471 @@
+
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<header  id="myCarousel" class="carousel carousel-fade slide carousel--borderbottom carousel--porftolio jmpa_myCarousel jmpa_car_soluciones headerServCell" 
+ng-class="{ 'header_services': serv.selectedService === '', 'back_menu': serv.backMenu === 'true', 'header_mkt': serv.selectedService === 'mkt', 'header_des': serv.selectedService === 'des', 'header_pub': serv.selectedService === 'pub', 'header_eng': serv.selectedService === 'eng' }">
+    <div class="bgzonesolutions jmpa_view_pc">
+        <div class="bgdifuminado"></div>
+    </div>
+
+    <div class="jmp_fondo_cell_sol_slider jmpa_view_cell">
+        <div class="difuminado_cell">
+
+        </div>
+        <img src="../images/soluciones/bgsoluciones.jpg" alt="" width="100%" ng-show="serv.selectedService === ''">
+        <img src="../images/soluciones/bgsoluciones_marketing_cell.jpg" alt="" width="100%" ng-show="serv.selectedService === 'mkt'">
+        <img src="../images/soluciones/bgsoluciones_creatividad_cell.jpg" alt="" width="100%" ng-show="serv.selectedService === 'des'">
+        <img src="../images/soluciones/bgsoluciones_publicidad_cell.jpg" alt="" width="100%" ng-show="serv.selectedService === 'pub'">
+        <img src="../images/soluciones/bgsoluciones_programacion_cell.jpg" alt="" width="100%" ng-show="serv.selectedService === 'eng'">
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xs-12">
+            <div class="jmpa_carousel">
+              <div class="carousel-caption__principal">
+
+                <h2  class="agencia-slider " ng-show="serv.selectedService === ''">Las soluciones<br><span>que tu empresa<br>necesita</span></h2>
+                <h2 class="agencia-slider" ng-show="serv.selectedService === 'mkt'">Estrategia<br>y Marketing</h2>
+                <h2 class="agencia-slider" ng-show="serv.selectedService === 'des'">Diseño<br>y Contenidos</h2>
+                <h2 class="agencia-slider" ng-show="serv.selectedService === 'pub'">Publicidad<br>y Campañas</h2>
+                <h2 class="agencia-slider" ng-show="serv.selectedService === 'eng'">Programación<br>y Tecnología</h2>
+                
+
+                <h4 class="informacion_agencia jmpa_view_pc" ng-show="serv.selectedService === ''">
+                    Con más de 40 especialidades profesionales, organizadas<br>y seleccionadas en nuestra <b>Plataforma de Talentos en Línea</b>,<br>ofrecemos a las empresas soluciones de marketing<br>digital, creatividad y contenidos, estrategia de medios<br>y tecnología de negocios digitales.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_pc" ng-show="serv.selectedService === 'mkt'">
+                    Disponer de una estrategia pensada desde la<br>comunicación y ejecutada en base a datos, impacta<br>positivamente en todos los aspectos del negocio.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_pc" ng-show="serv.selectedService === 'des'">
+                    La creatividad es hoy un valor indispensable. Contenidos<br>y diseños atractivos e interesantes le aportan calidad y<br>reconocimiento a tu marca.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_pc" ng-show="serv.selectedService === 'pub'">
+                    Mejor comunicación es más ventas. Crear mensajes que<br>conmuevan a tu público objetivo genera tráfico y<br>aumenta las conversiones de clientes.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_pc" ng-show="serv.selectedService === 'eng'">
+                    Contamos con un plantel de expertos para dotar a tu<br>negocio digital de recursos sólidos y eficientes, en una<br>amplia gama de lenguajes y plataformas.
+                </h4>
+ 
+                <h4 class="informacion_agencia jmpa_view_cell" ng-show="serv.selectedService === ''">
+                    Con más de 40 especialidades profesionales, organizadas y seleccionadas en nuestra <b>Plataforma de Talentos en Línea</b>, ofrecemos a las empresas soluciones de marketing digital, creatividad y contenidos, estrategia de medios y tecnología de negocios digitales.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_cell" ng-show="serv.selectedService === 'mkt'">
+                    Disponer de una estrategia pensada desde la comunicación y ejecutada en base a datos, impacta positivamente en todos los aspectos del negocio.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_cell" ng-show="serv.selectedService === 'des'">
+                    La creatividad es hoy un valor indispensable. Contenidos y diseños atractivos e interesantes le aportan calidad y reconocimiento a tu marca.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_cell" ng-show="serv.selectedService === 'pub'">
+                    Mejor comunicación es más ventas. Crear mensajes que conmuevan a tu público objetivo genera tráfico y aumenta las conversiones de clientes.
+                </h4>
+                <h4 class="informacion_agencia jmpa_view_cell" ng-show="serv.selectedService === 'eng'">
+                    Contamos con un plantel de expertos para dotar a tu negocio digital de recursos sólidos y eficientes, en una amplia gama de lenguajes y plataformas.
+                </h4>
+
+                <a class="linksoluciones" ng-click="serv.backToNormal()" onclick="window.scrollTo( 0, 0 )"
+                   ng-class="{ 'jmpa_spe_on': serv.selectedService != '' }">
+                    <img src="../images/arrow_services_atras.png" alt="" class="volverservicios"> Volver a las Áreas de Especialidad</a>
+                
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</header>
+<main class="main jmpa_soluciones">
+        <div class="container jmp_soluciones_menu" ng-show="serv.selectedService===''">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-md-10">
+                    <section class="jp_rhp_soluciones">
+                        <div class="row">
+                            <div class="col-xs-12"><span class="vermastale">Ingresa en cada área para saber más:</span></div>
+                            <div class="col-xs-12">
+                                <div class="row jp_rhp_items">
+                                    <div class="col-xs-6 col-md-3">
+                                        <div class="item colores_bloques hc1 on" ng-click="changeViewWithParams('services','area=mkt');">
+                                            <img src="../images/soluciones/item01.jpg" alt="" class="phcol">
+                                            <img src="../images/soluciones/item01h.jpg" class="hcol" alt="">
+                                            <div class="titulo">Estrategia y<br>Marketing</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <div class="item colores_bloques hc2 on" ng-click="changeViewWithParams('services','area=des');">
+                                            <img src="../images/soluciones/item02.jpg" alt="" class="phcol">
+                                            <img src="../images/soluciones/item02h.jpg" class="hcol" alt="">
+                                            <div class="titulo">Diseño y<br>Contenidos</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <div class="item colores_bloques hc3 on" ng-click="changeViewWithParams('services','area=pub');">
+                                            <img src="../images/soluciones/item03.jpg" alt="" class="phcol">
+                                            <img src="../images/soluciones/item03h.jpg" class="hcol" alt="">
+                                            <div class="titulo">Publicidad y<br>Campañas</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <div class="item colores_bloques hc4 on" ng-click="changeViewWithParams('services','area=eng');">
+                                            <img src="../images/soluciones/item04.jpg" alt="" class="phcol">
+                                            <img src="../images/soluciones/item04h.jpg" class="hcol" alt="">
+                                            <div class="titulo">Programación<br>y Tecnología</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="container jmp_soluciones_menu" ng-show="serv.selectedService!=''" ng-class="{ 'sol_contenido_services': serv.selectedService === '', 'sol_contenido_mkt': serv.selectedService === 'mkt', 'sol_contenido_des': serv.selectedService === 'des', 'sol_contenido_pub': serv.selectedService === 'pub', 'sol_contenido_eng': serv.selectedService === 'eng' }">
+            <div class="row ">
+                <div class="col-xs-12" >
+                    <div class="row jmpa_s_bloque_list jmpa_div_off" ng-show="serv.selectedService">
+                        <div class="col-xs-12 col-md-6">
+                            <ul ng-show="serv.selectedService==='mkt'" class="jmpa_div_off jmp_solu_intro ">
+                                <li>
+                                <a href="" class="titulo">​​Desarrollo de Negocios Digitales</a>
+                                <div class="drop">Repensar el negocio en clave 100% digital, mediante soluciones de estrategia y tecnología, para dotar a la empresa de las aptitudes necesarias para competir y posicionarse en el mundo on line. </div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Branding / Marca e Imagen Corporativa</a>
+                                <div class="drop">Una marca poderosa e influyente es mucho más que un logo. Es el resultado de acciones con propósito, valor y posicionamiento de la oferta de marca en la conciencia del público consumidor.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Estrategia de Comunicación con Grupos de Interés</a>
+                                <div class="drop">Entablar un vínculo proactivo con los grupos de interés (stakeholders) del producto o servicio tiene un valor fundamental, ya que impacta indefectiblemente en los resultados de ventas y la reputación de la organización.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Gestión de Contenidos</a>
+                                <div class="drop">Planificamos y gestionamos los contenidos de sitios webs, redes sociales y cualquier otro dispositivo digital que necesite mantenerse actualizado y vigente con las últimas ofertas, novedades y tendencias.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Marketing de Social Media</a>
+                                <div class="drop">Involucra todas las acciones que debe llevar a cabo una empresa u organización a través de las redes sociales, para promover sus productos o servicios y construir un vínculo positivo con su comunidad.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Reputación on line</a>
+                                <div class="drop">La reputación en línea es el prestigio o estima logrado por una empresa, marca o persona en Internet. Esto es sumamente importante en un contexto donde resulta muy fácil y accesible verter información y opiniones a través de las redes sociales, foros y medios.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Estrategia de Crecimiento (Growth Hacking)</a>
+                                <div class="drop">Un plan de growth hacking permite detectar oportunidades específicas para el crecimiento del negocio en el mundo on line. Facilitamos profesionales expertos en estas técnicas y tendencias.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Estrategia de Experiencia de Consumidor</a>
+                                <div class="drop">Colocar al cliente consumidor en el centro del análisis, estudiando datos y comportamientos y diseñando un mapa de ruta no intrusivo, para conectar al usuario con la oferta de modo natural.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Generación de Prospectos (Leads)</a>
+                                <div class="drop">Una estrategia adecuada permite atraer a las personas interesadas en el producto o servicio hacia el proceso del “embudo de ventas” de la empresa (interacción-conversión-fidelización).</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Gestión de Campañas Digitales</a>
+                                <div class="drop">Una campaña de marketing digital es una de las acciones más relevantes en el ecosistema online. Su principal propósito es impactar a las personas que nos interesan con una propuesta de valor o mensaje clave, para que realicen una acción determinada, muchas veces traccionada por anuncios (Ads).</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Optimización en Buscadores (SEO)</a>
+                                <div class="drop">Facilitamos el diseño del proceso por el cual una página web obtiene y mantiene posiciones notables en las páginas de resultados naturales de los buscadores, también llamados resultados orgánicos o algorítmicos.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Marketing en Buscadores (SEM)</a>
+                                <div class="drop">Mientras que el SEO se centra en mejorar la visibilidad a nivel orgánico o de forma natural en los resultados de búsqueda, el SEM se basa en campañas de publicidad mediante anuncios de pago en las páginas de resultados. Lo importante es estar primero.</div>
+                                </li>
+                                
+
+                                <li>
+                                <a href="" class="titulo">Relaciones Públicas</a>
+                                <div class="drop">Toda empresa necesita elaborar una estrategia para presentarse frente al mercado y a otras entidades con las cuales estrechar vínculos comerciales o institucionales, y establecer una relación de comunicación y cooperación mutua entre la organización y su público</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Marketing de Influencia y Recomendación</a>
+                                <div class="drop">Utilizar a personajes influyentes o calificados en un tema o sector para transmitir un mensaje y aumentar el reach (alcance) de un contenido hacia su comunidad de interés.</div>
+                                </li>
+                                
+                                <li>
+                                <a href="" class="titulo">Investigación de Mercado y Analítica</a>
+                                <div class="drop">Analizamos datos macro y micro para identificar nichos de mercado o una oportunidad de negocio, aplicamos técnicas de benchmarking para el estudio de la competencia e identificamos los insights o claves de percepción correspondientes al target.</div>
+                                </li>
+
+                                
+                            </ul>
+                            <ul ng-show="serv.selectedService==='des'" class="jmpa_div_off jmp_solu_intro ">
+
+                                <li>
+                                    <a href="" class="titulo">Marca e Identidad Corporativa</a>
+                                    <div class="drop">Creación de marcas desde cero, o a partir de existentes, en base a lo que una empresa quiere o necesita transmitir sobre sí misma, su esencia, oferta de valor y actualidad. Implementación y despliegue de la identidad corporativa de acuerdo al plan de mercadeo.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Diseño UX, Experiencia de Usuario</a>
+                                    <div class="drop">Entender al usuario, sus necesidades y expectativas, cuando interactúa con un producto, es un aspecto clave y de vital importancia. El diseño de UX trabaja en la creación de experiencias satisfactorias.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Sitios Web Multidispositivos</a>
+                                    <div class="drop">Mediante diseño responsivo y metodología de “mobile first” diseñamos productos digitales que se adaptan naturalmente a todo tipo de dispositivos: pc, celular, laptop, tablet. Para que todo se vea y luzca bien.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Aplicaciones Móviles</a>
+                                    <div class="drop">Creación de apps para descarga en teléfonos, tablets o reproductores mp3. Diseñadas a medida por nuestros equipos creativos para cada público y mercado específico.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Creación y Producción de Contenidos</a>
+                                    <div class="drop">Tanto visuales (imágenes, ilustraciones, gráficos, infografías) como escritos (redacción creativa, técnica, periodística, traducción a idiomas). Para informar, educar e interesar.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Diseño Editorial</a>
+                                    <div class="drop">Todo material de lectura requiere de un buen diseño. Creamos y producimos publicaciones de todo tipo: revistas, catálogos, brochures, e-magazines, portales de noticias, blogs, libros, arte de tapas, etc.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Diseño de Packaging, Etiquetas, Envases</a>
+                                    <div class="drop">Crear un embalaje destinado a contener un producto especial, luego aplicarle la comunicación y estética de branding. Un proceso creativo de alta exigencia que merece máxima atención.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Fotografía Publicitaria</a>
+                                    <div class="drop">Los fotógrafos de Rombus Global crean imágenes, seleccionan las mejores tomas y le aportan ideas e impacto visual a tu comunicación.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Producción Audiovisual</a>
+                                    <div class="drop">Creadores y productores de videos, clips. Filmaciones en locación o estudio. Grabaciones de audio, musicalización. Streaming en vivo. Cobertura de eventos.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Animación Digital, 2D, 3D, Motion Graphic</a>
+                                    <div class="drop">Expertos en crear animaciones y efectos visuales para diferentes plataformas o soportes: videos, televisión, películas, videojuegos, aplicaciones móviles, entre otros. Modelados 2D y 3D.</div>
+                                </li>
+                                
+
+
+                                
+                            </ul>
+                            <ul ng-show="serv.selectedService==='pub'" class="jmpa_div_off jmp_solu_intro ">
+
+                                <li>
+                                    <a href="" class="titulo">Creatividad Publicitaria</a>
+                                    <div class="drop">Diseñar avisos con una estrategia creativa bien elaborada es fundamental para lograr conectar con la audiencia. Aportamos dirección creativa y el talento de especialistas trabajando en equipo.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Planificación de Medios</a>
+                                    <div class="drop">Analizar y elegir las diferentes plataformas que se usarán para promocionar productos o servicios, llegar al mayor número de personas y con el menor costo posible, permite ampliar el market share (cuota de mercado) de la compañia.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Publicidad Programática</a>
+                                    <div class="drop">Adquirir espacios publicitarios de manera automatizada, para colocar anuncios en distintas webs, diarios online, blogs, entre muchos otros. Esto se suele hacer mediante pujas en tiempo real (RTB o Real Time Bidding).</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Gestión de Campañas Pay Per Click</a>
+                                    <div class="drop">El pago por clic (PPC) es parte del marketing de buscadores o SEM. El anunciante sólo paga cuando su aviso recibe un click. Bien estudiado, el PPC puede lograr clientes potenciales de calidad.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Google Ads, Facebook Ads, Instagram Ads</a>
+                                    <div class="drop">Avisos ideados para los principales buscadores y redes sociales, definidos según el objetivo primordial de la campaña: ganar visibilidad y exposición pública o generar tráfico, conversión y ventas.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Campañas Pagas y Orgánicas en Redes Sociales</a>
+                                    <div class="drop">Una buena estrategia de Social Ads permite aumentar el alcance del mensaje de manera paga, para llegar a más usuarios que luego conformarán nuestra audiencia orgánica gratuita.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Eventos On y Off line</a>
+                                    <div class="drop">Integramos la planificación de eventos virtuales (como webinars, videoconferencias y streaming) y reuniones en el mundo físico (charlas, talleres, presentaciones) para empujar la imagen de marca, el engagement y la confianza de clientes y proveedores.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Acciones BTL</a>
+                                    <div class="drop">La publicidad BTL (Below The Line o “debajo de la línea”) adopta diversas formas y alternativas. Patrocinios o co-branding con otras marcas o eventos, activaciones creativas, marketing de guerrilla o en punto de venta, son algunas de las opciones para destacar y buscar el “top of mind”.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Gestión de Prensa</a>
+                                    <div class="drop">Nuestros profesionales de prensa realizan comunicados, notas periodísticas, entrevistas, crónicas, con el objetivo de generar impacto positivo, aumentar la credibilidad y posicionar a las empresas como referentes en su campo.</div>
+                                </li>
+                                 
+                                <li>
+                                    <a href="" class="titulo">Campañas 360</a>
+                                    <div class="drop">Desarrollamos estrategias de comunicación integral 360º en múltiples plataformas y canales, para dotar a las marcas de un rol emisor con mayor presencia en los diversos medios, aumentando su protagonismo y potencia competitiva.</div>
+                                </li>
+                                
+
+                                
+                            </ul>
+                            <ul ng-show="serv.selectedService==='eng'" class="jmpa_div_off jmp_solu_intro ">
+<li>
+    <a href="" class="titulo">Interfaz de Usuario (UI)</a>
+    <div class="drop">La forma en la que un usuario interactúa con un Sistema/App es clave para mejorar su experiencia e incrementar su usabilidad. Lo ayudamos a construir una interfaz que favorezca la interacción de los usuarios con su producto.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Diseño de Front-end</a>
+    <div class="drop">Un diseño atractivo e intuitivo que transmita la esencia de la empresa es el primer paso para desarrollar un producto exitoso. El equipo creativo de Rombus Global lo asesorará para que adopte un diseño único.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Programación Web Responsiva</a>
+    <div class="drop">Diseñamos productos digitales que se adaptan a todo tipo de dispositivos (pc, celular, laptop, tablet), proporcionando a todos los usuarios de una web, idénticos contenidos y una experiencia de usuario natural para cada soporte.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Plataformas de Gestión de Contenidos (CMS)</a>
+    <div class="drop">Para crear, administrar y publicar contenido en una página web sin necesidad de conocimientos técnicos. Le mostraremos cuáles son los CMS más utilizados, que le permitirán mantener su sitio actualizado.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Desarrollo de Aplicaciones Nativas / Híbridas / Web</a>
+    <div class="drop">Nuestros programadores desarrollan aplicaciones nativas para Android, IOS, desktop, las cuales aprovechan al máximo las funciones integradas de cada dispositivo, aportan mayor seguridad y ofrecen un mejor desempeño; o híbridas, con un desarrollo unificado para distintos dispositivos.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Integración con API’s</a>
+    <div class="drop">Conecte sus diferentes sistemas, ejecute servicios de terceros o consulte fuentes fiables de información para mejorar la toma de decisiones. Integramos su aplicación con diversos servicios de forma confiable y escalable. </div>
+</li> 
+<li>
+    <a href="" class="titulo">Comercio Electrónico</a>
+    <div class="drop">Acceda a más clientes, con disponibilidad 24x7 y a un menor costo de operación, poniendo su negocio a disposición del público on line, a través de todos los canales e instrumentos que brinda Internet.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Desarrollo de Juegos</a>
+    <div class="drop">Nuestro equipo creativo especializado en la industria del entretenimiento lo ayudará a desarrollar videojuegos de última generación.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Control de Calidad QA / QR</a>
+    <div class="drop">Asegurar una salida a producción de óptima calidad y lograr la satisfacción del cliente con el producto final. Nuestro equipo de QA lo ayudará a mantener altos estándares en cada uno de sus entregables. </div>
+</li> 
+<li>
+    <a href="" class="titulo">Inteligencia de Negocios</a>
+    <div class="drop">Combine análisis de negocios, minería de datos, visualización, análisis de datos y modelos predictivos para tomar mejores decisiones y marque una diferencia con su competencia.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Base de Datos</a>
+    <div class="drop">Lo ayudamos a gestionar, monitorear, administrar, optimizar y proveer seguridad a su Base de Datos para que mantenga la integridad de su información y pueda dedicarse a extraerle valor. </div>
+</li> 
+<li>
+    <a href="" class="titulo">Sistemas</a>
+    <div class="drop">Un buen diseño (UX/UI) es exitoso si cuenta con la infraestructura adecuada. Para esto nuestros expertos Back-end y Full-stack se encargarán de que su sistema (servidor, bases de datos, etc.) se ejecute de manera óptima, segura y escalable.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Seguridad Informática</a>
+    <div class="drop">Minimice la vulnerabilidad de los sistemas y de la información contenida en ellos. Nuestros especialistas lo ayudan para que pueda mantener la integridad, confidencialidad, disponibilidad y autenticación de sus sistemas.</div>
+</li> 
+<li>
+    <a href="" class="titulo">Transformación Digital e Innovación</a>
+    <div class="drop">Aplicamos conocimientos estratégicos, técnicos y creativos para dotar a las empresas de recursos tecnológicos innovativos en sus procesos de diseño y comercialización de productos y servicios, adecuados a la actualización que requieren los mercados digitales globales.</div>
+</li>
+                               
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="jmpa_bloque_cliente_caso"  ng-show="serv.selectedService==='mkt'">
+                                <div class="img">
+                                    <img src="../images/clientes/natreon.jpg" alt="">
+                                </div>
+                                <div class="caso">Caso Destacado</div>
+                                <div class="titulo_cliente">Dow Agrosciences</div>
+                                <div class="realizamos">Realizamos una campaña de Branding y Contenidos para la introducción del Aceite de Girasol de Alto Oleico en el mercado alimentario latinoamericano.<br>Resultado: Posicionamos al producto como líder en el sector de alimentos procesados.</div>
+                                <a ng-click="changeViewWithSpecElement('portfoliocuatro','')" class="verpotafolio">Ver portafolio</a>
+                            </div>
+                            <div class="jmpa_bloque_cliente_caso"  ng-show="serv.selectedService==='des'">
+                                <div class="img">
+                                    <img src="../images/clientes/HMANDT2.jpg" alt="">
+                                </div>
+                                <div class="caso">Caso Destacado</div>
+                                <div class="titulo_cliente">Hotel Marketing and Technology
+                                </div>
+                                <div class="realizamos">Diseñamos la marca y una landing page para la búsqueda y reserva de alojamiento y autos. 
+                                    <br>Resultado: integración a Book engine como Affiliate Partner de Booking.com.</div>
+                                <a ng-click="changeViewWithSpecElement('portfoliouno','')" class="verpotafolio">Ver portafolio</a>
+                            </div>
+                            <div class="jmpa_bloque_cliente_caso"  ng-show="serv.selectedService==='pub'">
+                                <div class="img">
+                                    <img src="../images/clientes/SuperPollo.jpg" alt="">
+                                </div>
+                                <div class="caso">Caso Destacado</div>
+                                <div class="titulo_cliente">Súper Pollo</div>
+                                <div class="realizamos">Realizamos una campaña de Branding y Contenidos para la introducción del Aceite de Girasol de Alto Oleico en el mercado alimentario latinoamericano.<br>Resultado: +500.000 visualizaciones emocionadas en pocos días.</div>
+                                <a ng-click="changeViewWithSpecElement('portfoliotres','')" class="verpotafolio">Ver portafolio</a>
+                            </div>
+                            <div class="jmpa_bloque_cliente_caso"  ng-show="serv.selectedService==='eng'">
+                                <div class="img">
+                                    <img src="../images/clientes/hp.jpg" alt="">
+                                </div>
+                                <div class="caso">Caso Destacado</div>
+                                <div class="titulo_cliente">HP Premier A3</div>
+                                <div class="realizamos">Hewlet Packard prrsentó el programa “Premier A3” en los mercados de Latam y en Rombus nos encargamos de su website en versión local.<br>Resultado: colaboramos para un desembarco exitoso en Argentina.</div>
+                                <a ng-click="changeViewWithSpecElement('portfoliodos','')" class="verpotafolio">Ver portafolio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bloque_ready" ng-class="{ 'sol_ready_services': serv.selectedService === '', 'sol_ready_mkt': serv.selectedService === 'mkt', 'sol_ready_des': serv.selectedService === 'des', 'sol_ready_pub': serv.selectedService === 'pub', 'sol_ready_eng': serv.selectedService === 'eng' }">
+            <div class="container jmp_soluciones_ready" ng-show="serv.selectedService!=''" >
+                <div class="row justify-content-center">
+                    <div class="col-xs-12 col-md-10 text-center" >
+                        <h1>¿Ya estás listo para empezar?</h1>
+
+                        <p ng-if="serv.selectedService === 'mkt'">Accede ya mismo a soluciones de Marketing y Estrategia con la fuerza del Talento Profesional Independiente.</p>
+                        <p ng-if="serv.selectedService === 'des'">Accede ya mismo a soluciones de Diseño y Contenidos con la fuerza del Talento Profesional Independiente.</p>
+                        <p ng-if="serv.selectedService === 'pub'">Accede ya mismo a soluciones de Publicidad y Campañas con la fuerza del Talento Profesional Independiente.</p>
+                        <p ng-if="serv.selectedService === 'eng'">Accede ya mismo a soluciones de Programación y Tecnología con la fuerza del Talento Profesional Independiente.</p>
+
+
+                        <a ng-click="changeViewWithSpecElement('project-wizard/step1','')">Inicia Tu Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+<footer ng-include="'views/footer.html'"></footer>
+<script>
+   var width = $(window).width();
+   if(width<768){
+        $('.jmpa_soluciones').addClass('jmpa_v_mobile');
+    }else{
+        $('.jmpa_soluciones').removeClass('jmpa_v_mobile');
+    }
+$(window).on('resize', function() {
+  if ($(this).width() !== width) {
+    width = $(this).width();
+    if(width<768){
+        $('.jmpa_soluciones').addClass('jmpa_v_mobile');
+    }else{
+        $('.jmpa_soluciones').removeClass('jmpa_v_mobile');
+    }
+  }
+});
+$('.jmp_solu_intro li').click(function(){
+    if($(this).hasClass('active')){        
+        $(this).find('.drop').slideUp( "slow" );
+        $(this).removeClass('active');
+        return false;
+    }
+    $('.jmp_solu_intro li').removeClass('active');
+    $(this).addClass('active');
+
+    $('.jmp_solu_intro li .drop').slideUp( "slow" );
+    $(this).find('.drop').slideDown( "slow" );
+});
+$('.linksoluciones').click(function(){
+    $('.headerServCell').addClass('returnCell');
+});
+</script>

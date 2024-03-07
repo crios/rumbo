@@ -1,0 +1,20 @@
+<section id="sideBarContractUser">
+  <div class="modal-body row" id="modal-body">
+    <div class="col-sm-12">
+      <button type="button" class="close" aria-label="Close" ng-click="sibaModal.ok()">
+        <span aria-hidden="true" class="modalCloseBtn">&times;</span>
+      </button>
+    </div>
+    <form class="form-horizontal" ng-submit="sibaModal.sendInviteUser()">
+      <div class="col-sm-12">
+        <p class="text-center">{{'modals.inviteText1' | translate}}{{sibaModal.basicInfo.fullName}}{{'modals.inviteText2' | translate}}</p>
+      </div>
+      <div class="col-sm-12 modalFooterBtn">
+        <center>
+          <button class="btn btn-primary" type="submit">{{'btn.confirm' | translate}}</button>
+          <button class="btn btn-default" type="button" ng-click="sibaModal.ok()">{{'btn.cancel' | translate}}</button>
+        </center>
+      </div>
+    </form>
+  </div>
+</section>

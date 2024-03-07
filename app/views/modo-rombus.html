@@ -1,0 +1,139 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+
+<div class="Slider bg-modo">
+  <div class="capa_modo">
+    <div class="capa_gris"></div>
+  </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 info">
+              <h1 data-aos="fade-up" data-aos-delay="250" data-aos-offset="0">Un formato</h1>
+              <h1 data-aos="fade-up" data-aos-delay="250" data-aos-offset="0" class="alter">para cada necesidad</h1>
+              <p data-aos="fade-up" data-aos-delay="350" data-aos-offset="0" class="alter">¿Buscas un especialista para un proyecto puntual?<br>¿Un equipo dedicado, con un Project Manager a cargo?<br>¿Un asistente cercano con quien puedas reunirte a trazar objetivos?<br>¿O la agencia completa para ocuparnos de todos los requerimientos y aspectos de tu negocio?</p>
+              <div class="frase_modo_rombus" data-aos="fade-up" data-aos-delay="450" data-aos-offset="0">Rombus Global. Todas las opciones en un sólo lugar.</div>
+          </div>
+          <div class="col-md-4">
+                              
+          </div>
+      </div>
+  </div>               
+</div>
+
+<div class="container">
+<div class="row">
+  <div class="col-12 text-center my-elige">
+    <h3 class="title_modo">Elige tu <span class="title_tt_modo">Modo<b>Rombus</b></span></h3>
+  </div>
+</div>
+</div>
+
+<div class="container zona_modos">
+<div class="row">
+  <div class="col-md-6">
+    <div class="item_modo rb_central">
+      <div class="pic">
+        <img src="../images/formatos/01-RombusFree.jpg" alt="">
+      </div>
+      <div class="contenido">
+        <div class="header">                      
+          <div class="texto">
+            <div class="icono">
+              <img src="../images/rbs_projects/modos/rombus_free.png" alt="">
+            </div>
+            <div class="titulo_and_sub">
+              <span class="titulo">Rombus<b>Free</b></span>
+            <span class="sub_titulo">Un/a experto/a a tu servicio</span>                        
+            </div>
+          </div>
+          <p>Publica tu proyecto libremente y sin cargo en la plataforma y recibirás propuestas de freelancers expertos en tu tema, para que selecciones el más adecuado.</p>                      
+          <div class="pie">
+            <a ng-click="changeViewWithSpecElement('register','')" ng-if="header.userLogged != true" class="elijo">Elijo esta opción</a>
+            <a ng-click="changeViewWithSpecElement('project-wizard/step1 ','')" ng-if="header.userLogged === true" class="elijo">Elijo esta opción</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="item_modo rb_free">
+      <div class="pic">
+        <img src="../images/formatos/01-RombusTeam.jpg" alt="">
+      </div>
+      <div class="contenido">
+        <div class="header">                      
+          <div class="texto">
+            <div class="icono">
+              <img src="../images/rbs_projects/modos/rombus_team.png" alt="">
+            </div>
+            <div class="titulo_and_sub">
+              <span class="titulo">Rombus<b>Team</b></span>
+            <span class="sub_titulo">Un equipo dedicado</span>                        
+            </div>
+          </div>
+          <p>Si el proyecto requiere el trabajo de un equipo de especialistas, opta por un Director de Proyecto, quien se encargará de seleccionar los perfiles, coordinará el plan de ejecución y controlará todo el proceso.</p>                      
+          <div class="pie">
+            <a ng-click="changeViewWithSpecElement('register','')" ng-if="header.userLogged != true" class="elijo">Elijo esta opción</a>
+            <a ng-click="changeViewWithSpecElement('project-wizard/step1 ','')" ng-if="header.userLogged === true" class="elijo">Elijo esta opción</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="item_modo rb_central">
+      <div class="pic">
+        <img src="../images/formatos/02-RombusCentral.jpg" alt="">
+      </div>
+      <div class="contenido">
+        <div class="header">                      
+          <div class="texto">
+            <div class="icono">
+              <img src="../images/rbs_projects/modos/rombus_local.png" alt="">
+            </div>
+            <div class="titulo_and_sub">
+              <span class="titulo">Rombus<b>Local</b></span>
+            <span class="sub_titulo">Asistencia cercana</span>                        
+            </div>
+          </div>
+          <p>Si necesitas contar con asistencia directa y presencial. Elije esta opción y serás atendido por un representante de Rombus en tu país o un profesional cercano a tu localidad.</p>                      
+          <div class="pie">
+            <a ng-click="changeViewWithSpecElement('register','')" ng-if="header.userLogged != true" class="elijo">Elijo esta opción</a>
+            <a ng-click="changeViewWithSpecElement('project-wizard/step1 ','')" ng-if="header.userLogged === true" class="elijo">Elijo esta opción</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="item_modo rb_team">
+      <div class="pic">
+        <img src="../images/formatos/02-RombusTeam.jpg" alt="">
+      </div>
+      <div class="contenido">
+        <div class="header">                      
+          <div class="texto">
+            <div class="icono">
+              <img src="../images/rbs_projects/modos/rombus_central.png" alt="">
+            </div>
+            <div class="titulo_and_sub">
+              <span class="titulo">Rombus<b>Central</b></span>
+            <span class="sub_titulo">Atención Corporativa</span>                        
+            </div>
+          </div>
+          <p>Si tienes en mente un proyecto especial o de mayor escala, ponemos a tu disposición todos los recursos de gestión y talento de la agencia y su red internacional, para el logro de tus objetivos.</p>                      
+          <div class="pie">
+            <a ng-click="changeViewWithSpecElement('register','')" ng-if="header.userLogged != true" class="elijo">Elijo esta opción</a>
+            <a ng-click="changeViewWithSpecElement('project-wizard/step1 ','')" ng-if="header.userLogged === true" class="elijo">Elijo esta opción</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer ng-include="'views/footer.html'"></footer>
+
+<script>
+  AOS.init();
+</script>

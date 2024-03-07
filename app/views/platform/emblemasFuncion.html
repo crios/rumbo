@@ -1,0 +1,23 @@
+<section id="emblemasFuncion" ng-controller="EmblemasFuncionCtrl as embFun">
+  <div class="row">
+    <h5>{{'sideBar.function' | translate}}</h5>
+  </div>
+  <div class="row">
+    <div class="col-xs-3" ng-mouseenter="embFun.notifyMouseEnter('sc')" ng-mouseleave="embFun.notifyMouseLeave('sc')" ng-click="embFun.notifyClick('sc')">
+      <img ng-show="functionsModel.sc === true || embFun.tempSc === true" src="../../images/funcion-corporativo.svg" class="img-responsive img-controlled" />
+      <img ng-show="functionsModel.sc === false && embFun.tempSc !== true" src="../../images/funcion-corporativo-gris.svg" class="img-responsive img-controlled" />
+    </div>
+    <div class="col-xs-3" ng-mouseenter="embFun.notifyMouseEnter('pm')" ng-mouseleave="embFun.notifyMouseLeave('pm')" ng-click="embFun.notifyClick('pm')">
+      <img ng-show="functionsModel.pm === true || embFun.tempPm === true" src="../../images/funcion-manager.svg" class="img-responsive img-controlled" />
+      <img ng-show="functionsModel.pm === false && embFun.tempPm !== true" src="../../images/funcion-manager-gris.svg" class="img-responsive img-controlled" />
+    </div>
+    <div class="col-xs-3" ng-mouseenter="embFun.notifyMouseEnter('co')" ng-mouseleave="embFun.notifyMouseLeave('co')" ng-click="embFun.notifyClick('co')">
+      <img ng-show="functionsModel.co === true  || embFun.tempCo === true" src="../../images/funcion-coworker.svg" class="img-responsive img-controlled" />
+      <img ng-show="functionsModel.co === false && embFun.tempCo !== true" src="../../images/funcion-coworker-gris.svg" class="img-responsive img-controlled" />
+    </div>
+    <div class="col-xs-3" ng-mouseenter="embFun.notifyMouseEnter('re')" ng-mouseleave="embFun.notifyMouseLeave('re')" ng-click="embFun.notifyClick('re')">
+      <img ng-show="functionsModel.re === true || embFun.tempRe === true" src="../../images/funcion-representante.svg" class="img-responsive img-controlled" />
+      <img ng-show="functionsModel.re === false && embFun.tempRe !== true" src="../../images/funcion-representante-gris.svg" class="img-responsive img-controlled" />
+    </div>
+  </div>
+</section>

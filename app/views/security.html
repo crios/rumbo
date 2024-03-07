@@ -1,0 +1,85 @@
+<nav scroll ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel-fade slide carousel--borderbottom carousel--porftolio jmpa_myCarousel header_staff addscurity">
+
+  <div class="bgzonesolutions jmpa_view_pc">
+    <div class="bgdifuminado"></div>
+</div>
+<div class="jmp_fondo_cell_sol_slider jmpa_view_cell">
+  <div class="difuminado_cell"></div>
+  <img src="../images/bgsecurity_cell.jpg" alt="" width="100%">
+</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+          <div class="jmpa_carousel">
+            <div class="carousel-caption__principal">
+              <h2 class="agencia-slider">Seguridad<br><span>y transparencia</span></h2>                     
+
+              <h4 class="informacion_agencia jmpa_view_pc">En Rombus Global, empresas y profesionales cuentan con la<br>seriedad y seguridad de pagar por lo que se contrata y cobrar<br>por el servicio entregado, mediante el <span>depósito seguro</span><br><span>(escrow)</span> que resguarda los adelantos en garantía hasta que el<br>trabajo está terminado y aprobado por el Cliente.</h4>
+              <h4 class="informacion_agencia jmpa_view_cell">En Rombus Global, empresas y profesionales cuentan con la seriedad y seguridad de pagar por lo que se contrata y cobrar por el servicio entregado, mediante el <span>depósito seguro (escrow)</span> que resguarda los adelantos en garantía hasta que el trabajo está terminado y aprobado por el Cliente.</h4>
+              
+              <div class="tupagotucobro">
+                <span class="color_1">Tu pago / tu cobro,</span><br>
+                <span class="color_2">asegurados desde el primer momento.</span>
+              </div>
+               
+              
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+
+<main class="main jp_rhp_main jmpa_home_main addsecurityitems">
+  <div class="container">
+    <div class="row">
+
+
+
+      <div class="col-md-4">
+        <div class="item flo-md-l">
+            <div class="toph">
+                <div class="pic"><img src="../images/sty001.jpg" alt="" class="jmpa_view_pc mr-5px"><img src="../images/sty001_cell.jpg" alt="" class="jmpa_view_cell"></div>
+                <div class="title jmpa_view_pc">Contrataciones<br>en el marketplace</div>
+                <div class="title jmpa_view_cell">Contrataciones en el marketplace</div>
+            </div>
+            <p>Todas las contrataciones realizadas en el marketplace (Rombus Free, Rombus Team) cuentan con la garantía de depósito seguro (escrow) que otorga máxima seguridad a través de un depósito en una cuenta preservada. Este pago sólo se libera cuando el cliente aprueba el trabajo según lo convenido. En caso de incumplimiento verificado, el dinero se reintegra.</p>
+                <a ng-click="changeViewWithSpecElement('project-wizard/step1','')" class="link">Publica tu proyecto</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item mar-md-a">
+            <div class="toph">
+                <div class="pic"><img src="../images/sty002.jpg" alt="" class="jmpa_view_pc mr-5px"><img src="../images/sty002_cell.jpg" alt="" class="jmpa_view_cell"></div>
+                <div class="title jmpa_view_pc">Profesionales que<br>trabajan freelance</div>
+                <div class="title jmpa_view_cell">Profesionales que trabajan<br>freelance</div>
+            </div>
+            <p>
+                Los profesionales tienen la seguridad de cobro ya que el importe pactado se deposita al inicio en una cuenta en garantía. Sí el trabajo fué ejecutado correctamente y según lo previsto, el dinero se libera a su cuenta personal. Rombus retiene un 10% de comisión, que el profesional conoce cuando cotiza el trabajo, por ende, el precio a abonar es el presupuestado, sin cargos extra.
+            </p>
+            <a ng-click="changeViewWithSpecElement('login','')" class="link">Se parte de Rombus</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="item flo-md-r">
+            <div class="toph">
+                <div class="pic"><img src="../images/sty003.jpg" alt="" class=""></div>
+                <div class="title jmpa_view_pc">Clientes directos<br>de la Agencia</div>
+                <div class="title jmpa_view_cell">Clientes directos de la Agencia</div>
+            </div>
+            <p>Los contratos de clientes acordados con la agencia Rombus Central, o a través de un representante de Rombus Local, se liquidan de modo directo, con los hitos de pago previstos en el presupuesto. Los adelantos ingresan en la cuenta de depósito seguro (escrow), y de igual modo, los pagos a los proveedores de la plataforma se liberan cuando el cliente da su aprobación del trabajo.</p>
+            <a ng-click="contactUsDialog(null)" class="link">Envíanos tu mensaje</a>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</main>
+
+<footer ng-include="'views/footer.html'"></footer>
+

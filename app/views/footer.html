@@ -1,0 +1,155 @@
+<!--<footer class="jmpa_footer footer" ng-controller="FooterCtrl as foot">
+	<div class="footer__top padding padding--medium">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xs-12 col-md-10">
+						<div class="row  ">
+							<div class="footer--center">
+							<div class="col-xs-12 col-md-2" style="padding-right: 0;">
+								<div class="row">
+									<div class="col-xs-12 text-xs-center ">
+										<figure class="logo--footer" style="cursor: pointer;">
+											<img ng-click="changeViewWithSpecElement('','')" src="../images/logo_footer.jpg" alt="Rombus Global" class="img-responsive">
+										</figure>
+										<span class="jmpa_footer_t_online">Plataforma de Talentos en Línea</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-10">
+								<div class="col-xs-12 col-md-3 border-left">
+									<div class="titulo_ul" ng-click="changeViewWithSpecElement('services','')">Soluciones</div>
+									<ul class="list-unstyled">				
+										<li><a ng-click="changeViewWithParams('services','area=mkt')">Estrategia y Marketing</a></li>
+										<li><a ng-click="changeViewWithParams('services','area=des')">Diseño y Contenidos</a></li>
+										<li><a ng-click="changeViewWithParams('services','area=pub')">Publicidad y Campañas</a></li>
+										<li><a ng-click="changeViewWithParams('services','area=eng')">Programación y Tecnología</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-12 col-md-3 border-left">
+									<div class="titulo_ul" ng-click="changeViewWithSpecElement('project-wizard/step1','')">Publica tu Proyecto</div>						
+									<ul class="list-unstyled">
+										<li><a ng-click="changeViewWithSpecElement('staff','')">Talentos</a></li>
+										<li><a ng-click="changeViewWithSpecElement('red','')">Red</a></li>
+										<li><a ng-click="changeViewWithSpecElement('representatives','')">Representantes</a></li>
+										<li><a ng-click="changeViewWithSpecElement('cowork','')">Coworking</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-12 col-md-3 border-left">			
+									<div class="titulo_ul" ng-click="contactUsDialog(null)">Contacto</div>						
+									<ul class="list-unstyled">
+										<li><a ng-click="changeViewWithSpecElement('security','')">Pago seguro (escrow)</a></li>
+										<li><a ng-click="changeViewWithSpecElement('memberships','')">Membresías y precios</a></li>
+										<li><a target="_blank" href="https://blog.rombusglobal.com">Blog</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-12 col-md-3 border-left ">
+									<div class="titulo_ul">Siguenos</div>	
+									<ul class="list-inline redes-sociales">
+										<li>
+											<a href="https://www.facebook.com/rombusglobal" target="_blank" title="Rombus Global Facebook">
+												<span class="global-facebook"></span>
+											</a>
+										</li>
+										<li>
+											<a href="https://twitter.com/rombusglobal" target="_blank" title="Rombus Global Twitter">
+												<span class="global-twitter"></span>
+											</a>
+										</li>
+										<li>
+											<a href="https://www.linkedin.com/company/rombus" target="_blank" title="Rombus Global Linkedin">
+												<span class="global-linkedin"></span>
+											</a>
+										</li>
+										<li>
+											<a href="https://www.youtube.com/user/RombusGlobal" target="_blank" title="Rombus Global YouTube">
+												<span class="global-youtube"></span>
+											</a>
+										</li>
+										<li>
+											<a href="https://www.instagram.com/rombusglobal/" target="_blank" title="Rombus Global Instagram">
+												<span class="rombus-logo-de-instagram"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="footer__bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xs-12 col-md-10">
+					<div class="capacellfooter">
+						© 2021 Rombus Global. Todos los derechos reservados. <a ng-click="changeViewWithSpecElement('termsAndConditions','')"> {{'footerView.termsConditions' | translate}}</a> <a ng-click="changeViewWithSpecElement('privacyPolicy','')">{{'footerView.privatePolicy' | translate}}</a>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>-->
+	<div class="container">
+  
+		<div class="footer-items row">
+		  <div class="footer-logo col-md-3">
+			<img src="../images/logo_footer.jpg" alt="" class="logo" />
+			<span class="plataforma">Plataforma de Talentos en Línea</span>
+		  </div>
+		  <div class="footer-links col-md-9">
+			<div class="row">
+			  <div class="col-md-3">
+				<h3>Soluciones</h3>
+				<ul>
+				  <li><a href="./services?area=mkt">Estrategia y Marketing</a></li>
+				  <li><a href="./services?area=des">Diseño y Creatividad</a></li>
+				  <li><a href="./services?area=pub">Publicidad y Campañas</a></li>
+				  <li><a href="./services?area=eng">Programación y Tecnología</a></li>
+				</ul>
+			  </div>
+			  <div class="col-md-3">
+				<h3>Publica tu Proyecto</h3>
+				<ul>
+				  <li><a href="./staff">Talentos</a></li>
+				  <li><a href="./red">Red</a></li>
+				  <li><a href="./representatives">Representantes</a></li>
+				  <li><a href="./cowork">Coworking</a></li>
+				</ul>
+			  </div>
+			  <div class="col-md-3">
+				<h3>Contacto</h3>
+				<ul>
+				  <li><a href="./modo-rombus">Modo Rombus</a></li>
+				  <li><a href="./security">Pago seguro (escrow)</a></li>
+				  <li><a href="./memberships">Membresías y precios</a></li>
+				  <!-- <li><a href="https://www.blog.rombusglobal.com/" target="_blank">Blog</a></li> -->
+				</ul>
+			  </div>
+			  <div class="footer-follow-us col-md-3">
+				<h3>Síguenos</h3>
+				<ul class="redes">
+				  <li class="fb"><a href="https://www.facebook.com/rombusglobal" target="_blank"></a></li>
+				  <li class="tw"><a href="https://twitter.com/rombusglobal" target="_blank"></a></li>
+				  <li class="li"><a href="https://www.linkedin.com/company/rombus" target="_blank"></a></li>
+				  <li class="in"><a href="https://www.youtube.com/user/RombusGlobal" target="_blank"></a></li>
+				  <li class="yt"><a href="https://www.instagram.com/rombusglobal/" target="_blank"></a></li>
+				</ul>
+			  </div>
+  
+			</div>
+		  </div>          
+		</div>      
+  
+  
+	  <div class="row">
+		<div class="col-12 mt-5">
+		  <span class="derechos"
+		  >© 2022 Rombus Global. Todos los derechos reservados. Términos y
+		  Condiciones. Políticas de Privacidad y Protección de Datos
+		  Personales.</span
+		>
+		</div>
+	  </div>
+	</div>

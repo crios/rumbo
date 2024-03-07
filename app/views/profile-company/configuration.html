@@ -1,0 +1,67 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav><img src="images/fondo_login.png" class="hidden-xs img-responsive" />
+<section id="configuration" >
+	<div class="container ">
+		<div class="row">
+			<div class="col-sm-6  col-xs-12">
+				<div class="row font-pequena">
+					<div class="col-xs-3 padding-hidden-right col-sm-3">
+            <img src="https://picsum.photos/200/200" class="img-responsive">
+					</div>
+          <div class="col-xs-7 col-sm-8 padding-hidden-left col-sm-8 color--gris">
+            <div class="col-sm-12 profile__name">
+              <h2 class="name font-pequena">
+                 {{profConf.firstName}} {{profConf.lastName}}
+              </h2>
+              <em>{{profConf.jobTitle}}</em>
+              <p>
+                <i class="fa fa-map-marker"></i>
+                <span class="texto-gris">{{profConf.location}}, {{profConf.country}}</span>
+              </p>
+              <p>
+                <i class="fa fa-user"></i>
+                <span class="texto-gris">Perfil predeterminado: {{profConf.profilePreference}}</span>
+              </p>
+              <p><i class="fa fa-calendar-check-o"></i> <span class="texto-gris">{{'profileView.memberSince' | translate}}{{profConf.memberSince | date: 'MMMM yyyy'}}</span></p>
+            </div>
+          </div>
+          <div class="col-xs-1 col-sm-1">
+            <a class="fa fa-pencil margin-top--big"></a>
+          </div>
+          <div class="hidden-xs col-sm-12">
+						<div class="hr"></div>
+					</div>
+				</div>
+        <div class="row" >
+					<div class="col-xs-10 col-sm-11 profile__name">
+						<p>
+              <i class="fa fa-envelope-o"></i>
+              <span class="texto-gris">Email :</span>
+              <strong class="texto-gris">yavallejor@gmail.com</strong>
+            </p>
+						<p>
+              <i class="fa fa-key"></i>
+              <span class="texto-gris">Contraseña</span>
+              <a class="text-primary">(Cambiar)</a>
+            </p>
+					</div>
+					<div class="col-xs-1">
+						<a class="fa fa-pencil margin-top" ng-click="profConf.toggleEmailPass()"></a>
+					</div>
+					<div class="col-xs-12">
+						<div class="hr"></div>
+					</div>
+				</div>
+        <div class="row buttons">
+          <div class="col-xs-12 col-sm-6">
+            <button type="button" class="btn btn-confirmar">Confirmar</button>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <button type="button" class="btn btn-cancelar">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+	</div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

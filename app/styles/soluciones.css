@@ -1,0 +1,251 @@
+.jmpa_soluciones { background-color: rgb(255, 255, 255); }
+.jmpa_s_item_card { position: relative; }
+.jmpa_s_item_card_body { position: absolute; text-align: center; color: rgb(255, 255, 255); background-size: 100%; top: 0px; left: 0px; width: 100%; height: 100%; padding: 15px; }
+.jmpa_s_icon i { width: 75px; height: 75px; background-size: 100%; display: inline-block; }
+.jmpa_s_icon { text-align: center; margin: 15px 0px 0px; }
+.jmpa_s_mkt .jmpa_s_sp { background-image: url("../images/projects/especialidad_marketing_blanco.svg"); }
+.jmpa_s_des .jmpa_s_sp { background-image: url("../images/projects/especialidad_diseno_blanco.svg"); }
+.jmpa_s_pub .jmpa_s_sp { background-image: url("../images/projects/especialidad_publicidad_blanco.svg"); }
+.jmpa_s_eng .jmpa_s_sp { background-image: url("../images/projects/especialidad_programacion_blanco.svg"); }
+.jmpa_s_bloque_header { background-image: url("../images/soluciones/bg_web_principal.png"); background-size: cover; background-repeat: no-repeat; background-position: center center; text-align: center; color: rgb(255, 255, 255); position: relative; height: 440px; }
+.jmpa_s_bloque_header_manto { background-color: rgb(0, 160, 192); opacity: 0.7; height: 100%; position: absolute; width: 100%; }
+.jmpa_s_bloque_header_body .container { max-width: 900px; }
+.jmpa_s_bloque_body { margin: 40px 0px 15px; }
+.jmpa_s_plus { width: 20px; height: 20px; border: 1px solid rgb(255, 255, 255); border-radius: 50%; line-height: 16px; margin: 20px auto 0px; }
+.jmpa_s_name { font-size: 15px; }
+.jmpa_s_bloque_body .col-md-3, .jmpa_s_bloque_list .col-md-3 { padding: 5px; }
+.jmpa_s_h1 { font-size: 30px; line-height: 40px; text-shadow: rgb(0, 0, 0) 0px 0px 3px; font-weight: 400; }
+.jmpa_s_bloque_header_body { padding-top: 100px; }
+.jmpa_s_mkt.active, .jmpa_s_mkt:hover { background-color: rgb(208, 29, 0); }
+.jmpa_s_des.active, .jmpa_s_des:hover { background-color: rgb(252, 176, 64); }
+.jmpa_s_pub.active, .jmpa_s_pub:hover { background-color: rgb(14, 118, 188); }
+.jmpa_s_eng.active, .jmpa_s_eng:hover { background-color: rgb(159, 31, 99); }
+.jmpa_s_mkt:hover > img { opacity: 0; }
+.jmpa_s_des:hover > img { opacity: 0; }
+.jmpa_s_pub:hover > img { opacity: 0; }
+.jmpa_s_eng:hover > img { opacity: 0; }
+.jmpa_s_item_card.active img { opacity: 0; }
+.jmpa_s_bloque_list ul { list-style: none; margin: 0px; padding: 0px;
+  /* height: calc(100% + 80px); */
+  }
+.jmpa_s_bloque_list { padding: 90px 0px 110px; }
+.jmpa_s_bloque_list ul li {margin: 0px;position: relative;background-image: url("../images/drop_service.jpg");background-repeat: no-repeat;background-position-x: right;background-position-y: 9px;background-size: 15px;cursor: pointer;}
+.jmpa_s_bloque_list ul li a {color: rgb(125, 144, 168);line-height: 18.9pt;font-size: 12.6pt;text-decoration: none !important;width: calc(100% - 15px);display: block;}
+.jmpa_s_bloque_list ul li a:hover{ text-decoration:none}
+.jmpa_s_item_card.active .jmpa_s_plus { display: none; }
+.jmpa_s_bloque_header_mkt .jmpa_s_bloque_header_manto { background-color: rgb(208, 29, 0); opacity: 0.6; }
+.jmpa_s_bloque_header_des .jmpa_s_bloque_header_manto { background-color: rgb(252, 176, 64); opacity: 0.6; }
+.jmpa_s_bloque_header_pub .jmpa_s_bloque_header_manto { background-color: rgb(14, 118, 188); opacity: 0.6; }
+.jmpa_s_bloque_header_eng .jmpa_s_bloque_header_manto { background-color: rgb(159, 31, 99); opacity: 0.6; }
+.jmpa_caso_mkt { background-color: rgb(208, 29, 0); }
+.jmpa_caso_des { background-color: rgb(252, 176, 64); }
+.jmpa_caso_pub { background-color: rgb(14, 118, 188); }
+.jmpa_caso_eng { background-color: rgb(159, 31, 99); }
+.jmpa_caso_body { max-width: 770px; margin: auto; color: rgb(255, 255, 255); padding: 65px 15px; }
+.jmpa_caso_body .container { max-width: 100%; }
+.jmpa_caso_b_title { font-size: 14px; }
+.jmpa_caso_b_company { font-size: 22px; font-weight: bold; margin: 10px 0px 5px; }
+.jmpa_caso_b_portafoliio a { font-size: 10px; font-weight: bold; color: rgb(0, 177, 232); text-decoration: none; }
+.jmpa_caso_b_descripcion { font-size: 14px; line-height: 22px; }
+.jmpa_caso_b_portafoliio { margin: 0px 0px 10px; }
+.jmpa_bloque_comienza { padding: 65px 15px; font-size: 16px; font-weight: normal; color: rgb(85, 85, 85); }
+.jmpa_s_button { background-color: rgb(36, 164, 180); color: rgb(255, 255, 255); padding: 12px 45px; border-radius: 30px; font-weight: lighter; letter-spacing: 0.9px; font-size: 12px; margin-top: 40px; }
+.jmpa_caso_container { position: relative; }
+.jmpa_fondos_caso { position: absolute; width: 100%; bottom: 0%; z-index: 1; }
+.jmpa_s_contenido { min-height: auto; position: relative; }
+.jmpa_fondos_caso img { width: 95%; }
+.jmpa_caso_mkt .jmpa_caso_b_portafoliio a { color: rgb(252, 234, 13); }
+.jmpa_caso_des .jmpa_caso_b_portafoliio a { color: rgb(0, 105, 180); }
+.jmpa_caso_pub .jmpa_caso_b_portafoliio a { color: rgb(255, 159, 137); }
+.jmpa_caso_eng .jmpa_caso_b_portafoliio a { color: rgb(152, 212, 237); }
+.jmpa_s_msj { margin-bottom: 40px; font-size: 16px; }
+.jmpa_s_msj b { margin: 10px 0px; display: block; }
+.jmpa_reset_service { display: none; }
+.jmpa_spe_on .jmpa_reset_service { display: inline-block; position: absolute; top: 0px; height: 100%; z-index: 1; width: 100%; }
+.jmpa_li_right a { right: 0px; }
+.jmpa_cuerpo_titulos { padding: 90px; }
+.jmpa_fondos_row { width: 100%; float: left; position: relative; }
+.jmpa_fd_mkt img { margin-bottom: -1px; }
+.jmpa_fd_pub img { margin-bottom: -70px; }
+.jmpa_fd_eng img { margin-bottom: -10px; }
+.jmpa_fd_des img { max-width: 500px; float: right; }
+.jmpa_s_bloque_list_eng { min-height: 450px; }
+.jmpa_s_msj { padding: 20px 0px; }
+.jmpa_s_item_card.active { background-image: none; }
+.jmpa_container_des.container { width: 100%; padding: 0px; }
+.jmpa_soluciones .jp_rhp_soluciones { margin-top: 60px; padding-bottom: 120px; }
+.jmpa_car_soluciones .agencia-slider.jmpa_spe_on, .jmpa_car_soluciones .informacion_agencia.jmpa_spe_on { display: block; }
+.header_services { background-color: rgb(255, 255, 255); }
+.header_services .bgzonesolutions { background-image: url("../images/soluciones/bgsoluciones.jpg"); }
+.header_home .bgzonesolutions { background-image: url("../images/bg_rombus_home.jpg"); }
+.header_mkt { background: rgb(255, 45, 55) !important; }
+.header_mkt .bgzonesolutions { background-image: url("../images/soluciones/bgsoluciones_marketing.jpg"); }
+.header_des { background: rgb(255, 130, 13) !important; }
+.header_des .bgzonesolutions { background-image: url("../images/soluciones/bgsoluciones_creatividad.jpg"); }
+.header_pub { background: rgb(19, 167, 96) !important; }
+.header_pub .bgzonesolutions { background-image: url("../images/soluciones/bgsoluciones_publicidad.jpg"); }
+.header_eng { background: rgb(172, 27, 153) !important; }
+.header_eng .bgzonesolutions { background-image: url("../images/soluciones/bgsoluciones_programacion.jpg"); }
+header.jmpa_car_soluciones .jmpa_carousel { background-color: transparent; width: calc(50% - 20px); }
+header.jmpa_car_soluciones { padding-bottom: 80px; }
+.header_mkt h2, .header_mkt h4, .header_des h2, .header_des h4, .header_pub h2, .header_pub h4, .header_eng h2, .header_eng h4 { color: rgb(255, 255, 255) !important; }
+.linksoluciones { display: none;}
+a.linksoluciones { color: white !important;}
+a.linksoluciones.jmpa_spe_on { display: block; margin-top: 80px; text-decoration: none;}
+.volverservicios {
+   width: 6px; 
+   margin-top: -2px; 
+   margin-right: 8px; 
+}
+a.linksoluciones { color: rgb(255, 255, 255); width: 100%; border-top: 1px solid; padding-top: 20px; margin-top: 100px; display: none; }
+.bgzonesolutions { position: absolute; width: 50%; top: 0px; height: 100%; z-index: 2; right: 0px; background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 50px; }
+.bgdifuminado { position: absolute; left: 0px; top: 0px; width: 50%; height: 100%; }
+.header_staff.addcowork.addrves .bgdifuminado {width: 50px;}
+
+
+.header_mkt .bgzonesolutions .bgdifuminado { background: linear-gradient(90deg, rgb(255, 45, 55) 0%, rgba(255, 255, 255, 0) 100%); }
+.header_eng .bgzonesolutions .bgdifuminado { background: linear-gradient(90deg, rgb(172, 27, 153) 0%, rgba(255, 255, 255, 0) 100%); }
+.header_pub .bgzonesolutions .bgdifuminado { background: linear-gradient(90deg, rgb(19, 167, 96) 0%, rgba(255, 255, 255, 0) 100%); }
+.header_des .bgzonesolutions .bgdifuminado { background: linear-gradient(90deg, rgb(255, 130, 13) 0%, rgba(255, 255, 255, 0) 100%); }
+.jmp_soluciones_menu.jmpa_spe_on { display: block; }
+.jmp_solu_intro .titulo { font-size: 12.6pt; line-height: 18.9pt; font-weight: 500; margin-bottom: 0px; display: block; }
+.jmp_solu_intro li .drop {font-size: 9.45pt;border-left: 2px solid;padding-left: 15px;color: rgb(0, 0, 0) !important;width: calc(100% - 30px);height: inherit;display: none;}
+.jmp_solu_intro li.active > .drop {margin-bottom: 5px;margin-top: 5px;}
+.sol_contenido_eng .jmp_solu_intro li:hover > .drop, .sol_contenido_eng .jmp_solu_intro li:hover > .titulo, .sol_contenido_eng .jmpa_bloque_cliente_caso .verpotafolio, .sol_contenido_eng .jmpa_bloque_cliente_caso .caso { border-color: rgb(172, 27, 153); color: rgb(172, 27, 153); }
+.sol_contenido_pub .jmp_solu_intro li:hover > .drop, .sol_contenido_pub .jmp_solu_intro li:hover > .titulo, .sol_contenido_pub .jmpa_bloque_cliente_caso .verpotafolio, .sol_contenido_pub .jmpa_bloque_cliente_caso .caso { border-color: rgb(19, 167, 96); color: rgb(19, 167, 96); }
+.sol_contenido_des .jmp_solu_intro li:hover > .drop, .sol_contenido_des .jmp_solu_intro li:hover > .titulo, .sol_contenido_des .jmpa_bloque_cliente_caso .verpotafolio, .sol_contenido_des .jmpa_bloque_cliente_caso .caso { border-color: rgb(255, 130, 13); color: rgb(255, 130, 13); }
+.sol_contenido_mkt .jmp_solu_intro li:hover > .drop, .sol_contenido_mkt .jmp_solu_intro li:hover > .titulo, .sol_contenido_mkt .jmpa_bloque_cliente_caso .verpotafolio, .sol_contenido_mkt .jmpa_bloque_cliente_caso .caso { border-color: rgb(255, 45, 55); color: rgb(255, 45, 55); }
+.sol_contenido_eng .jmp_solu_intro li .drop { border-color: rgb(172, 27, 153); color: rgb(172, 27, 153); }
+.sol_contenido_pub .jmp_solu_intro li .drop { border-color: rgb(19, 167, 96); color: rgb(19, 167, 96); }
+.sol_contenido_des .jmp_solu_intro li .drop { border-color: rgb(255, 130, 13); color: rgb(255, 130, 13); }
+.sol_contenido_mkt .jmp_solu_intro li .drop { border-color: rgb(255, 45, 55); color: rgb(255, 45, 55); }
+.sol_contenido_eng ul.jmp_solu_intro li:hover > a,.sol_contenido_eng ul.jmp_solu_intro li.active > a { color: rgb(172, 27, 153); }
+.sol_contenido_pub ul.jmp_solu_intro li:hover > a,.sol_contenido_pub ul.jmp_solu_intro li.active > a { color: rgb(19, 167, 96); }
+.sol_contenido_des ul.jmp_solu_intro li:hover > a,.sol_contenido_des ul.jmp_solu_intro li.active > a { color: rgb(255, 130, 13); }
+.sol_contenido_mkt ul.jmp_solu_intro li:hover > a,.sol_contenido_mkt ul.jmp_solu_intro li.active > a { color: rgb(255, 45, 55); }
+
+.sol_contenido_eng ul.jmp_solu_intro li:hover {background-image: url(../images/drop_service_pro_active.jpg);}
+.sol_contenido_pub ul.jmp_solu_intro li:hover {background-image: url(../images/drop_service_pub_active.jpg); }
+.sol_contenido_des ul.jmp_solu_intro li:hover {background-image: url(../images/drop_service_dis_active.jpg); }
+.sol_contenido_mkt ul.jmp_solu_intro li:hover {background-image: url(../images/drop_service_mkt_active.jpg); }
+
+.sol_contenido_eng ul.jmp_solu_intro li.active{background-image: url(../images/drop_service_pro.jpg); }
+.sol_contenido_pub ul.jmp_solu_intro li.active{background-image: url(../images/drop_service_pub.jpg); }
+.sol_contenido_des ul.jmp_solu_intro li.active{background-image: url(../images/drop_service_dis.jpg); }
+.sol_contenido_mkt ul.jmp_solu_intro li.active{background-image: url(../images/drop_service_mkt.jpg); }
+
+.jmpa_bloque_cliente_caso { width: calc(100%); padding: 20px; background-color: rgb(238, 238, 238); float: right; border-radius: 8px; max-width: 450px; }
+.jmpa_bloque_cliente_caso .img img { width: 100%; }
+.jmpa_bloque_cliente_caso .img { border-radius: 8px; overflow: hidden; }
+.jmpa_bloque_cliente_caso .caso { line-height: 14.7pt; font-size: 12.08pt; margin: 15px 0px; }
+.titulo_cliente { font-size: 15.75pt; line-height: 14.7pt; color: rgb(26, 46, 60); }
+.jmpa_bloque_cliente_caso .realizamos { font-size: 9.45pt; line-height: 14.7pt; padding: 15px 0px; color: rgb(75, 94, 116); }
+.jmpa_bloque_cliente_caso .verpotafolio { font-size: 9.45pt; font-weight: 600; }
+.jmp_soluciones_ready h1 { font-size: 33.08pt; line-height: 32.55pt; color: rgb(255, 255, 255); font-family: cooper; margin: 0px; }
+.jmp_soluciones_ready p { font-size: 9.45pt; line-height: 14.7pt; color: rgb(255, 255, 255); margin: 25px 0px 40px; }
+.jmp_soluciones_ready a {font-size: 10.4pt;line-height: 16.4pt;border: 1px solid;color: rgb(255, 255, 255);padding: 6px 20px;border-radius: 16.5px;}
+.jmp_soluciones_ready { padding: 45px 15px 70px; }
+.contenid_ready { background-color: rgb(174, 174, 174); }
+.bloque_ready { background-color: rgb(204, 204, 204); }
+.bloque_ready { background-position: right center; background-repeat: no-repeat; background-size: contain; }
+.bloque_ready.sol_ready_eng { background-image: url("../images/grafica_especialidades/pro_d.jpg"); background-position: center bottom; background-color: rgb(151, 27, 153); }
+.bloque_ready.sol_ready_mkt { background-image: url("../images/grafica_especialidades/mkt_d.jpg"); background-size: auto 100%; background-color: rgb(255, 45, 55); }
+.bloque_ready.sol_ready_des { background-image: url("../images/grafica_especialidades/crea_d.jpg"); background-color: rgb(255, 95, 16); background-position: center bottom; }
+.bloque_ready.sol_ready_pub { background-image: url("../images/grafica_especialidades/pub_d.jpg"); background-color: rgb(19, 167, 56); background-position: center bottom; }
+.bloque_ready.sol_ready_mkt a { background-color: rgb(255, 45, 55); }
+.bloque_ready.sol_ready_des a { background-color: rgb(253, 95, 31); }
+.bloque_ready.sol_ready_pub a { background-color: rgb(23, 167, 56); }
+.bloque_ready.sol_ready_eng a { background-color: rgb(151, 27, 153); }
+header.jmpa_car_soluciones .difuminado_cell { position: absolute; width: 100%; height: 50%; bottom: -1px; }
+.jmp_fondo_cell_sol_slider { position: relative; }
+.jmpa_soluciones .conocetraajo, .vermastale { padding: 0px 0px 15px !important; }
+.jp_rhp_soluciones .vermastale { color: rgb(75, 94, 116); }
+.header_home.addred .bgzonesolutions { background-image: none; }
+.header_home.addred { background-image: url("../images/fodo_red.jpg"); background-position: center top; background-size: cover; background-repeat: no-repeat; }
+.header_home.addred .jmpa_carousel { background-color: transparent; }
+.header_home.addred .bgzonesolutions .bgdifuminado { background: transparent; }
+
+
+.jmpa_MsjProfile {
+  background-color: #f6f6f6;
+  padding: 15px;
+}
+
+.jmpa_MsjProfile p {
+  text-align: center;
+  font-weight: bold;
+  max-width: 600px;
+  margin: 0px auto !important;
+  display: block;
+  line-height: 14pt;
+}
+.pt-staff {
+  padding-top: 30px;
+}
+
+@media (max-width: 992px) {
+  .jmpa_fondos_caso { display: none; }
+  .jmpa_caso_b_descripcion { margin-bottom: 15px; }
+}
+@media (max-width: 768px) {
+  .bloque_ready.sol_ready_eng { background-image: url("../images/grafica_especialidades/pro_c.jpg"); background-size: 100%; }
+  .bloque_ready.sol_ready_mkt { background-image: url("../images/grafica_especialidades/mkt_c.jpg"); }
+  .bloque_ready.sol_ready_des { background-image: url("../images/grafica_especialidades/crea_c.jpg"); }
+  .bloque_ready.sol_ready_pub { background-image: url("../images/grafica_especialidades/pub_c.jpg"); }
+  header.jmpa_car_soluciones { padding-top: 0px; }
+  .jmpa_s_mkt { background-image: url("../images/soluciones/sol_bg_card_marketing.png"); }
+  .jmpa_s_des { background-image: url("../images/soluciones/sol_bg_card_diseno.png"); }
+  .jmpa_s_pub { background-image: url("../images/soluciones/sol_bg_card_publicidad.png"); }
+  .jmpa_s_eng { background-image: url("../images/soluciones/sol_bg_card_programacion.png"); }
+  .jmpa_s_bloque_list_eng { min-height: inherit; }
+  .jmpa_s_mkt img, .jmpa_s_des img, .jmpa_s_pub img, .jmpa_s_eng img { display: none; }
+  .jmpa_s_item_card { height: 115px; background-size: 100%; background-position: center center; background-repeat: no-repeat; }
+  .jmpa_s_bloque_header_body { padding-top: 78px; }
+  .jmpa_s_bloque_header_body .container { max-width: inherit; padding: 30px 15px; }
+  .jmpa_s_h1 { font-size: 19px; margin: 0px; line-height: 25px; }
+  .jmpa_s_bloque_header { height: inherit; }
+  .jmpa_s_bloque_body { margin: 15px 0px; position: relative; }
+  .jmpa_s_item_card img { height: 110px; }
+  .jmpa_s_icon i { width: 65px; height: 65px; margin-top: -10px; }
+  .jmpa_s_icon { margin: 2px 0px 4px; }
+  .jmpa_s_plus { margin: 8px auto 0px; width: 16px; height: 16px; font-size: 12px; line-height: 14px; display: inline-block !important; }
+  .jmpa_s_name { margin-top: -10px; font-size: 17px; font-weight: 100; }
+  .jmpa_caso_b_descripcion { font-size: 16px; font-weight: normal; line-height: 23px; }
+  .jmpa_fondos_caso { display: none; }
+  .jmpa_s_contenido { min-height: auto; }
+  .jmpa_s_bloque_body .col-md-3 { padding: 0px 0px 5px; }
+  .jmpa_s_bloque_list .col-md-3 { padding: 0px; }
+  .jmpa_caso_b_company { font-size: 33px; line-height: 38px; }
+  .jmpa_caso_body { padding: 25px 15px; }
+  .jmpa_bloque_comienza { font-size: 14.5px; }
+  .jmpa_s_bloque_list { margin: 0px 0px 15px; padding-top: 20px; padding-bottom: 10px; }
+  .jmpa_v_mobile .jmpa_spe_body_on .col-sm-6 { display: none; }
+  .jmpa_v_mobile .jmpa_spe_body_on .col-sm-6.jmpa_spe_on { display: inline-block; position: relative; padding: 0px; width: 100%; }
+  .jmpa_s_bloque_list ul li a { position: relative; width: -webkit-fit-content; width: fit-content; font-size: 13px; line-height: 14px; display: inline-block; }
+  .jmpa_s_bloque_list ul li { height: inherit; }
+  .jmpa_cuerpo_titulos { padding: 5px 15px; }
+  header.jmpa_car_soluciones .jmpa_carousel, .header_staff .jmpa_carousel { padding-top: 15px; width: 100% !important; }
+  .jmpa_myCarousel { margin-top: 70px; }
+  .jmpa_soluciones .jp_rhp_soluciones {margin-top: 0px;padding-bottom: 50px;}
+  header.jmpa_car_soluciones { padding-bottom: 10px; }
+  .header_services { background: rgb(255, 255, 255) !important; }
+  a.linksoluciones { margin-bottom: 20px; padding-top: 15px; font-size: 9.5pt; line-height: 16.08pt; margin-top: 40px !important; }
+  .header_staff a.linksoluciones span { font-size: 11.5pt; line-height: 18.08pt; }
+  .jmpa_bloque_cliente_caso { width: 100%; margin-top: 20px; }
+  .jmpa_s_bloque_list .col-xs-12 { padding: 0px; }
+  .jmp_solu_intro .titulo {font-size: 10pt;line-height: 16.9pt;width: calc(100% - 15px);display: block;}
+  .jmpa_bloque_cliente_caso .realizamos { font-size: 10.5pt; line-height: 16.08pt; }
+  .titulo_cliente { font-size: 17.75pt; line-height: 16.7pt; }
+  .jmp_soluciones_ready h1 { font-size: 18pt; }
+  .jmp_soluciones_ready p { margin: 15px 0px 30px; font-size: 10.5pt; line-height: 16.1pt; }
+  .jmp_soluciones_ready { padding: 30px 15px 50px; }
+  .jmp_soluciones_ready a { padding: 6px 20px; font-size: 10.4pt; line-height: 18.4pt; }
+  .jmp_solu_intro li .drop {font-size: 9.8pt;}
+  .back_menu .jmp_fondo_cell_sol_slider {display: none !important;}
+  .back_menu .container {display: none;}
+  .back_menu {margin-bottom: 10px;}
+}
+@media (min-width: 992px) {
+  .jmpa_soluciones .d-md-block { display: inline; }
+  .jmpa_soluciones .d-md-none { display: none; }
+}

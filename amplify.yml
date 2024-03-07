@@ -1,0 +1,20 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g bower grunt-cli
+        - npm install
+        - bower install
+    # IMPORTANT - Please verify your build commands
+    build:
+      commands:
+        - grunt --force
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: /rombusApp
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

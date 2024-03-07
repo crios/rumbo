@@ -1,0 +1,272 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav><section id="configuration" class="jmpa_web_configuration">
+    <div class="container ">
+        <div class="row" ng-show="profConf.isUpdatingPassword === false && profConf.showUpdatedMessage === false">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 jmpa_bloque_datos_personales">
+                        <div class="row font-pequena" ng-show="profConf.modeMain === 0">
+                            <div class="col-xs-4 padding-hidden-right">
+                                <img ng-if="profConf.userPicture === null" ng-src="../../images/avatar.png"
+                                     class="img-responsive">
+                                <img ng-if="profConf.userPicture !== null" ng-src="{{profConf.userPicture}}"
+                                     class="img-responsive">
+                            </div>
+                            <div class="col-xs-8 col-sm-8 padding-hidden-left color--gris">
+                                <div class="col-sm-12 profile__name">
+                                    <h2 class="name font-pequena">{{profConf.firstName}} {{profConf.lastName}}</h2>
+                                    <em>{{profConf.jobTitle}}</em>
+                                    <p>
+                                        <i class="fa fa-map-marker"></i>
+                                        <span class="texto-gris">{{profConf.location}}, {{profConf.country}}</span>
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-user"></i>
+                                        <span class="texto-gris">Perfil predeterminado: {{profConf.profilePreference.name}}</span>
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span class="texto-gris">{{'profileView.memberSince' | translate}}{{profConf.memberSince | date: 'MMMM yyyy'}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="fa fa-pencil margin-top--big jmpa_pencil_ab" ng-click="profConf.toggleMain()"></a>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6  col-xs-12">
+                <div class="row ">
+                    <div class="col-sm-12">
+                        <div class="hr"></div>
+                    </div>
+                </div>    
+                <div class="row" ng-show="profConf.modeMain === 1">
+                    <div class="col-xs-12 configurationbox configurationbox--lados font-pequena">
+                        <div class="row ">
+                            <div class="col-xs-4 col-sm-3 col-md-2 user">
+                                <label for="nombre">{{'profileView.name' | translate}}: </label>
+                            </div>
+                            <div class="col-xs-8 col-sm-9 col-md-10 user">
+                                <input id="nombre" type="text" ng-model="profConf.tempFirstName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 configurationbox configurationbox--lados font-pequena">
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-3 col-md-2 user">
+                                <label>{{'profileView.lastName' | translate}}: </label>
+                            </div>
+                            <div class="col-xs-8 col-sm-9 col-md-10 user">
+                                <input type="text" ng-model="profConf.tempLastName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 configurationbox configurationbox--lados font-pequena">
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-3 col-md-2 user">
+                                <label>{{'profileView.jobSpeciality' | translate}} </label>
+                            </div>
+                            <div class="col-xs-8 col-sm-9 col-md-10 user">
+                                <input type="text" ng-model="profConf.tempJobTitle">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12  configurationbox configurationbox--lados font-pequena">
+                        <i class="fa fa-map-marker"></i>
+                        <input class="inputsinborder" type="text" ng-model="profConf.tempLocation">
+                        <select class="form-control selectconfiguration" ng-model="profConf.tempCountry"
+                                rombus-country-picker="name">
+                            <option value="">{{'profileView.selectCountry' | translate}}</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12  configurationbox configurationbox--lados font-pequena">
+                        <i class="fa fa-user"></i>
+                        <select class="form-control selectconfiguration" ng-options="pp.name for pp in profConf.profilePreferenceList track by pp.id" ng-model="profConf.tempProfilePreference">
+                            <option value="">Seleccione un perfil</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 configurationbox configurationbox--lados font-pequena">
+                        <p>
+                            <i class="fa fa-calendar-check-o"></i>
+                            <span class="texto-gris">{{'profileView.memberSince' | translate}}{{profConf.memberSince | date: 'MMMM yyyy'}}</span>
+                        </p>
+                    </div>
+                    <div class="hidden-xs col-sm-12">
+                        <div class="hr"></div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="profConf.modeEmailPass === 0">
+                    <div class="col-xs-12 col-sm-11 profile__name">
+                        <p>
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="texto-gris">{{'profileView.email' | translate}} :</span>
+                            <strong class="texto-gris"><b>{{profConf.email}}</b></strong>
+                        </p>
+                        <p>
+                            <i class="fa fa-key"></i>
+                            <span class="texto-gris">{{'profileView.pass' | translate}}</span>
+                            <a class="text-primary" ng-click="profConf.toggleUpdatePassword()">{{'profileView.change' |
+                                translate}}</a>
+                        </p>
+                    </div>
+                    <a class="fa fa-pencil margin-top jmpa_pencil_correo" ng-click="profConf.toggleEmailPass()"></a>
+                    <div class="col-xs-12">
+                        <div class="hr"></div>
+                    </div>
+                </div>
+                <div class="row" ng-show="profConf.modeEmailPass === 1">
+                    <div class="col-sm-12 profile__name font-pequena">
+                        <i class="fa fa-envelope-o"></i>
+                        <label class="texto-gris">{{'profileView.email' | translate}}: </label>
+                        <input class="inputsinborder" type="text" ng-model="profConf.tempEmail">
+                    </div>
+                    <div class="col-sm-12 profile__name font-pequena">
+                        <p>
+                            <i class="fa fa-key"></i>
+                            <span class="texto-gris">{{'profileView.pass' | translate}}</span>
+                            <a ng-click="profConf.toggleUpdatePassword()">{{'profileView.change' | translate}}</a></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="hr"></div>
+                    </div>
+                </div>
+
+                <div ng-show="profConf.isCompanyView === true">
+                    <div class="row buttons">
+                        <div class="col-xs-12 col-sm-6">
+                            <button type="button" ng-click="profConf.confirmChanges()" class="btn btn-confirmar">
+                                {{'btn.confirm' | translate}}
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <button type="button" ng-click="profConf.cancelEdit()" class="btn btn-cancelar">
+                                {{'btn.cancel' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-hide="profConf.isCompanyView === true">
+                    <div class="col-sm-12 profile__name">
+                        <p>
+                            <i class="fa fa-chevron-circle-down"></i>
+                            <span class="texto-gris">Membresía y Funciones</span>
+                            <a class="text-primary" ng-click="changeViewWithSpecElement('memberships','')">{{'profileView.p2Configuration'
+                                | translate}}</a></p>
+                    </div>
+                </div>
+                <div class="row emblemas" ng-hide="profConf.isCompanyView === true">
+                    <div class="col-xs-12">
+                        <div class="row top">
+                            <div class="membershipArea" ng-controller="EmblemasMembershipCtrl">
+                                <div class="planmedalla" ng-if="membershipModel.reg === true">
+                                    <img src="../../images/icon_plan_membresia_1.png"/>
+                                    <span><b>Básico</b></span>
+                                </div>
+                                <div class="planmedalla" ng-if="membershipModel.acr === true">
+                                    <img src="../../images/icon_plan_membresia_2.png"/>
+                                    <span><b>Regular</b></span>
+                                </div>
+                                <div class="planmedalla" ng-if="membershipModel.pre === true">
+                                    <img src="../../images/icon_plan_membresia_3.png"/>
+                                    <span><b>Pro</b></span>
+                                </div>
+                            </div>
+                            <div class="funcionArea" ng-controller="EmblemasFuncionCtrl">
+                                    <div class="planmedalla" ng-if="functionsModel.sc === true">
+                                        <img src="../../images/bl_mem_1_plan.jpg" />
+                                        <span>Staff Corporativo</span>
+                                    </div>
+                                    <div class="planmedalla" ng-if="functionsModel.pm === true">
+                                        <img src="../../images/bl_mem_2_plan.jpg" />
+                                        <span>Project Manager</span>
+                                    </div>
+                                    <div class="planmedalla" ng-if="functionsModel.co === true">
+                                        <img src="../../images/bl_mem_3_plan.jpg" />
+                                        <span>Coworker</span>
+                                    </div>
+                                    <div class="planmedalla" ng-if="functionsModel.re === true">
+                                        <img src="../../images/bl_mem_4_plan.jpg" />
+                                        <span>Representante</span>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <div class="row margin-all">
+                  <span class="texto-gris pointer" ng-click="profConf.closeAccount()">Cerrar cuenta</span>
+                </div> -->
+            </div>
+
+            <div class="col-sm-6 col-xs-12 especialiadesCaja font-pequena jmpa_especialidad_caja" ng-hide="profConf.isCompanyView === true">
+                <a class="fa fa-pencil jmpa_pencil_edit_especialidad" ng-click="profConf.toggleSpecAreas()"></a>
+                <div class="espeBox">
+
+                    <div class="row especialidades box-reg jmpa_box_specAreaEdit" ng-show="profConf.modeSpecAreas === 1">
+                        <div ng-include="'views/platform/specArea.html'"></div>
+                    </div>
+                    <div class="row especialidades box-reg jmpa_box_specAreaView" ng-show="profConf.modeSpecAreas === 0">
+                        <div ng-include="'views/platform/specAreaViewOnly.html'"></div>
+                    </div>
+                </div>
+                <div class="row buttons">
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" ng-click="profConf.confirmChanges()" class="btn btn-confirmar">
+                            {{'btn.confirm' | translate}}
+                        </button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" ng-click="profConf.cancelEdit()" class="btn btn-cancelar">{{'btn.cancel' |
+                            translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="profConf.isUpdatingPassword === true">
+            <div class="updPwd">
+                <form ng-submit="profConf.updatePass()">
+                    <div class="col-sm-12">
+                        <button type="button" class="close" aria-label="Close" ng-click="profConf.closeUpdateForm()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="col-sm-12">
+                        <input class="icon input-gris" type="password"
+                               placeholder="{{'profileView.actualPass' | translate}}"
+                               ng-model="profConf.pass" minlength="8" required>
+                    </div>
+                    <div class="col-sm-12">
+                        <input class="icon input-gris" type="password"
+                               placeholder="{{'profileView.newPass' | translate}}"
+                               ng-model="profConf.newPass" minlength="8" required>
+                    </div>
+                    <div class="col-sm-12">
+                        <input class="icon input-gris" type="password"
+                               placeholder="{{'profileView.newPass2' | translate}}"
+                               ng-model="profConf.newPass2" minlength="8" required>
+                    </div>
+                    <div class="col-sm-12">
+                        <input type="submit" class="button primary" value="{{'btn.updatePass' | translate}}">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" ng-show="profConf.showUpdatedMessage === true">
+            <div class="row updPwd">
+                <div class="col-sm-12">
+                    <button type="button" class="close" aria-label="Close" ng-click="profConf.closeUpdateForm()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="changed col-sm-12">
+                    <span>{{'profileView.span1Config' | translate}}</span>
+                    <span>{{'profileView.span2Config' | translate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'"></footer>

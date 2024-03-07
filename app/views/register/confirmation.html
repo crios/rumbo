@@ -1,0 +1,12 @@
+<nav ng-include="'views/headerRegistration.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- @Tomas un favor,aque podes crear la condicional para cuando se muestre este error aparezca esa clase full-height, pero si no aparece este mensaje, se quita esa clase de full-height para que aparezca en la posiciona adeacuda la vista del footer -->
+<section id="regwiz01" class="loginNew"  ng-show="register.confirmationError === true">
+  <div class="container container--promotion">
+    <div class="row promotion">
+      <header class="col-xs-12 promotion__header promotion__header--blanco">
+          <h3 class="seccion__titulos">{{'registerView.problemOccurred' | translate}}</h3>
+      </header>
+    </div>
+  </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ng-show="register.confirmationError === true"></footer>

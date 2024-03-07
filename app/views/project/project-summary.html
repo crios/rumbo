@@ -1,0 +1,334 @@
+<nav scroll ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<section id="jmpa_project_summary" class="jmpa_project_summary">
+    <div class="container jmpa-xs-pd-0 ">
+            <div class="jmpa_psummary">
+                
+                <div ng-if="proj.isSelfUser === false" ng-class="{'jmpa_mobile_close': proj.isSelfUser === false,}">
+                    <div class="rombus-float-buttons-container" >
+                        <a class="jmpa_close_postulante" ng-click="proj.closeProject()">
+                            <i class="rombus-close"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3" ng-class="{'jmpa_master_card_profile': proj.isSelfUser === true,}">
+                <div ng-include="'views/profile-company/sideBar.html'"></div>
+                </div>
+                <div class="col-md-9">
+                    <div ng-show="proj.project.status !== 1 || proj.isSelfUser === true" class="">
+                        <!--<div class="jmpa_ps_head" ng-show="proj.isSelfUser !== true">Presupuesto</div>-->
+                        <div class="">
+
+                            <div class="container-fluid project-information" ng-if="proj.isSelfUser === true" ng-class="{'jmpa_psum_p0': proj.isSelfUser === true}">
+                                <div class="rombus-float-buttons-container" >
+                                    <a ng-click="proj.editProject()" ng-if="proj.isSelfUser && proj.status === 1" class="rombus-edit">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a ng-click="proj.closeProject()">
+                                        <i class="rombus-close"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="container-fluid project-information jmpa_close_postulante_div" ng-if="proj.isSelfUser === false" ng-class="{'jmpa_psum_p0': proj.isSelfUser === false,}">
+                                <div class="rombus-float-buttons-container" >
+                                    <a class="jmpa_close_postulante" ng-click="proj.closeProject()">
+                                        <i class="rombus-close"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="jmpa_ps_section">Proyecto</div>
+                            <div class="jmpa_ps_nombre_proyecto">{{ proj.project.title }}</div>
+                            <div class="jmpa_ps_section">Descripción</div>
+                            <textarea ta-expandable ta-Min-Height="50" readonly class="jmpa_ps_description">{{proj.project.description}}</textarea>
+
+                            <div class="row project-section jmpa_ps_especialidad">
+                                <div class="col-md-12">
+                                    <h4 class="section-title text-blue">Especialidad</h4>
+                                    <div class="jmpa_summary_esp_group">
+                                        <div class="jmpa_sumary_espe" ng-class="{
+                                            'bg-esp1': proj.project.specialtyId === 2,
+                                            'bg-esp2': proj.project.specialtyId === 3,
+                                            'bg-esp3': proj.project.specialtyId === 4,
+                                            'bg-esp4': proj.project.specialtyId === 5,
+                                            'bg-esp5': proj.project.specialtyId === 6
+                                        }">{{ proj.project.specialityName }}</div>
+                                        <div class="jmpa_sumary_espe" ng-class="{
+                                            'bg-esp1': proj.project.specialtyId === 2,
+                                            'bg-esp2': proj.project.specialtyId === 3,
+                                            'bg-esp3': proj.project.specialtyId === 4,
+                                            'bg-esp4': proj.project.specialtyId === 5,
+                                            'bg-esp5': proj.project.specialtyId === 6
+                                        }">
+                                        {{ proj.project.specialtyCategoryDescription }} / {{ proj.project.specialtySubCategoryDescription }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="jmpa_ps_section" ng-if="proj.project.comments">Adicionales</div>
+                            <textarea ta-expandable ta-Min-Height="50" readonly class="jmpa_ps_adicionales jmpa_add_box" ng-if="proj.project.comments">{{ proj.project.comments}}</textarea>
+                            <div class="jmpa_ps_file" ng-if="proj.project.attachment"><b>Archivo adjunto</b>: <a class="text-gray-mobile" href="{{ proj.project.attachment }}">{{ proj.project.attachmentName }}</a></div>
+                            <div class="jmpa_ps_skil"><b>Habilidades requeridas</b>:</div>
+                            <div class="tags skills">
+                                    <div ng-repeat="skil in proj.project.projectSkills" class="fluid-skills">
+                                        <ng-switch on = "skil.type">
+                                            <div ng-switch-when="mkt" class="tag cmkt">
+                                                <p>{{skil.description}}</p>
+                                            </div>
+                                            <div ng-switch-when="des" class="tag cdesign">
+                                                <p>{{skil.description}}</p>
+                                            </div>
+                                            <div ng-switch-when="eng" class="tag cdev">
+                                                <p>{{skil.description}}</p>
+                                            </div>
+                                            <div ng-switch-when="pub" class="tag cpub">
+                                                <p>{{skil.description}}</p>
+                                            </div>
+                                            <div ng-switch-when="pre" class="tag cpress">
+                                                <p>{{skil.description}}</p>
+                                            </div>
+                                            <div ng-switch-default class="tag" style="background-color: grey;">
+                                                <p>{{skil.description}}</p>
+                                            </div>
+                                        </ng-switch>
+                                    </div>
+                            </div>
+                            <div class="jmpa_ps_section">Condiciones</div>
+                            <div class="jmpa_ps_condiciones">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-1 jmpa_label d-md-block"><span><b>Con quien prefiere resolver el trabajo:</b></span>
+                                        </div>
+                                        <div class="item-card jmpa_card_resumen mb-05  mb-md-0">
+                                            <div class="jmpa__item-card-body active item-resolver d-flex align-items-center bg_resumen_new jmpa__bg-view"
+                                                id="profesional" ng-class="{
+                                                    'bgr_rf': proj.project.workerTypeId ===1,
+                                                    'bgr_rt': proj.project.workerTypeId ===2,
+                                                    'bgr_rl': proj.project.workerTypeId ===3,
+                                                    'bgr_rc': proj.project.workerTypeId ===4
+                                                }">
+
+                                                <div class="row" >                                               
+                                                    <div class="col-xs-9 col-md-12  p-cel" ng-show="proj.project.workerTypeId === 1">
+                                                        <span class="new_proy">Rombus<b>Free</b></span>
+                                                        <span class="new_sub_proy">Un/a profesional individual</span>
+                                                    </div>                                                
+                                                    <div class="col-xs-9 col-md-12  p-cel" ng-show="proj.project.workerTypeId === 2">
+                                                        <span class="new_proy">Rombus<b>Team</b></span>
+                                                        <span class="new_sub_proy">Project Manager y equipo</span>
+                                                    </div>                                                
+                                                    <div class="col-xs-9 col-md-12 p-cel" ng-show="proj.project.workerTypeId === 3">
+                                                        <span class="new_proy">Rombus<b>Local</b></span>
+                                                        <span class="new_sub_proy">{{proj.project.city}} / {{proj.project.country}}</span>
+                                                    </div>                                                
+                                                    <div class="col-xs-9 col-md-12 p-cel" ng-show="proj.project.workerTypeId === 4">
+                                                        <span class="new_proy">Rombus<b>Central</b></span>
+                                                        <span class="new_sub_proy">{{proj.project.city}} / {{proj.project.country}}</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-1 jmpa_label d-md-block jmpa_mt_2_xs"><span><b>Tipo de proyecto:</b></span></div>
+                                        <div class="item-card jmpa_card_resumen mb-2 mb-md-0">
+                                            <div class="jmpa__item-card-body active item-tipo d-flex align-items-center bg_resumen_new jmpa__bg-view"
+                                                id="inicial" ng-class="{
+                                                    'bgr_pas': proj.project.workerTypeId ===3 || proj.project.workerTypeId ===4,
+                                                    'bgr_rec': proj.project.paymentMethodId ===2,                                                    
+                                                    'bgr_pu': proj.project.paymentMethodId ===1,
+                                                    'bgr_nls': proj.project.paymentMethodId ===3,
+                                                }">
+
+                                                <div class="row">
+                                                    <div class="col-xs-9 col-md-12 p-cel" ng-show="proj.project.workerTypeId === 3 || proj.project.workerTypeId === 4">
+                                                        <span class="new_proy">Proyecto Asistido</span>
+                                                        <span class="new_sub_proy">Atención Directa</span>
+                                                    </div>
+                                                    <div class="col-xs-9 col-md-12 p-cel" ng-show="proj.project.paymentMethodId === 1">
+                                                        <span class="new_proy">Pago por proyecto</span>
+                                                        <span class="new_sub_proy">según presupuesto</span>
+                                                    </div>
+                                                    <div class="col-xs-9 col-md-12 p-cel" ng-show="proj.project.paymentMethodId === 2">
+                                                        <span class="new_proy">Proyecto recurrente</span>
+                                                        <span class="new_sub_proy">Plazo estimado: 8 a 30 días</span>
+                                                    </div>
+                                                    <div class="col-xs-9 col-md-12 p-cel" ng-show="proj.project.paymentMethodId === 3">
+                                                        <span class="new_proy">No lo se aún</span>
+                                                        <span class="new_sub_proy">lo deﬁniré luego</span>                                                        
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <!-- <div class="jmpa_ps_tipo_prestacion">
+                                    <span>Tipo de prestación: </span>
+                                    <span ng-if="proj.project.workerTypeId === 1">Un profesional individual</span>
+                                    <span ng-if="proj.project.workerTypeId === 2">Project manager</span>
+                                    <span ng-if="proj.project.workerTypeId === 3">Representante local</span>
+                                    <span ng-if="proj.project.workerTypeId === 4">Depto. Corporativo</span>
+                                    <span ng-if="proj.project.workerTypeId === 1">
+                                        <div ng-if="proj.project.professionalExpertise === 1">/ Nivel Inicial</div>
+                                        <div ng-if="proj.project.professionalExpertise === 2">/ Nivel Medio</div>
+                                        <div ng-if="proj.project.professionalExpertise === 3">/ Nivel Experto</div>
+                                    </span>
+                                </div>
+
+                                <div class="jmpa_ps_tipo_proyecto">
+                                    <span>Proyecto Recurrente</span>
+                                    <span>/</span>
+                                    <span>Plazo estimado:</span>
+                                    <span ng-if="proj.project.recurrentType === 2">1 a 7 días</span>
+                                    <span ng-if="proj.project.recurrentType === 3">8 a 30 días</span>
+                                    <span ng-if="proj.project.recurrentType === 4">Más de 30 días</span>
+                                </div>-->
+
+                            </div>               
+                            
+
+                        
+                        </div>
+
+                        <div class="jmpa_ps_publicado" ng-show="proj.project.status === 2"><b>Publicado</b>: {{proj.project.publicationDate | date: 'dd/MM/yyyy'}}</div>
+                        <div class="jmpa_ps_publicado" ng-show="proj.project.status === 1"><b>Este proyecto todavia no sido publicado.</b></div>
+
+                        <div ng-show="proj.showUserOffer === true || proj.isSelfUser === true">
+                        <div class="jmpa__contenido" ng-show="proj.project.workerTypeId === 3 || proj.project.workerTypeId === 4">
+                            <div class="row pt-2 pt-md-0 jmpa_ps_datos_contacto" >
+                                <div class="col-xs-12 mb-1 mb-md-0">
+                                <div class="mt-3 mt-md-2"><span class="jmpa_label"><b>Datos de contacto y ubicación del proyecto:</b></span></div>
+                                </div>
+                                <div class="col-md-6 mt-md-2 jmpa__form-descripcion jmpa_txt_contacto">
+                                <span>{{proj.project.contactName}} {{proj.project.contactLastName}}</span>
+                                </div>
+                                <div class="col-md-6 mt-md-2 jmpa__form-descripcion jmpa_txt_contacto">
+                                <span>{{proj.project.contactEmail}}</span>
+                                </div>
+                                <div class="col-md-6 mt-md-2 jmpa__form-descripcion jmpa_txt_contacto">
+                                <span>{{proj.project.contactPhone}}</span>
+                                </div>
+                                <div class="col-md-6 mt-md-2 jmpa__form-descripcion jmpa_txt_contacto jmpa_txt_contacto_f">
+                                <span>{{proj.project.city}}, {{proj.project.country}}</span>
+                                </div>                                
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="jmpa_ps_propuesta">
+                            <div class="row">
+                                <div class="col-md-8 jmpa_ps_col_cli">
+                                    <span class="jmpa_ps_pro_span jmpa_view_pc">Presupuesto (en USD):</span>
+                                    <span class="jmpa_ps_pro_span jmpa_view_cell">Presupuesto (en USD):</span>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="jmpa_ps_group_input">
+                                        <div class="jmpa_ps_dolar">$</div>
+                                        <input type="text" class="form-control  jmpa_add_box" disabled ng-model="proj.project.userBudget">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section de propuesta solo para proyectos con estado ABIERTO -->
+                        <div ng-show="proj.project.status === 2 && proj.isSelfUser !== true">
+                            <!-- Vista para profesionales -->
+                            <div class="jmpa_ps_propuesta" ng-if="proj.project.workerTypeId === 1">
+                                <div ng-show="proj.showUserOffer === true">
+                                    <div class="row">
+                                        <div class="col-md-8 jmpa_ps_col_oferta"><span class="jmpa_ps_pro_span">Mi oferta (en USD):</span><br>Puedes aceptar el monto consignado o colocar tu estimación de presupuesto.</div>
+                                        <div class="col-md-4">
+                                            <div class="jmpa_ps_group_input">
+                                                <div class="jmpa_ps_dolar">$</div>
+                                                <input type="text" class="form-control jmpa_add_box" ng-model="proj.userOffer.usd" ng-click="proj.checkToBlankOriginalUserOffer()">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-8">
+                                            <span class="jmpa_ps_fee_offer">- Fee $ {{ proj.userOffer.usd * 0.1 | currency:''}} = recibirás $ {{ proj.userOffer.usd * 0.9 | currency:''}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12"><span class="jmpa_ps_pro_span jmpa_ps_pro_mipro">Mi propuesta para este proyecto:</span></div>
+                                        <div class="col-xs-12">
+                                        <textarea class="jmpa_ps_explicacion jmpa_add_box" placeholder="Explica porqué consideras que eres la persona más indicada para realizar el trabajo."
+                                                ng-model="proj.userOffer.comments"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <span class="jmpa_ps_pro_span jmpa_view_pc">Tiempo de ejecución:</span>
+                                            <span class="jmpa_ps_pro_span jmpa_view_cell">Tiempo de ejecución:<br></span>
+                                            <input type="number" class="form-control jmpa_ps_tiempo_ejecucion jmpa_add_box" ng-model="proj.userOffer.workDays"/>
+                                            <span class="jmpa_ps_dias_habiles">Días hábiles.</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12"><b class="jmpa_ps_mensaje_final">En caso de ser elegido/a por el cliente, serás contactado/a para definir los términos y completar los requisitos del encargo. Te enviaremos un e-mail a la casilla que ingresaste al momento de tu registro (si necesitas actualizar tu casilla de e-mail, puedes hacerlo en tu Menú/Configuración). Estate atent@ ¡Éxitos!</b></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8"><div class="jmpa_ps_texto_enviar">Al enviar, doy conformidad a lo indicado en este presupuesto.</div></div>
+                                        <div class="col-md-4">
+                                            <button class="jmpa_ps_btn_enviar" ng-click="proj.userProjectApplication()">POSTULAR</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-show="proj.showUserOffer !== null && proj.showUserOffer !== true && proj.isSelfUser !== true">
+                                    <div class="row jmpa_ps_col_cli">
+                                        <p class="jmpa_ps_pro_span">Ya has postulado a este Proyecto con los siguientes datos:</p>
+                                        <p class="jmpa_ya_has_enviado jmpa_view_pc"><span class="jmpa_bold">Tu oferta (en USD):</span>&nbsp;<span>$ {{proj.existingUserOffer.usd}}</span><br class="jmpa_view_cell"><span class="jmpa_view_pc">&nbsp;</span><span>(- fee $ {{proj.existingUserOffer.usd * 0.1}} = recibirás $ {{ proj.existingUserOffer.usd * 0.9 }})</span></p>
+                                        <p class="jmpa_ya_has_enviado jmpa_view_cell"><span class="jmpa_bold">Tu oferta (en USD):</span>&nbsp;<span>$ {{proj.existingUserOffer.usd}}</span><br class="jmpa_view_cell"><span class="jmpa_view_pc">&nbsp;</span><span>(- fee $ {{proj.existingUserOffer.usd * 0.1}} = recibirás $ {{ proj.existingUserOffer.usd * 0.9 }})</span></p>
+                                        <p class="jmpa_ya_has_enviado"><span class="jmpa_bold">Tu propuesta:</span>&nbsp;</p>
+                                        <p class="jmpa_ya_has_enviado">{{proj.existingUserOffer.comments}}</p>
+                                        <p class="jmpa_ya_has_enviado"><span class="jmpa_bold">Tiempo de ejecución:</span>&nbsp;{{proj.existingUserOffer.workDays}} días hábiles</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vista para PM -->
+                            <div class="jmpa_ps_propuesta" ng-if="proj.project.workerTypeId === 2">
+                                <p>Este Proyecto está dirigido a Project Managers de la red de Rombus Global. Si deseas tener acceso a este tipo de proyectos, puedes postularte como PM en tu área de especialidad.</p>
+                                <a ng-click="contactUsDialog('Postular a Staff Corporativo/Project Manager')">Quiero ser Project Manager</a>
+                            </div>
+
+                            <!-- Vista para Representante -->
+                            <div class="jmpa_ps_propuesta" ng-if="proj.project.workerTypeId === 3">
+                                <p>Este Proyecto está dirigido a Representantes de la red de Rombus Global. Si deseas tener acceso a este tipo de proyectos, puedes postularte en tu Ciudad y País.</p>
+                                <a ng-click="contactUsDialog('Oficinas Rombus/Quiero ser Representante')">Quiero ser Representante</a>
+                            </div>
+                        </div>
+
+                        <!-- Pryecto ya asignado -->
+                        <div class="jmpa_ps_propuesta" ng-if="proj.project.status === 3">
+                            <p>Este Proyecto ya ha sido asignado, pero aún puedes postular a otros trabajos ABIERTOS en tu área de especialidad.</p>
+                        </div>
+
+                    </div>
+                    <!-- Projecto que no es del mismo usuario y todavia se encuentra en estado BORRADOR -->
+                    <div ng-show="proj.project.status === 1 && proj.isSelfUser === false" class="jmpa_psummary">
+                        <p>El proyecto solicitado no se encuentra disponible para recibir propuestas</p>
+                        <button class="btn-cancelar" ng-click="changeViewWithSpecElement('dashboard','')">Dashboard</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>
+
+<script>
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('chrome') > -1) {
+    $('.jmpa_add_box ').addClass('jmpa_remove_border');
+  } else {
+    $('.jmpa_add_box ').removeClass('jmpa_remove_border');
+  }
+}
+</script>

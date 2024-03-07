@@ -1,0 +1,9 @@
+<section id="reactivateAccountConfirmation">
+  <div class="modal-body row" id="modal-body">
+    <center><p>{{ modal.message1 }}</p></center>
+    <center><p ng-if="modal.message2 !== null">{{ modal.message2 }}</p></center>
+  </div>
+  <div class="modal-footer">
+    <center><button class="btn btn-primary" type="button" ng-click="modal.reactivateAccount()">{{'btn.reactivate' | translate}}</button></center>
+  </div>
+</section>

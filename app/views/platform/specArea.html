@@ -1,0 +1,97 @@
+<div id="specArea" class="container-fluid area-esp jmpa_specArea" ng-controller="SpecAreaCtrl as spar">
+  <h4 class="text-uppercase titulos--modales jmpa_skill_title">TUS ÁREAS DE ESPECIALIDAD</h4>
+  <p class="descripciones--modales jmpa_view_cell">Puedes seleccionar hasta dos áreas, con la primera que elijas -y con tu perfil completo al 80% de carga- podrás figurar en el staff.</p>
+  <p class="descripciones--modales jmpa_view_pc">Puedes seleccionar hasta dos áreas, con la primera que elijas -y con tu perfil<br>completo al 80% de carga- podrás figurar en el staff.</p>
+  <!-- Nuevo -->  
+  <div class="jmpa_specArea_checks">
+    <div class="col-xs-12 col-md-3 jmpa_sa_col jmpa_sa_col_mkt">
+      <div class="jmpa_sa_col_body bg_new_icon bgm active ">
+          <i></i>
+          <div class="jmpa_sa_titulo">
+            
+
+            <span class="new_proy jmpa_view_pc">Estrategia y<br>Marketing</span>
+            <span class="new_proy jmpa_view_cell">Estrategia y Marketing</span>
+
+
+          </div>
+          <div class="jmpa_sa_check" ng-class="{ 'jmpa_sa_ck_on': specAreasModel.mkt === true }">
+            <div class="jmap_sa_ck_on_body"></div>
+
+            <input id="especialidad1" type="checkbox" 
+          ng-model="specAreasModel.mkt" 
+          ng-change="spar.specAreaSelected('mkt')" 
+          ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.mkt === false">
+
+          </div>          
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3 jmpa_sa_col jmpa_sa_col_des">
+      <div class="jmpa_sa_col_body bg_new_icon bgd active ">
+          <i></i>
+          <div class="jmpa_sa_titulo">
+            
+
+            <span class="new_proy jmpa_view_pc">Diseño y<br>Contenidos</span>
+            <span class="new_proy jmpa_view_cell">Diseño y Contenidos</span>
+
+
+          </div>
+          <div class="jmpa_sa_check" ng-class="{ 'jmpa_sa_ck_on': specAreasModel.des === true }">
+            <div class="jmap_sa_ck_on_body"></div>
+
+            <input id="especialidad2" type="checkbox" 
+          ng-model="specAreasModel.des" 
+          ng-change="spar.specAreaSelected('des')" 
+          ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.des === false">
+
+          </div>          
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3 jmpa_sa_col jmpa_sa_col_pub">
+      <div class="jmpa_sa_col_body bg_new_icon bgpu active  ">
+          <i></i>
+          <div class="jmpa_sa_titulo">
+            
+
+            <span class="new_proy jmpa_view_pc">Publicidad y<br>Campañas</span>
+            <span class="new_proy jmpa_view_cell">Publicidad y Campañas</span>
+
+
+          </div>
+          <div class="jmpa_sa_check" ng-class="{ 'jmpa_sa_ck_on': specAreasModel.pub === true }">
+            <div class="jmap_sa_ck_on_body"></div>
+
+            <input id="especialidad4" type="checkbox" 
+          ng-model="specAreasModel.pub" 
+          ng-change="spar.specAreaSelected('pub')" 
+          ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.pub === false">
+
+          </div>          
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3 jmpa_sa_col jmpa_sa_col_eng">
+      <div class="jmpa_sa_col_body bg_new_icon bgpr active  ">
+          <i></i>
+          <div class="jmpa_sa_titulo">
+           
+
+            <span class="new_proy jmpa_view_pc">Programación<br>y Tecnología</span>
+            <span class="new_proy jmpa_view_cell">Programación y Tecnología</span>
+
+
+          </div>
+          <div class="jmpa_sa_check" ng-class="{ 'jmpa_sa_ck_on': specAreasModel.dev === true }">
+            <div class="jmap_sa_ck_on_body"></div>
+
+            <input id="especialidad3" type="checkbox" 
+          ng-model="specAreasModel.dev" 
+          ng-change="spar.specAreaSelected('eng')" 
+          ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.dev === false">
+
+          </div>          
+      </div>
+    </div>    
+  </div>
+</div>
+</div>

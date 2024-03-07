@@ -1,0 +1,13 @@
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
+.idea/
+*.patch
+*.diff
+/rombusApp
+/app/bower_components
+rombusApp.zip
+/app/styles/styl.css
+.DS_Store

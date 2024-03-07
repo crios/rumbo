@@ -1,0 +1,28 @@
+<div ng-controller="SkillsCtrl as sk">
+  <div class="container-fluid tags skills">
+    <div class="row tags skills">
+      <div ng-repeat="skil in prof.userSkills" class="fluid-skills">
+        <ng-switch on = "skil.type">
+          <div ng-switch-when="mkt" class="tag cmkt">
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="des" class="tag cdesign">
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="eng" class="tag cdev">
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="pub" class="tag cpub">
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="pre" class="tag cpress">
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-default class="tag" style="background-color: grey;">
+            <p>{{skil.description}}</p>
+          </div>
+        </ng-switch>
+      </div>
+    </div>
+  </div>
+</div>

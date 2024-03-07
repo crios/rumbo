@@ -1,0 +1,15 @@
+<section id="specAreaModal">
+  <div class="modal-body row" id="modal-body">
+    <div class="col-sm-12 overflow--hidden">
+      <button type="button" class="close" aria-label="Close" ng-click="modal.ok()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+        <div class="specAreasCentered" ng-include="'views/platform/specArea.html'"></div>
+    </div>
+    <div class="col-sm-12 center-block">
+      <input type="button" value="{{'btn.save' | translate}}" ng-click="modal.saveSpecAreas()" class="center-block btn btn-primary" />
+    </div>
+  </div>
+</section>

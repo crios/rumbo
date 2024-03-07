@@ -1,0 +1,35 @@
+<nav ng-include="'views/headerRegistration.html'" ng-controller="HeaderCtrl as header"></nav>
+<section id="regwiz01" class="loginNew loginNew--welcome loginNew--fullheight">
+  <div class="container">
+		<div class="row ">
+      <div class="texto col-sm-5 col-md-4 registerNew__text registerNew__text--welcome">
+        <h4>Bienvenido a Rombus Global</h4>
+        <h5 class="subtitulo-register">Selecciona cómo quieres INGRESAR</h5>
+        <p class="font-medium-register">
+          · Empresa para contratar soluciones <br />
+          · Profesional para trabajar en proyectos
+        </p>
+        <small class="margin-top--small">Si deseas cambiar el modo, luego podrás hacerlo.</small>
+      </div>
+      <div class="inputs inputs--welcome col-sm-6 col-md-5 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+        <div class="box box--welcome">
+          <div class="hidden-xs logo">
+            <img src="../../images/logorombus_negro.png" class="img-responsive"/>
+          </div>
+          <div class="formulario">
+            <form ng-submit="login.doLogin()" class="container welcome--padding">
+              <div class="welcome___formulario text-center">
+                <a ng-click="register.setProfilePreference('company')">Ingresa como Empresa</a>
+              </div>
+              <div class="welcome___formulario text-center">
+                <a ng-click="register.setProfilePreference('prof')">Ingresa como Profesional</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+		</div>
+  </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

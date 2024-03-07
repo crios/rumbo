@@ -1,0 +1,47 @@
+<section id="portfolioItem">
+  <div class="modal-body container-fluid" id="modal-body">
+    <button type="button" class="close" aria-label="Close" ng-click="portfolio.cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <ng-switch on="portfolio.showItem.typeName">
+      <div ng-switch-when="Image" class="overflowhidden">
+        <img ng-src="{{portfolio.showItem.url}}" class="center-block portImage ">
+      </div>
+      <div ng-switch-when="Video" class="video text-center">
+        <img src="../../images/previewVideo.png" class="center-block portIcon">
+        <div class="portLink">
+          <a href="{{portfolio.showItem.url}}" target="_blank">
+            <span class="linkTitle">{{'modals.watchVideo' | translate}}</span><br>
+            <span class="linkSubtitle">{{'modals.inNewFrame' | translate}}</span>
+          </a>
+        </div>
+      </div>
+      <div ng-switch-when="Audio" class="audio text-center">
+        <img ng-src="../../images/previewAudio.png" class="center-block portIcon">
+        <div class="portLink">
+          <a href="{{portfolio.showItem.url}}" target="_blank">
+            <span class="linkTitle">{{'modals.listenAudio' | translate}}</span><br>
+            <span class="linkSubtitle">{{'modals.inNewFrame' | translate}}</span>
+          </a>
+        </div>
+      </div>
+      <div ng-switch-when="Other" class="other text-center">
+        <img ng-src="../../images/previewOther.png" class="center-block portIcon">
+        <div class="portLink" >
+          <a href="{{portfolio.showItem.url}}" target="_blank">
+            <span class="linkTitle">{{'modals.download' | translate}}</span><br>
+          </a>
+        </div>
+      </div>
+    </ng-switch>
+  </div>
+  <div class="modal-footer center-block portFooter">
+    <div class="col-sm-3">
+      <p class="title">{{portfolio.showItem.title}}</p>
+    </div>
+    <div class="col-sm-9">
+      <p class="description">{{portfolio.showItem.description}}</p>
+    </div>
+  </div>
+</section>
+

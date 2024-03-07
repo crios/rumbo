@@ -1,0 +1,188 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<header id="myCarousel"
+        class="carousel carousel-fade slide carousel--borderbottom carousel--porftolio jmpa_myCarousel header_staff">
+  <div class="bgzonesolutions jmpa_view_pc">
+    <div class="bgdifuminado"></div>
+  </div>
+  <div class="jmp_fondo_cell_sol_slider jmpa_view_cell">
+    <div class="difuminado_cell">
+    </div>
+    <img src="../images/office-worker.jpg" alt="" width="100%">
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+        <div class="jmpa_carousel">
+          <div class="carousel-caption__principal">
+            <h2 class="agencia-slider">Plataforma<br><span>de Talentos</span></h2>
+            <h4 class="informacion_agencia jmpa_view_pc">Selecciona a los profesionales de tu interés por área de<br>especialidad
+              y ubicación. Haciendo click en las fotos,<br>podrás ingresar en sus perfiles individuales.</h4>
+            <h4 class="informacion_agencia jmpa_view_cell">Selecciona a los profesionales de tu interés por área de
+              especialidad y ubicación. Haciendo click en las fotos, podrás ingresar en sus perfiles individuales.</h4>
+            <a href="" class="linksoluciones" style="display: block;"><span>4</span> Áreas de Prestación /
+              <span>+40</span> Especialidades<br>Staff Interdisciplinario / Multicultural / Global</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main class="main jmpa_web_staff">
+  <div class="container">
+    <div class="row">
+      <form class="col-xs-12 jmpa_form_staff">
+        <div class="jmpa_fs_con">
+          <div class="form-group">
+              <select style="display: none;"  class="form-control" id="ids_especialidad" ng-model="staff.specAreaSelected"
+                      ng-change="staff.buscar()"
+                      ng-options="spec.description for spec in staff.specAreaList track by spec.id">
+                <option value="">Especialidad</option>
+              </select> 
+              <!--Selector Especial-->
+              <div class="jmpa_selector selStaff" style="z-index: 3;">
+                <a class="selTitulo selStaff_esp" selOpen="selStaff_esp" >
+                  <span ng-show="staff.specAreaSelected">{{ staff.specAreaSelected.description }}</span>
+                  <span ng-show="!staff.specAreaSelected">Especialidad</span>
+                </a>
+                <ul id="selStaff_esp" class="selOptions" style="display: none;">
+                  <li ng-repeat="spec in staff.specAreaList track by spec.id" >
+                    <a 
+                      ng-click="staff.specAreaSelected = spec;staff.buscar()" 
+                      onclick="$('.selStaff_esp').removeClass('active');$('#selStaff_esp').hide();">
+                      {{  spec.description }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!--End Selector Especial-->
+
+          </div>
+          <div class="form-group hide">
+            <select class="form-control" ng-model="staff.skillSelected" ng-change="staff.buscar()"
+                    ng-options="sk.description for sk in staff.skillList track by sk.id">
+              <option value="">Habilidad</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div class="groselect">
+              <select style="display: none;" class="form-control" id="ids_pais" ng-model="staff.countrySelected" rombus-country-picker="name"
+                      ng-change="staff.buscar()">
+                <option value="">País {{ staff.countrySelected }}</option>
+              </select>
+              
+
+              <!--Selector Especial-->
+              <div class="jmpa_selector selStaff">
+                <a class="selTitulo selStaff_pais" selOpen="selStaff_pais" >
+                  <span ng-show="staff.countrySelected">{{ staff.countrySelected }}</span>
+                  <span ng-show="!staff.countrySelected">País</span>
+                </a>
+                <ul id="selStaff_pais" class="selOptions" style="display: none;">
+                  <li ng-repeat="country in countries" >
+                    <a 
+                      ng-click="staff.countrySelected = country.name;staff.buscar()" 
+                      onclick="$('.selStaff_pais').removeClass('active');$('#selStaff_pais').hide();">
+                      {{  country.name }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!--End Selector Especial-->
+
+
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="jmpa_sf_grupo">
+              <input type="text" class="form-control input_especial" placeholder="Buscar Persona"
+                     ng-model="staff.nameSelected">
+              <span class="fa fa-search fa-lg form-control-feedback form-control-especial" aria-hidden="true"
+                    ng-click="staff.buscar()"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="button" ng-click="staff.defaultGrid()"
+                   class="btn btn-primary btn-staff form-control input_especial" value="Quitar Filtros">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <section class="jmpa_cuadritos_staff">
+    <div class="row">
+
+      <div class="col-xs-3 col-sm-2 col-md-1 item_staff_user" ng-repeat="user in staff.resultadoBusqueda">
+        <a class="istaffu_contenido clic_modal_user" iduser="{{ user.userId }}"
+           ng-click="staff.setActiveUserForModal(user)">
+          <div class="pic">
+            <div class="capita pc_{{ ($index % 24) }} cell_{{ ($index % 8) }} esp_{{ user.mainSpecialityId }}">
+            </div>
+            <img ng-if="user.urlProfilePicture !== undefined" class="img-responsive"
+                 ng-src="{{user.urlProfilePicture}}">
+            <img ng-if="user.urlProfilePicture === undefined" class="img-responsive" src="../images/nopic-est.jpg">
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="text-center verMas vmoreck"  ng-show="staff.gridCounter < 3">
+      <div class="textosvermasstaff"><a ng-click="staff.getMoreUsers();"><span>Ver más</span></a></div>
+    </div>
+    <div class="bloque_ready br_staff" ng-class="{ 'pt-staff' : staff.gridCounter >= 3 }">
+      <div class="container jmp_soluciones_ready">
+        <div class="row justify-content-center">
+          <div class="col-xs-12 col-md-10 text-center">
+            <h1>¿Quieres sumarte?</h1>
+            <a ng-click="changeViewWithSpecElement('project-wizard/step1','')">Ingresa aquí</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal_cuadritos" id="user_modal" ng-show="staff.modaUser">
+  <div class="bloque_user_modal">
+    <div class="contenidopic">
+      <div ng-class="{'user_esp modalStaff_esp_2' : staff.modaUser.mainSpecialityId === 2,
+                                            'user_esp modalStaff_esp_3' : staff.modaUser.mainSpecialityId === 3,
+                                            'user_esp modalStaff_esp_4' : staff.modaUser.mainSpecialityId === 4,
+                                            'user_esp modalStaff_esp_5' : staff.modaUser.mainSpecialityId === 5}"></div>
+      <img ng-if="staff.modaUser.urlProfilePicture !== undefined" class="img-responsive user_pic"
+           ng-src="{{staff.modaUser.urlProfilePicture}}" alt="">
+      <img ng-if="staff.modaUser.urlProfilePicture === undefined" class="img-responsive user_pic"
+           src="../images/nopic-est.jpg"/></div>
+
+    <div class="tmuiser">
+      <span class="user_miembro">{{'staffView.member' | translate}}{{staff.modaUser.membershipName}}</span>
+      <a ng-if="staff.modaUser.avgcompleted >= 79"
+         ng-click="staff.showUser(staff.modaUser, 'modalRed')">{{'staffView.seeProfile' | translate}}</a>
+      <a ng-if="staff.modaUser.avgcompleted < 80 && staff.modaUser.notified !== true"
+         ng-click="staff.notifyUserTryingToContact(staff.modaUser)">{{'staffView.askView' | translate}}</a>
+    </div>
+
+    <div class="bmuser">
+      <span class="user_nombre">{{staff.modaUser.fullName}}</span>
+      <span class="user_perfil">{{staff.modaUser.specialityDescr}}</span>
+      <span class="user_ciudad">{{staff.modaUser.city}}</span>
+      <span class="user_pais">{{staff.modaUser.country}}</span>
+    </div>
+    <div class="bclose" ng-click="staff.closeUserModal()"><img src="../images/close_modal.png" alt=""></div>
+  </div>
+</div>
+<footer ng-include="'views/footer.html'"></footer>
+<script>
+  $('.selTitulo').on('click',function(){
+    var select = '#'+$(this).attr('selOpen');
+    if($(select).css('display')=='none'){
+      $(select).show();
+      $(this).addClass('active');
+    }else{
+      $(select).hide();
+      $(this).removeClass('active');
+    }
+  });
+</script>

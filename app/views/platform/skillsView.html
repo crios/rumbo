@@ -1,0 +1,34 @@
+<div ng-controller="SkillsCtrl as sk">
+  <div class="container-fluid tags skills">
+    <div class="row tags skills" style="display: inline-flex;">
+      <div ng-repeat="skil in sk.userSkills" class="fluid-skills">
+        <ng-switch on = "skil.type">
+          <div ng-switch-when="mkt" class="tag cmkt">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="des" class="tag cdesign">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="eng" class="tag cdev">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="pub" class="tag cpub">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="pre" class="tag cpress">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-default class="tag" style="background-color: grey;">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+        </ng-switch>
+      </div>
+    </div>
+  </div>
+</div>

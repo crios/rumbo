@@ -1,0 +1,131 @@
+<section id="portfolioModal">
+  <div class="modal-body row" id="modal-body">
+    <button type="button" class="close" aria-label="Close" ng-click="portfolio.cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="text-uppercase titulos--modales text-center">{{'portfolioView.title' | translate}}</h3>
+    <form ng-submit="portfolio.saveItem()">
+      <div class="col-sm-12 portfolioRow" ng-hide="portfolio.showSpinner === true">
+        <label class="bold">{{'portfolioView.fileType' | translate}}</label><br/>
+        <label class="col-sm-3 postafoliotipo--azul pos" >
+          <input type="radio" name="portType" ng-model="portfolio.type" value="Image" ng-change="portfolio.typeChanged()" required />
+              <span>{{'portfolioView.typeImage' | translate}}</span>
+        </label>
+        <label class="col-sm-3 postafoliotipo--morado dif" ><input type="radio" name="portType" ng-model="portfolio.type" value="Video" ng-change="portfolio.typeChanged()" required />{{'portfolioView.typeVideo' | translate}}</label>
+        <label class="col-sm-3 postafoliotipo--amarillo cre" ><input type="radio" name="portType" ng-model="portfolio.type" value="Audio" ng-change="portfolio.typeChanged()" required />{{'portfolioView.typeAudio' | translate}}</label>
+        <label class="col-sm-3 postafoliotipo--verde est" ><input type="radio" name="portType" ng-model="portfolio.type" value="Other" ng-change="portfolio.typeChanged()" required />{{'portfolioView.typeOther' | translate}}</label>
+      </div>
+      <div ng-switch on="portfolio.type" ng-hide="portfolio.showSpinner === true">
+        <div ng-switch-when="Image">
+          <div class="col-sm-12 portfolioRow portfolioRow--gris ">
+            <label for="title">{{'portfolioView.titleText' | translate}}</label>
+            <label class="pull-right">{{portfolio.title.length}}/30</label>
+            <input id="title" type="text" ng-model="portfolio.title" maxlength="30" required>
+          </div>
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label for="description">{{'portfolioView.descriptionText' | translate}}</label>
+            <label class="pull-right">{{portfolio.description.length}}/600</label>
+            <textarea id="description" ng-model="portfolio.description" maxlength="600" required> </textarea>
+          </div>
+          <div class="col-sm-12 portfolioRow portfolioRow--gris upload">
+            <input type="file" id="fileInputPortfolio" onchange="angular.element(this).scope().fileNameChangedImage(this)" class="fileInputPortfolio examinarBtn" />
+          </div>
+          <div class="col-sm-12 portfolioRow info">
+            <h4 class="text-uppercase titulos--modales text-center margin-bottom">{{'portfolioView.cropPicTitle' | translate}}</h4>
+            <div class="col-sm-4 info">
+              <strong class="editarTitle">
+                   {{'portfolioView.cropPicText1' | translate}}
+              </strong>
+              <span class="editarBody">
+                {{'portfolioView.cropPicText2' | translate}}
+              </span>
+              <span class="editarBody">
+                {{'portfolioView.cropPicText3' | translate}}
+              </span>
+              <strong class="editarTitle">{{'portfolioView.cropPicText4' | translate}}:</strong>
+              <div><img ng-src="{{image.croppedImage}}" /></div>
+            </div>
+            <div class="col-sm-8" style="margin-bottom: 30px;">
+              <div class="cropArea">
+                <img-crop image="image.originalImage" result-image="image.croppedImage" area-type="square"></img-crop>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-switch-when="Video">
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label >{{'portfolioView.titleText' | translate}}</label>
+            <label class="pull-right">{{portfolio.title.length}}/30</label>
+            <input type="text" ng-model="portfolio.title" maxlength="30" required>
+          </div>
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label>{{'portfolioView.descriptionText' | translate}}</label>
+            <label class="pull-right">{{portfolio.description.length}}/600</label>
+            <textarea ng-model="portfolio.description" maxlength="600" required> </textarea>
+          </div>
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label >{{'portfolioView.urlText' | translate}}</label>
+            <input type="url" ng-model="portfolio.url" placeholder="http://www...">
+          </div>
+        </div>
+        <div ng-switch-when="Audio">
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label>{{'portfolioView.titleText' | translate}}</label>
+            <label class="pull-right">{{portfolio.title.length}}/30</label>
+            <input type="text" ng-model="portfolio.title" maxlength="30" required>
+          </div>
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label>{{'portfolioView.descriptionText' | translate}}</label>
+            <label class="pull-right">{{portfolio.description.length}}/600</label>
+            <textarea ng-model="portfolio.description" maxlength="600" required> </textarea>
+          </div>
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label>{{'portfolioView.urlText' | translate}}</label>
+            <input type="url" ng-model="portfolio.url" placeholder="http://www..." ng-disabled="portfolio.file !== undefined">
+          </div>
+          <div class="col-sm-12 portfolioRow upload">
+            <input type="file" ng-disabled="portfolio.url !== ''"
+                   onchange="angular.element(this).scope().fileNameChanged(this)" class="examinarBtn" />
+          </div>
+        </div>
+        <div ng-switch-when="Other">
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label >{{'portfolioView.titleText' | translate}}</label>
+            <label class="pull-right">{{portfolio.title.length}}/30</label>
+            <input type="text" ng-model="portfolio.title" maxlength="30" required>
+          </div>
+          <div class="col-sm-12 portfolioRow portfolioRow--gris">
+            <label>{{'portfolioView.descriptionText' | translate}}</label>
+            <label class="pull-right">{{portfolio.description.length}}/600</label>
+            <textarea ng-model="portfolio.description" maxlength="600" required> </textarea>
+          </div>
+          <div class="col-sm-12 portfolioRow upload">
+            <input type="file" class="examinarBtn" onchange="angular.element(this).scope().fileNameChanged(this)" />
+          </div>
+        </div>
+      </div>
+    <!--<form ng-submit="portfolio.saveItem()">-->
+      <div ng-hide="portfolio.showSpinner === true">
+        <div class="col-sm-7 portfolioRow info" ng-switch on="portfolio.type">
+          <div ng-switch-when="Image"><span >{{'portfolioView.infoMaxSize' | translate}}: 10 Mb</span></div>
+          <div ng-switch-when="Audio">
+            <span>{{'portfolioView.infoAudio1' | translate}}: MP3</span>
+            <span>{{'portfolioView.infoMaxSize' | translate}}: 20 Mb</span>
+          </div>
+          <div ng-switch-when="Other"><span>{{'portfolioView.infoMaxSize' | translate}}: 10 Mb</span></div>
+        </div>
+        <div class="col-sm-5 portfolioRow buttons center-block" ng-if="portfolio.type !== null && portfolio.type !== undefined">
+          <input type="submit" value="GUARDAR" class="btn-form button center-block btn-primary" />
+          <input type="button" value="CANCELAR" ng-click="portfolio.cancel()" class="cancelBtn center-block"></input>
+        </div>
+      </div>
+      <div class="col-sm-12 text-center" ng-show="portfolio.showSpinner === true">
+        <span>Subiendo portfolio...</span>
+      </div>
+      <div class="col-sm-12" coderty-loading="portfolio.showSpinner"></div>
+      <div class="col-sm-12 portfolioRow text-center">
+        <span class="zocaloMessage">{{'portfolioView.copyrights' | translate}}</span>
+      </div>
+    </form>
+  </div>
+</section>

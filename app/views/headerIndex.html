@@ -1,0 +1,46 @@
+<header>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-6 col-md-4">
+        <a href="./"
+          ><img src="../images/logo-rombus.png" alt="" class="logo"
+        /></a>
+      </div>
+      <div class="col-6 col-md-8 d-flex justify-content-end navbar-links">
+        <ul class="d-none d-md-block">
+          <li>
+            <a href="/services"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a href="/staff">Talentos</a>
+          </li>
+          <li><a href="/red">Red</a></li>
+          <li>
+            <a href="https://blog.rombusglobal.com" target="_blank">Blog</a> 
+          </li> 
+        </ul>
+        <a
+          class="btn-publicar d-none d-md-block"
+          href="/project-wizard/step1"
+          >Publicar Proyecto</a
+        >
+        <div class="user_logueado">
+          <span ng-click="changeViewWithSpecElement('login','')"
+              ng-if="header.userLogged != true"
+            >Entrar</span
+          >
+          <img
+            ng-if="header.userLogged === true"
+            ng-src="{{header.profilePicture}}"
+          />
+          <img
+            ng-if="header.userLogged != true"
+            ng-src="../../images/new_login.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

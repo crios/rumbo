@@ -1,0 +1,110 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel--interna slide portfolios--marginTop">
+  <!-- Wrapper for Slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <!-- Set the first background image using inline CSS below. -->
+      <div class="fill fill-centertop" style="background-image:url('../../images/userSamples/sample4/Natreon-1-1920x1080.jpg');"></div>
+    </div>
+  </div>
+</header>
+<main class="main" style="background-color: #ffffff;">
+  <section class="porftoliosImages container-fluid">
+    <article class="portfoliosImages__top row no-gutter">
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample4/Natreon-2-960x1340.jpg" class="img-responsive">
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder portfolioBorder--Top">
+          <img src="../../images/userSamples/sample4/Natreon-3-960x670.jpg" class="img-responsive">
+        </figure>
+        <figure class="portfoliosBorder portfolioBorder--Top">
+          <img src="../../images/userSamples/sample4/Natreon-4-960x670.jpg" class="img-responsive">
+        </figure>
+      </div>
+    </article>
+    <!-- Add the extra clearfix for only the required viewport -->
+    <div class="clearfix visible-xs-block"></div>
+    <article class="portfoliosImages__top row no-gutter">
+      <div class="col-sm-4">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample4/Natreon-5-640x447.jpg" class="img-responsive">
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample4/Natreon-6-640x447.jpg" class="img-responsive">
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <figure class="portfoliosBorder portfolioBorder--Top ">
+          <img src="../../images/userSamples/sample4/Natreon-7-640x447.jpg" class="img-responsive">
+        </figure>
+      </div>
+    </article>
+  </section>
+  <section class="container porftoliosInformation">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3><strong>DOW AGROSCIENCES</strong> / BRANDING</h3>
+        <h4>Natreon</h4>
+        <strong class="porftoliosInformation__description">Un perfil de avanzada para alimentos más saludables</strong>
+        <div class="porftoliosInformation__perfil d-none d-sm-block">
+          <!--<figure>
+            <img src="../../images/userSamples/icono_argentina.png" class="img-responsive img-circle">
+            <figcaption>
+              <h5>Florencia Schmidt</h5>
+              &lt;!&ndash;<a href="#">Autor / Ver Perfil</a>&ndash;&gt;
+            </figcaption>
+          </figure>-->
+        </div>
+      </div>
+      <div class="col-sm-6 margin-top--small">
+        <p>
+          Dow AgroSciences, filial de Dow Chemical en Argentina, nos encargó el plan de marketing para la introducción
+          del nuevo Aceite de Girasol de Alto Oleico en el mercado argentino. Argentina es líder mundial en producción
+          de aceite de girasol, y la variante Alto Oleico es el reemplazo saludable más adecuado y eficiente respecto
+          a los aceites hidrogenados en la industria de alimentos procesados.
+        </p>
+        <p>
+          Realizamos primero una investigación local que nos permitió adecuar y rediseñar la marca, para la
+          presentación al consumidor local. Desarrollamos la literatura que explica la problemática de la Salud y
+          Alimentación y volcamos estos contenidos en un material de lectura bilingüe, que se convirtió en material
+          de consulta y referencia general.
+        </p>
+        <p>
+          A través de acciones de prensa, eventos y marketing directo, penetramos el mercado y posicionamos al
+          producto Natreon como líder indiscutido en la industria alimentaria.
+        </p>
+      </div>
+    </div>
+    <!-- Only information Author Mobile -->
+    <div class="row d-sm-none">
+      <div class="col-xs-12">
+        <div class="porftoliosInformation__perfil">
+          <!--<figure>
+            <img src="../../images/userSamples/icono_argentina.png" class="img-responsive img-circle">
+            <figcaption>
+              <h5>Florencia Schmidt</h5>
+              &lt;!&ndash;<a href="#">Autor / Ver Perfil</a>&ndash;&gt;
+            </figcaption>
+          </figure>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid portfolio-footer">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="hide-on-desktop">Proveemos soluciones profesionales<br/> para tu empresa</p>
+        <p class="hide-on-mobile">Proveemos soluciones profesionales para tu empresa</p>
+        <button ng-click="changeViewWithSpecElement('project-wizard/step1','')" class="start-now-button">Publica tu proyecto</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer ng-include="'views/footer.html'"></footer>

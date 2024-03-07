@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  web:
+    image: nginx:1.25
+    ports: 
+    - 8081:80
+    volumes:
+    - ./rombusApp:/usr/share/nginx/html

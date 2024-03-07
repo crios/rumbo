@@ -1,0 +1,184 @@
+<div id="specArea" class="container-fluid area-esp" ng-controller="SpecAreaCtrl as spar">
+  <!-- <h4>{{'specAreaView.title' | translate}}</h4> -->
+  <!-- <p>{{'specAreaView.titleP1' | translate}}</p> -->
+  <h4 class="text-uppercase titulos--modales">Tus Áreas de Especialidad</h4>
+  <p class="descripciones--modales">Puedes seleccionar hasta dos áreas para los resultados de búsqueda, con la primera que elijas figurarás en el staff.</p>
+
+  <!-- Nuevo -->
+
+  <div class="row row-fluid ">
+      <article class="col-xs-12  col-sm-15 fondo" id="marketingBorder">
+        <figure class="animationServicios">
+          <img class="img-responsive" src="../images/servicio-estrategia.jpg" alt="sample91" />
+          <label for="especialidad1">
+              <div class="fondo__informacion">
+                <i class="fa fa-binoculars"></i>
+                <h4 class="text-uppercase">Estrategia</h4>
+                <!-- <i class="fa fa-angle-down icon-min"></i> -->
+              </div>
+              <figcaption>
+                <h3>Marketing</h3>
+                <span class="text-uppercase">Investigación</span>
+                <span class="text-uppercase">Planificación</span>
+                <span class="text-uppercase">analytics</span>
+                <!-- Aqui va el label radio -->
+                <input id="especialidad1" type="checkbox" ng-model="specAreasModel.mkt"
+                ng-change="spar.specAreaSelected('mkt')"
+                ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.mkt === false">
+              </figcaption>
+          </label>
+        </figure>
+      </article>
+
+      <article class="col-xs-12  col-sm-15 fondo fondo__creatividad" id="creatividadBorder">
+        <figure class="animationServicios animationServicios--creatividad">
+          <img class="img-responsive" src="../images/servicio-creatividad.jpg" alt="sample91" />
+          <div class="fondo__informacion">
+            <i class="fa fa-lightbulb-o"></i>
+            <h4 class="text-uppercase">Creatividad</h4>
+            <!-- <i class="fa fa-angle-down icon-min"></i> -->
+          </div>
+          <figcaption>
+            <h3>Diseño</h3>
+            <span class="text-uppercase">Concepto</span>
+            <span class="text-uppercase">Imagen</span>
+            <span class="text-uppercase">Función</span>
+            <input id="especialidad2" type="checkbox" ng-model="specAreasModel.des"
+            ng-change="spar.specAreaSelected('des')"
+            ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.des === false">
+          </figcaption>
+        </figure>
+      </article>
+      <article class="col-xs-12  col-sm-15 fondo fondo__desarrollo" id="desarrolloBorder">
+        <figure class="animationServicios animationServicios--desarrollo">
+          <img class="img-responsive" src="../images/servicio-desarrollo.jpg" alt="sample91" />
+          <div class="fondo__informacion">
+            <i class="fa fa-cogs"></i>
+            <h4 class="text-uppercase">Desarrollo</h4>
+            <!-- <i class="fa fa-angle-down icon-min"></i> -->
+          </div>
+          <figcaption>
+            <h3>IT</h3>
+            <span class="text-uppercase">Ingeniería</span>
+            <span class="text-uppercase">Sistemas</span>
+            <span class="text-uppercase">Producto</span>
+            <input id="especialidad3" type="checkbox" ng-model="specAreasModel.dev"
+            ng-change="spar.specAreaSelected('eng')"
+            ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.dev === false">
+          </figcaption>
+        </figure>
+      </article>
+      <article class="col-xs-12  col-sm-15 fondo fondo__posicionamiento" id="posicionamientoBorder">
+        <figure class="animationServicios animationServicios--posicionamiento">
+          <img class="img-responsive" src="../images/servicio-posicionamiento.jpg" alt="sample91" />
+          <div class="fondo__informacion">
+            <i class="fa fa-signal"></i>
+            <h4 class="text-uppercase">Posicionamiento</h4>
+            <!-- <i class="fa fa-angle-down icon-min"></i> -->
+          </div>
+          <figcaption>
+            <h3>Management</h3>
+            <span class="text-uppercase">Community</span>
+            <span class="text-uppercase">Publicidad</span>
+            <span class="text-uppercase">Social media</span>
+            <input id="especialidad4" type="checkbox" ng-model="specAreasModel.pub"
+            ng-change="spar.specAreaSelected('pub')"
+            ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.pub === false">
+          </figcaption>
+        </figure>
+      </article>
+      <article class="col-xs-12  col-sm-15 fondo fondo__difusion" id="difusionBorder">
+        <figure class="animationServicios animationServicios--difusion">
+          <img class="img-responsive" src="../images/servicio-difusion.jpg" alt="sample91" />
+          <div class="fondo__informacion">
+            <i class="fa fa-paper-plane"></i>
+            <h4 class="text-uppercase">Difusión</h4>
+            <!-- <i class="fa fa-angle-down icon-min"></i> -->
+          </div>
+          <figcaption>
+            <h3>Prensa</h3>
+            <span class="text-uppercase">Contenidos</span>
+            <span class="text-uppercase">Opinión</span>
+            <span class="text-uppercase">Medios</span>
+            <input id="especialidad5" type="checkbox" ng-model="specAreasModel.pre"
+            ng-change="spar.specAreaSelected('pre')"
+            ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.pre === false">
+          </figcaption>
+        </figure>
+      </article>
+    </div>
+
+    <!-- Viejo -->
+  <!-- <div class="row box-area col-sm-12 center-block">
+    <div id="reg-mkt" class="area">
+      <label for="especialidad1" class="label-full">
+        <div class="def">
+          <i class="fa fa-rocket"></i>
+          <span>{{'specAreaView.mktSpan' | translate}}</span>
+          <p>{{'specAreaView.mktP1' | translate}}</p>
+          <p>{{'specAreaView.mktP2' | translate}}</p>
+          <p>{{'specAreaView.mktP3' | translate}}</p>
+        </div>
+        <input id="especialidad1" type="checkbox" ng-model="specAreasModel.mkt"
+               ng-change="spar.specAreaSelected('mkt')"
+               ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.mkt === false">
+      </label>
+    </div>
+    <div id="reg-design" class="area">
+      <label for="especialidad2" class="label-full">
+        <div class="def">
+          <i class="fa fa-lightbulb-o"></i>
+          <span>{{'specAreaView.designSpan' | translate}}</span>
+          <p>{{'specAreaView.designP1' | translate}}</p>
+          <p>{{'specAreaView.designP2' | translate}}</p>
+          <p>{{'specAreaView.designP3' | translate}}</p>
+        </div>
+        <input id="especialidad2" type="checkbox" ng-model="specAreasModel.des"
+               ng-change="spar.specAreaSelected('des')"
+               ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.des === false">
+      </label>
+    </div>
+    <div id="reg-dev" class="area">
+      <label for="especialidad3" class="label-full">
+        <div class="def">
+          <i class="fa fa-cogs"></i>
+          <span>{{'specAreaView.devSpan' | translate}}</span>
+          <p>{{'specAreaView.devP1' | translate}}</p>
+          <p>{{'specAreaView.devP2' | translate}}</p>
+          <p>{{'specAreaView.devP3' | translate}}</p>
+        </div>
+        <input id="especialidad3" type="checkbox" ng-model="specAreasModel.dev"
+               ng-change="spar.specAreaSelected('eng')"
+               ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.dev === false">
+      </label>
+    </div>
+    <div id="reg-pub" class="area">
+      <label for="especialidad4" class="label-full">
+        <div class="def">
+          <i class="fa fa-line-chart"></i>
+          <span>{{'specAreaView.pubSpan' | translate}}</span>
+          <p>{{'specAreaView.pubP1' | translate}}</p>
+          <p>{{'specAreaView.pubP2' | translate}}</p>
+          <p>{{'specAreaView.pubP3' | translate}}</p>
+        </div>
+        <input id="especialidad4" type="checkbox" ng-model="specAreasModel.pub"
+               ng-change="spar.specAreaSelected('pub')"
+               ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.pub === false">
+      </label>
+    </div>
+    <div id="reg-press" class="area">
+      <label for="especialidad5" class="label-full">
+        <div class="def">
+          <i class="fa fa-paper-plane"></i>
+          <span>{{'specAreaView.pressSpan' | translate}}</span>
+          <p>{{'specAreaView.pressP1' | translate}}</p>
+          <p>{{'specAreaView.pressP2' | translate}}</p>
+          <p>{{'specAreaView.pressP3' | translate}}</p>
+        </div>
+        <input id="especialidad5" type="checkbox" ng-model="specAreasModel.pre"
+               ng-change="spar.specAreaSelected('pre')"
+               ng-disabled="specAreasSelected.length >= spar.maxAmount && specAreasModel.pre === false">
+      </label>
+    </div>
+  </div> -->
+</div></div>

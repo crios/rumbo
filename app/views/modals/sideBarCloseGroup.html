@@ -1,0 +1,17 @@
+<section id="sideBarCloseGroup">
+  <div class="modal-body row text-center" id="modal-body">
+    <div class="col-sm-12">
+      <button type="button" class="close" aria-label="Close" ng-click="sibaModal.ok()">
+        <span aria-hidden="true" class="modalCloseBtn">&times;</span>
+      </button>
+    </div>
+    <p>{{'modals.closeGroup' | translate}}</p>
+    <p class="cannotUndo">{{'modals.cannotUndo' | translate}}</p>
+    <div class="col-sm-12 center-block">
+      <center>
+        <button class="btn btn-primary" type="button" ng-click="sibaModal.closeGroup()">{{'btn.confirm' | translate}}</button>
+        <button class="btn btn-default" type="button" ng-click="sibaModal.ok()">{{'btn.cancel' | translate}}</button>
+      </center>
+    </div>
+  </div>
+</section>

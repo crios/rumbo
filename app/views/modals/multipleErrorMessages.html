@@ -1,0 +1,14 @@
+<section id="modalNotificationSimple">
+  <div class="modal-title">
+    <center><h4>Completa la siguiente información pendiente</h4></center>
+  </div>
+  <div class="modal-body row" id="modal-body">
+    <!--<center><p ng-repeat="em in modal.errorMessages">{{em}}</p></center>-->
+    <ul>
+      <li ng-repeat="em in modal.errorMessages" style="margin-left: 30px"><p>{{em}}</p></li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <center><button class="btn btn-primary" type="button" ng-click="modal.ok()">{{'btn.ok' | translate}}</button></center>
+  </div>
+</section>

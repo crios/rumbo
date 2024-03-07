@@ -1,0 +1,43 @@
+<nav ng-include="'views/headerRegistration.html'" ng-controller="HeaderCtrl as header"></nav>
+<section id="regwiz01" class="loginNew">
+  <div class="container container--promotion">
+    <div class="row promotion">
+      <header class="col-xs-12 promotion__header">
+              <h5 class="seccion__titulos text-center" style="margin-top: 30px; font-weight: 400;">¡Bienvenido a Rombus Global!</h5>
+          </header>
+      <div class="col-xs-12 margin-top--small">
+        <div class="box-reg">
+          <div class="row body-rg">
+            <p class="text-gris">Si eres Empresa, tu cuenta ya está habilitada para que cargues tu Proyecto.</p>
+            <div class="col-xs-12 margin-top--small margin-bottom--small">
+              <button ng-click="register.createProject()" class="button btn-confirmar"
+                      style="padding-left: 30px!important; padding-right: 30px!important;">INICIA TU PROYECTO</button>
+            </div>
+            <p class="text-gris">Para ingresar a tu perfil Empresa o Profesional, revisa tu correo, hemos enviado un e-mail de confirmación a la dirección que has registrado.</p>
+            <div class="emailSentNotif">
+              <label class="showEmail">{{register.tempEmail}}</label>
+            </div>
+            <p class="text-gris">Cliquea en el enlace que te hemos enviado para verificar tu dirección.</p>
+            <div class="row botones">
+                <div class="col-xs-12">
+                    <p class="texto-olvido">
+                        Si no has recibido el e-mail de confirmación, por favor: <br>
+                        <ul class="list-email">
+                          <li class="color--azul">Comprueba la carpeta de correo basura o el filtro de spam en tu cuenta de e-mail.</li>
+                          <li class="color--azul">Asegúrate de que has introducido correctamente tu dirección de correo electrónico.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-xs-12 margin-top--small">
+                    <button ng-click="register.resendRegistrationEmail()" class="button btn-cancelar bottonEmailSent">{{'registerView.resend' | translate}}</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

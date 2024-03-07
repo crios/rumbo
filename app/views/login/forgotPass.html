@@ -1,0 +1,40 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- <img src="images/fondo_login.png" class="img-responsive" /> -->
+<section id="login" class="loginNew">
+  <article class="container">
+    <div class="row">
+      <div class="texto col-sm-4 texto__forgotPass" ng-show="login.restoreEmailSent === false">
+        <h4 >{{'loginView.forgotPass' | translate}}</h4>
+        <p>{{'loginView.forgotPassMsg' | translate}}</p>
+      </div>
+      <div class="texto col-sm-5 col-sm-offset-2" ng-show="login.restoreEmailSent === true">
+        <h4>{{'loginView.sentMsg' | translate}}</h4>
+        <p>{{'loginView.chkMailMsg' | translate}}</p>
+      </div>
+      <div class="inputs col-sm-6 col-sm-offset-1 col-lg-offset-2">
+        <div class="box">
+          <div class="hidden-xs logo">
+             <img src="../../images/logorombus_negro.png" class="img-responsive">
+          </div>
+          <div class="formulario">
+            <form ng-submit="login.forgotPass()" class="container">
+              <div class="col s12">
+                <i class="fa fa-envelope"></i>
+                <input class="icon loginplaceholder" type="email" placeholder="{{'loginView.email' | translate}}" ng-model="login.email" required>
+              </div>
+              <div class="col s12">
+                <input type="submit" class="button primary" value="{{'btn.send' | translate}}">
+              </div>
+              <div class="footer" ng-show="login.passRestored === false">
+                  <div class="col-xs-8 col-xs-offset-2">
+                    <a ng-click="changeViewWithSpecElement('register','')">{{'loginView.haveAnAccount' | translate}}</a>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

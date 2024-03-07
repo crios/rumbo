@@ -1,0 +1,88 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav><!--<img src="../../images/fondo_login.png" class="hidden-xs img-responsive" style="z-index:-10" />-->
+<section id="perfil">
+  <div class="container tab-container">
+    <div class="hidden-xs row" style="padding-top: 0px;">
+      <div class="tab-perfil">
+        <h4>{{'profileView.userProfile' | translate}}</h4></div>
+    </div>
+    <aside class="backStaff" ng-click="prof.backToStaff()">
+      <a ng-show="prof.isStaffSearch === true" href="">Volver a la búsqueda</a>
+    </aside>
+    <div class="row flexbox migris">
+
+      <section class="flexbox__sidebar dashboard__sidebar" id="profileSideBar" ng-include="'views/profile/sideBar.html'"></section>
+      <div class="col-sm-7 flexbox__information dashboard__information perfil__sidebar">
+
+        <div ng-if="prof.extract !== undefined && prof.extract !== null" class="row extracto">
+          
+            <div class="col-sm-12 cabeza">
+              <h4>{{'profileView.extractTitle' | translate}}</h4>
+              <hr class="marginBottom-none">
+            </div>
+            <div class="col-sm-12 cuerpo3">
+              <textarea ta-expandable ta-Min-Height="60" class="extractDetails noBorderTextArea" ng-model="prof.extract" readonly></textarea>
+            </div>
+          
+        </div>
+        <div ng-if="prof.portfolioItems.length > 0" class="row portfolio hidden-sm hidden-xs">
+            <div class="col-sm-12 cabeza">
+              <h4>{{'profileView.portfolioTitle' | translate}}</h4>
+              <hr class="marginBottom-none">
+          </div>
+          <div class="col-sm-12 cuerpo2 portfolio-items"><!-- style="display: inline-flex;" -->
+            <div ng-repeat="item in prof.portfolioItems">
+              <ng-switch on="item.typeName">
+                <div ng-switch-when="Image" class="col-sm-3 portfolio-item" ng-style="{'background-image': 'url(' + item.preview + ')'}"
+                    style="background-size: cover;" ng-click="prof.showPortfolioItem(item)">
+                  <p class="portfolioTitle">{{item.title}}</p>
+                </div>
+                <div ng-switch-when="Video" class="col-sm-12 portfolio-item video" ng-click="prof.showPortfolioItem(item)">
+                  <p class="portfolioTitle">{{item.title}}</p>
+                </div>
+                <div ng-switch-when="Audio" class="col-sm-3 portfolio-item audio" ng-click="prof.showPortfolioItem(item)">
+                  <p class="portfolioTitle">{{item.title}}</p>
+                </div>
+                <div ng-switch-when="Other" class="col-sm-3 portfolio-item other" ng-click="prof.showPortfolioItem(item)">
+                  <p class="portfolioTitle">{{item.title}}</p>
+                </div>
+              </ng-switch>
+            </div>
+          </div>
+        </div>
+        <div ng-if="prof.userSkills.length > 0" class="row aptitudes">
+          <div class="col-sm-12 cabeza">
+            <h4>{{'profileView.skillsTitle' | translate}}</h4>
+
+            <hr>
+          </div>
+          <div ng-include="'views/platform/skillsViewOnly.html'" class="aptitudes-items">
+          </div>
+        </div>
+        <div class="cv hidden-sm hidden-xs"
+            ng-if="prof.cvExperiencia !== undefined && prof.cvExperiencia !== null ||
+                    prof.cvFormacion!== undefined && prof.cvFormacion!== null ||
+                    prof.cvCertificacion !== undefined && prof.cvCertificacion !== null" >
+          <div class="col-sm-12 cabeza menoslarge">
+            <h4>{{'profileView.cvTitle' | translate}}</h4>
+            <hr>
+          </div>
+          <div class="cuerpo4">
+            <uib-tabset active="active" class="cv-tabs">
+              <uib-tab index="0" heading="{{'profileView.cvExperience' | translate}}">
+                <textarea ta-expandable class="noBorderTextArea" ng-model="prof.cvExperiencia" readonly ></textarea>
+              </uib-tab>
+              <uib-tab index="1" heading="{{'profileView.cvFormation' | translate}}" >
+                <textarea ta-expandable class="noBorderTextArea" ng-model="prof.cvFormacion" readonly></textarea>
+              </uib-tab>
+              <uib-tab index="2" heading="{{'profileView.cvCertification' | translate}}" >
+                <textarea ta-expandable class="noBorderTextArea" ng-model="prof.cvCertificacion" readonly></textarea>
+              </uib-tab>
+            </uib-tabset>
+          </div>
+        </div>
+      </div>
+   </div>
+  </div>
+</section>
+<!--<section id="emblemas" ng-include="'views/platform/emblemas.html'"></section>-->
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

@@ -1,0 +1,89 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav><!--<img src="images/fondo_login.png" class="hidden-xs img-responsive" style="z-index:-10" />-->
+<section id="perfil">
+  <div class="container tab-container">
+      <div class="hidden-xs row" style="padding-top: 0px;">
+        <div class="tab-perfil">
+            <h4>{{'profileView.userProfile' | translate}}</h4>
+        </div>
+      </div>
+      <div class="row flexbox migris">
+          <section class="flexbox__sidebar dashboard__sidebar " id="profileSideBar" ng-include="'views/profile-company/sideBar.html'"></section>
+          <div class="col-sm-7 flexbox__information dashboard__information perfil__sidebar">
+
+            <div class="extracto wrapper">
+              <div class="box">
+                <div class="box-header">
+                  <h4 class="section-title">{{'profileView.extractTitle' | translate}}</h4>
+                </div>
+                <div class="divider"></div>
+                <div class="cuerpo3">
+                  <textarea ta-expandable ta-Min-Height="50" class="extractDetails no-resize borderless" readonly>Blablabla balbalba blablabl abll baln la la laj lajsd asdkasj k alsdj aslj asldj aslkdj aslkd jaslkdjas lkdjalkdsj lkasjl asjdlk sjadl asld jaskldj aslkj dlkasdj lsakj dasklj daslkj dsakl</textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="extracto wrapper">
+              <div class="box">
+                <div class="box-header">
+                  <h4 class="section-title">Empresa</h4>
+                </div>
+                <div class="divider"></div>
+                <div class="cuerpo3 company__edit">
+                  <figure class="company__edit--image" ng-show="comProf.companyInfo.logo === null || comProf.companyInfo.logo === undefined">
+<!--                    <img src="https://via.placeholder.com/252" class="img-responsive" alt="">-->
+                    <div class="company__edit--green"></div>
+                    <div class="company__edit--action">
+                      <a href="#">
+                        <span class="fz-2rem">Logo</span>
+                      </a>
+                    </div>
+                  </figure>
+                  <figure class="company__edit--image" ng-show="comProf.companyInfo.logo !== null && comProf.companyInfo.logo !== undefined">
+                    <img ng-src="{{comProf.companyInfo.logo}}" class="img-responsive" alt="">
+                  </figure>
+                  <div class="company__edit--information">
+                    <ul>
+                      <li><span ng-hide="isNotNullNorUndefinedNorEmpty(comProf.companyInfo.name)">Nombre: </span><span class="brave">{{comProf.companyInfo.name}}</span></li>
+                      <li><span ng-hide="isNotNullNorUndefinedNorEmpty(comProf.companyInfo.industry)">Actividad/Industria: </span><span>{{comProf.companyInfo.industry}}</span></li>
+                      <li>
+                        <span ng-hide="comProf.companyInfo.city !== undefined || comProf.companyInfo.country !== undefined">Ubicación: </span>
+                        <span ng-show="comProf.companyInfo.city !== undefined || comProf.companyInfo.country !== undefined">
+                          {{comProf.companyInfo.city}}, {{comProf.companyInfo.country}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="extracto wrapper">
+              <div class="box">
+                <div class="section-header">
+                  <h4 class="title">MIS PROYECTOS</h4>
+                </div>
+                <div class="divider"></div>
+                <div class="box-list">
+                  <ul>
+                    <li ng-click="comProf.loadProjectDetails(pj)" class="with-hover pointer" ng-repeat="pj in comProf.projectList">
+                      <span class="ellipsis project-title">
+                        <i ng-class="{ 'dot user__especialidadBoton--estrategia': pj.specialtyId === 2,
+                            'dot user__especialidadBoton--creatividad':  pj.specialtyId === 3,
+                            'dot user__especialidadBoton--desarrollo': pj.specialtyId === 4,
+                            'dot user__especialidadBoton--posicionamiento': pj.specialtyId === 5,
+                            'dot user__especialidadBoton--difusion': pj.specialtyId === 6}"></i>
+                        <a class="fz-1-6rem" ng-click="comProf.loadProjectDetails(pj)">{{pj.title}}</a>
+                      </span>
+                      <div class="project-details">
+                        <button ng-click="comProf.loadProjectDetails(pj)" class="r-button button-secondary">Leer más</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+  </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

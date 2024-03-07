@@ -1,0 +1,236 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<main id="wrap">
+   <div class="jmpa__contenido py-3 py-md-5 d-none" id="jmpaStep2">
+      <div class="container py-md-5">
+         <div class="row">
+            <div class="col-md-3 mb-3 mb-md-5 mb-md-0">
+               <div class="jmpa__estado-btn jmpa__bg-tb jmpa__rounded-circle">2/4</div>
+               <div class="jmpa__estado jmpa__titulo">ESPECIALIDAD</div>
+            </div>
+            <div class="col-md-9 jmpa_blr">
+               <div class="row">
+                  <div class="col-xs-12 my-2 my-md-0">
+                     <h1>Selecciona  el área profesional adecuada</h1>
+                     
+                     <div class="jmpa__form-descripcion">
+                        <span class="d-none d-md-block">Elige el servicio que enfoca tu necesidad principal:</span>
+                        <span class="d-md-none" ng-show="!isNotNullNorUndefinedNorEmpty(wwp.selectedSpecialty)">Elige el servicio que enfoca tu necesidad principal, luego señala, dentro del área elegida, la categoría y subcategoría que correspondan.* :</span>
+                        <span class="d-md-none" ng-show="isNotNullNorUndefinedNorEmpty(wwp.selectedSpecialty)">Ya elegiste el servicio que enfoca tu necesidad principal, ahora señala la categoría y subcategoría que correspondan.*</span>
+                     </div>
+
+                  </div>
+               </div>
+                  
+
+               <div class="row">
+
+                  <div class="col-xs-12 mt-md-4">
+                     <div class="row jmpa_items_row">
+                        <div class="jmpa_box_cell bg_new_icon_area">
+                           <div class="col-md-3 jmpa__item-card" id="mktSpecialtyCol">
+                              <div class="jmpa__item-card-body d-flex align-items-center jmpa__bg-tomato bg_new_icon bgm" ng-model="wwp.selectedSpecialty"
+                                   uib-btn-radio="'mkt'" ng-click="wwp.filterBySpecialty()">
+                                 <div class="row">
+                                    <div class="col-xs-9 col-md-12 p-cel">
+                                       <span class="new_proy jmpa_view_pc">Estrategia y<br>Marketing</span>
+                                       <span class="new_proy jmpa_view_cell">Estrategia y Marketing</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 jmpa__item-card" id="desSpecialtyCol">
+                              <div class="jmpa__item-card-body d-flex align-items-center jmpa__bg-scotch bg_new_icon bgd" ng-model="wwp.selectedSpecialty"
+                                   uib-btn-radio="'des'" ng-click="wwp.filterBySpecialty()">                                    
+                                    <div class="row">
+                                       <div class="col-xs-9 col-md-12 p-cel">
+                                          <span class="new_proy jmpa_view_pc">Diseño y<br>Contenidos</span>
+                                          <span class="new_proy jmpa_view_cell">Diseño y Contenidos</span>
+                                       </div>
+                                    </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 jmpa__item-card" id="pubSpecialtyCol">
+                              <div class="jmpa__item-card-body d-flex align-items-center jmpa__bg-niceblue bg_new_icon bgpu" ng-model="wwp.selectedSpecialty"
+                                   uib-btn-radio="'pub'" ng-click="wwp.filterBySpecialty()">
+                                   <div class="row">
+                                    <div class="col-xs-9 col-md-12 p-cel">
+                                       <span class="new_proy jmpa_view_pc">Publicidad y<br>Campañas</span>
+                                       <span class="new_proy jmpa_view_cell">Publicidad y Campañas</span>
+                                    </div>
+                                 </div> 
+                              </div>
+                           </div>
+                           <div class="col-md-3 jmpa__item-card" id="engSpecialtyCol">
+                              <div class="jmpa__item-card-body d-flex align-items-center jmpa__bg-berry bg_new_icon bgpr" ng-model="wwp.selectedSpecialty"
+                                   uib-btn-radio="'eng'" ng-click="wwp.filterBySpecialty()">
+                                   <div class="row">                                    
+                                    <div class="col-xs-9 col-md-12 p-cel">
+                                       <span class="new_proy jmpa_view_pc">Programación<br>y Tecnología</span>
+                                       <span class="new_proy jmpa_view_cell">Programación y Tecnología</span>
+                                    </div>
+                                 </div> 
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+
+
+                  <div class="col-xs-12 jmpa_cat_celular jmpa_div_off" ng-show="isNotNullNorUndefinedNorEmpty(wwp.selectedSpecialty)">
+                     <ul class="jmpa__lista-categoria jmpa__listado-catsub">
+                        <li id="cfsf{{fsf.id}}" ng-repeat="fsf in wwp.filteredSpecialtyCategories track by $index" class="cssCategoria" 
+                            >
+                           <a ng-class="{
+                              'jmpa__bg-cat-jmpa__marketing': wwp.selectedSpecialty === 'mkt',
+                              'jmpa__bg-cat-jmpa__diseno': wwp.selectedSpecialty === 'des',
+                              'jmpa__bg-cat-jmpa__publicidad': wwp.selectedSpecialty === 'pub',
+                              'jmpa__bg-cat-jmpa__programacion': wwp.selectedSpecialty === 'eng',
+                              'jmpa__active': wwp.currentProject.specialtyCategoryId === fsf.id
+                           }"><span class="jmpa__tab"><i class="jmpa_radio" ng-click="wwp.mouseoverFilter = true; wwp.filterBySpecialtyCategory(fsf);"><div class="jmpa_radio_on"></div></i>{{fsf.description}}</span></a>
+                           <div class="jmpa_sub_cat_celular" ng-class="{
+                              'hidden-css': fsf.id != wwp.selectedSpecialtyCategory.id }">
+                              <ul class="jmpa__lista-sub-categoria jmpa__listado-catsub" ng-class="{
+                                 'jmpa__bg-cat-jmpa__marketing': wwp.selectedSpecialty === 'mkt',
+                                 'jmpa__bg-cat-jmpa__diseno': wwp.selectedSpecialty === 'des',
+                                 'jmpa__bg-cat-jmpa__publicidad': wwp.selectedSpecialty === 'pub',
+                                 'jmpa__bg-cat-jmpa__programacion': wwp.selectedSpecialty === 'eng',
+                                 'jmpa__active': wwp.currentProject.specialtyCategoryId === fsf.id
+                              }">
+                                 <li id="csubcat{{subCat.id}}" ng-repeat="subCat in wwp.filteredSpecialtySubCategories track by $index" class="cssSubCategoria" 
+                                    ng-class="{
+                                       'jmpa__bg-cat-jmpa__marketing': wwp.selectedSpecialty === 'mkt',
+                                       'jmpa__bg-cat-jmpa__diseno': wwp.selectedSpecialty === 'des',
+                                       'jmpa__bg-cat-jmpa__publicidad': wwp.selectedSpecialty === 'pub',
+                                       'jmpa__bg-cat-jmpa__programacion': wwp.selectedSpecialty === 'eng',
+                                       'jmpa__active': wwp.currentProject.specialtySubCategoryId === subCat.id
+                                    }">
+                                    <a><span class="tab"><i class="jmpa_radio" ng-click="wwp.selectSpecialtySubCategory(subCat)"><div class="jmpa_radio_on"></div></i>{{subCat.name}}</span></a>
+                                    <!--<div class="jmpa_divisor_sub_cat"></div>-->
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ul>                     
+                  </div>
+
+
+
+                  <div class="col-xs-12 my-2  mt-md-4 jmpa__block-categoria jmpa_cat_pc jmpa_div_off" ng-show="isNotNullNorUndefinedNorEmpty(wwp.selectedSpecialty)">
+                     <div class="jmpa__form-descripcion jmpa__block-categoria">Marca dentro del área elegida, la categoría y subcategoría que correspondan* :</div>
+                     <div class="row">
+                        <div class="jmpa__block-categoria_select mt-md-4">
+                        <div class="col-md-6 jmpa_columnas ">
+                           <input type="hidden" id="jmpa_id_categoria">
+                           <ul class="jmpa__lista-categoria jmpa__listado-catsub">
+                              <li id="fsf{{fsf.id}}" ng-repeat="fsf in wwp.filteredSpecialtyCategories track by $index" class="cssCategoria"
+                                  ng-mouseover="wwp.filterBySpecialtyCategory(fsf)" ng-click="wwp.mouseoverFilter = true; wwp.filterBySpecialtyCategory(fsf);"
+                                  ng-class="{
+                                    'jmpa__bg-cat-jmpa__marketing': wwp.selectedSpecialty === 'mkt',
+                                    'jmpa__bg-cat-jmpa__diseno': wwp.selectedSpecialty === 'des',
+                                    'jmpa__bg-cat-jmpa__publicidad': wwp.selectedSpecialty === 'pub',
+                                    'jmpa__bg-cat-jmpa__programacion': wwp.selectedSpecialty === 'eng',
+                                    'jmpa__active': wwp.currentProject.specialtyCategoryId === fsf.id
+                                 }">
+                                 <a><span class="jmpa__tab">{{fsf.description}}</span></a>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="col-md-6 jmpa_columnas ">
+                           <input type="hidden" id="jmpa_id_subcategoria">
+                           <ul class="jmpa__lista-sub-categoria jmpa__listado-catsub">
+                              <li id="subcat{{subCat.id}}" ng-repeat="subCat in wwp.filteredSpecialtySubCategories track by $index" class="cssSubCategoria" ng-click="wwp.selectSpecialtySubCategory(subCat)"
+                                 ng-class="{
+                                    'jmpa__bg-cat-jmpa__marketing': wwp.selectedSpecialty === 'mkt',
+                                    'jmpa__bg-cat-jmpa__diseno': wwp.selectedSpecialty === 'des',
+                                    'jmpa__bg-cat-jmpa__publicidad': wwp.selectedSpecialty === 'pub',
+                                    'jmpa__bg-cat-jmpa__programacion': wwp.selectedSpecialty === 'eng',
+                                    'jmpa__active': wwp.currentProject.specialtySubCategoryId === subCat.id
+                                 }">
+                                 <a><span class="tab">{{subCat.name}}</span></a>
+                              </li>
+                           </ul>
+                        </div>
+                        </div>
+
+                     </div>
+                  </div>
+                  <div class="col-xs-12 my-2  mt-md-4 jmpa__block-habilidad" ng-show="isNotNullNorUndefinedNorEmpty(wwp.selectedSpecialty)">
+                     <div class="row">
+                        <div class="col-xs-12">
+                           <div class="jmpa__form-descripcion jmpa__block-categoria mb-2 mb-md-4">Si lo deseas, puedes agregar hasta 5 habilidades que consideres necesarias.</div>
+                        </div>
+                        <div class="col-xs-12 jmpa__form-autocomplete  ">
+                           <form ng-submit="wwp.addProjectSkill(selectedSkill)">
+                              <div id="classHabilidad">
+                                 <div class="input-group">
+                                    <div class="skilleditmio"
+                                         angucomplete-alt id="ex1"
+                                         placeholder="AUTOCOMPLETE"
+                                         pause="100"
+                                         selected-object="selectedSkill"
+                                         local-data="wwp.skillList"
+                                         search-fields="description"
+                                         title-field="description"
+                                         minlength="1"
+                                         input-class="input-agregar-skill jmpa_txt_habilidad"></div>
+                                    <span class="input-group-btn">
+                                    <button class="jmpa__btn-habilidad btn jmpa__bg-grey jmpa_txt_habilidad" type="submit">AGREGAR +</button>
+                                    </span>
+                                 </div>
+                              </div>
+                           </form>
+                           <div class="container-fluid tags skills">
+                              <div class="row">
+                                 <div ng-repeat="skil in wwp.currentProject.projectSkills" class="fluid-skills">
+                                    <ng-switch on = "skil.type">
+                                       <div ng-switch-when="mkt" class="tag cmkt">
+                                          <a ng-click="wwp.deleteProjectSkill(skil)"><i class="fa fa-times"></i></a>
+                                          <p>{{skil.description}}</p>
+                                       </div>
+                                       <div ng-switch-when="des" class="tag cdesign">
+                                          <a ng-click="wwp.deleteProjectSkill(skil)"><i class="fa fa-times"></i></a>
+                                          <p>{{skil.description}}</p>
+                                       </div>
+                                       <div ng-switch-when="eng" class="tag cdev">
+                                          <a ng-click="wwp.deleteProjectSkill(skil)"><i class="fa fa-times"></i></a>
+                                          <p>{{skil.description}}</p>
+                                       </div>
+                                       <div ng-switch-when="pub" class="tag cpub">
+                                          <a ng-click="wwp.deleteProjectSkill(skil)"><i class="fa fa-times"></i></a>
+                                          <p>{{skil.description}}</p>
+                                       </div>
+                                       <div ng-switch-when="pre" class="tag cpress">
+                                          <a ng-click="wwp.deleteProjectSkill(skil)"><i class="fa fa-times"></i></a>
+                                          <p>{{skil.description}}</p>
+                                       </div>
+                                       <div ng-switch-default class="tag" style="background-color: grey;">
+                                          <a ng-click="wwp.deleteProjectSkill(skil)"><i class="fa fa-times"></i></a>
+                                          <p>{{skil.description}}</p>
+                                       </div>
+                                    </ng-switch>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+               <div class="row jmpa__block-habilidad mb-2 mt-md-4" >
+                  <div class="col-xs-3 col-md-6"> 
+                     <a class="jmpa_volver" ng-click="wwp.previousStep()">&lt;&nbsp;Volver</a>
+                  </div>
+                  <div class="col-xs-9 col-md-6" ng-show="isNotNullNorUndefinedNorEmpty(wwp.selectedSpecialty)">
+                     <button class="btn jmpa__btn-submit jmpa__bg-tb jmpa__float-right" type="button" ng-click="wwp.saveStep2()">Continuar</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+<script>
+   $('#jmpaStep2').fadeIn(800);
+</script>

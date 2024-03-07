@@ -1,0 +1,27 @@
+<nav ng-include="'views/headerRegistration.html'" ng-controller="HeaderCtrl as header"></nav>
+<section id="regwiz01" class="loginNew loginNew--welcome">
+  <div class="container">
+		<div class="row ">
+      <div class="texto col-sm-5 col-md-4 registerNew__text">
+        <h4>Muéstrale al mundo tu Talento</h4>
+        <h5 class="subtitulo-register">SOLO TE RESTA COMPLETAR TU EXPERTISE</h5>
+        <p class="font-medium-register">Selecciona las habilidades que coincidan con tus<br>
+          conocimientos y experiencia para que puedas<br>aparecer en los resultados de búsqueda.</p>
+      </div>
+      <div class="inputs col-sm-7 col-lg-offset-1">
+        <div class="box">
+          <div ng-include="'views/platform/specArea.html'"></div>
+          <div class="row habilidad jmpa_block_habildiad">
+            <div ng-include="'views/platform/skillsEditable.html'"></div>
+          </div>
+          <div class="row botones jmpa_block_botones">
+            <button ng-click="register.saveChanges()" class="tomas button btn-confirmar btn-confirmar--welcome jmpa_buttons jmpa_btn_confirm">{{'btn.confirm' | translate}}</button>
+            <button ng-click="changeViewWithSpecElement('profile','')" class="button btn-cancelar btn-confirmar--welcome btn-cancelar--welcome jmpa_buttons jmpa_btn_cancel">{{'btn.cancelGoProfile' | translate}}</button>
+          </div>
+        </div>
+      </div>
+
+		</div>
+  </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

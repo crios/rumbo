@@ -1,0 +1,343 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<main id="wrap">
+  <div class="jmpa__contenido py-3 py-md-5 d-none" id="jmpaStep4">
+    <div class="container py-md-5">
+      <div class="row">
+        <div class="col-md-3 mb-3 mb-md-5 mb-md-0">
+          <div class="jmpa__estado-btn jmpa__bg-tb jmpa__rounded-circle">4/4</div>
+          <div class="jmpa__estado jmpa__titulo">TIPO DE PRESTACIÓN</div>
+        </div>
+        <div class="col-md-9 jmpa_blr">
+          <div class="row">
+            <div class="col-xs-12 mt-2 my-md-0">
+              <h1>Define la modalidad de atención profesional</h1>                        
+            </div>
+            <div class="col-xs-12">
+              <div class="jmpa__form-descripcion mb-2 mb-md-4">
+                Elige con quién prefieres resolver el trabajo:
+             </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="row jmpa_items_row">
+                <div class="jmpa_box_cell jmpa_items_row_step4 bg_new_icon_modalidad">
+                <div class="col-md-3 jmpa__item-card">
+                  <div id="workerType1" class="jmpa__item-card-body item-resolver d-flex align-items-center bg_new_icon bgmo_free jmpa__bg-view"
+                       ng-model="wwp.currentProject.workerTypeId" uib-btn-radio="1" ng-change="wwp.selectWorkerType(1)" ng-click="wwp.selectWorkerTypeForMobile(1)">
+
+                    <div class="row">
+                      <div class="col-xs-9 col-md-12  p-cel">
+                        <span class="new_proy">Rombus<b>Free</b></span>
+                        <span class="new_sub_proy">Un/a profesional individual</span>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-3 jmpa__item-card">
+                  <div id="workerType2" class="jmpa__item-card-body item-resolver d-flex align-items-center bg_new_icon bgmo_team jmpa__bg-view"
+                       ng-model="wwp.currentProject.workerTypeId" uib-btn-radio="2" ng-change="wwp.selectWorkerType(2)" ng-click="wwp.selectWorkerTypeForMobile(2)">
+
+                    <div class="row">
+                      <div class="col-xs-9 col-md-12  p-cel">
+                        <span class="new_proy">Rombus<b>Team</b></span>
+                        <span class="new_sub_proy">Project Manager y equipo</span>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-3 jmpa__item-card">
+                  <div id="workerType3" class="jmpa__item-card-body item-resolver d-flex align-items-center bg_new_icon bgmo_local jmpa__bg-view"
+                       ng-model="wwp.currentProject.workerTypeId" uib-btn-radio="3" ng-change="wwp.selectWorkerType(3)" ng-click="wwp.selectWorkerTypeForMobile(3)">
+
+                    <div class="row">
+                      <div class="col-xs-9 col-md-12 p-cel">
+                        <span class="new_proy">Rombus<b>Local</b></span>
+                        <span class="new_sub_proy">Cercano a mi ubicación</span>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-3 jmpa__item-card">
+                  <div id="workerType4" class="jmpa__item-card-body item-resolver d-flex align-items-center bg_new_icon bgmo_central jmpa__bg-view"
+                       ng-model="wwp.currentProject.workerTypeId" uib-btn-radio="4" ng-change="wwp.selectWorkerType(4)" ng-click="wwp.selectWorkerTypeForMobile(4)">
+
+                    <div class="row">
+                      <div class="col-xs-9 col-md-12 p-cel">
+                        <span class="new_proy">Rombus<b>Central</b></span>
+                        <span class="new_sub_proy">Atención corporativa</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="row jmpa_items_row view_nivel_2 views jmpa_div_off" ng-show="wwp.currentProject.workerTypeId === 2">
+                <div class="col-xs-12 col-md-8 col-md-offset-3 my-2  mt-md-4 p-des">
+                  <div class="jmpa__form-descripcion">
+                    <span>Designaremos un Project Manager</span>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-8 col-md-offset-3 p-des">
+                  <span class="jmpa_label jmpa_pc">Quien se encargará de atender el caso,<br>coordinar el proceso y dirigir el trabajo del<br>equipo profesional.</span>
+                  <span class="jmpa_label jmpa_cel">Quien se encargará de atender el caso, coordinar el proceso y dirigir el trabajo del equipo profesional.</span>
+                </div>  
+              </div>
+              <div class="row view_nivel views jmpa_div_off" ng-show="wwp.currentProject.workerTypeId === 1">
+                <input type="hidden" name="jmpa_id_nivel" id="jmpa_id_nivel">
+                <div class="col-xs-12 my-2  mt-md-4">
+                  <div class="jmpa__form-descripcion">
+                    <span>Selecciona el nivel de experiencia:</span>
+                  </div>
+                </div>
+                <div class="col-xs-12 mb-2 jmpa_niveles_des">
+                  <span class="jmpa_label">Inicial » talentos que transitan sus primeros años.</span>
+                  <span class="jmpa_label">Medio » ya cuentan con experiencia comprobable.</span>
+                  <span class="jmpa_label">Experto » poseen total dominio en la materia.</span>
+                </div>
+                <div class="col-xs-12">
+                  <div class="row jmpa_items_row">
+                    <div class="jmpa_box_cell jmpa_items_row_step4">
+                    <div class="col-md-4 jmpa__item-card">
+                      <div id="profExpertirse1" class="jmpa__item-card-body jmpa__item-experiencia d-flex align-items-center jmpa__bg-view"
+                           uib-btn-radio="1" ng-model="wwp.currentProject.professionalExpertise" ng-change="wwp.updateSuggestedPrice()">
+                        <div><span class="new_sub_proy">Inicial</span><span class="new_proy"><b>$</b></span></div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 jmpa__item-card">
+                      <div id="profExpertirse2" class="jmpa__item-card-body jmpa__item-experiencia d-flex align-items-center jmpa__bg-view"
+                           uib-btn-radio="2" ng-model="wwp.currentProject.professionalExpertise" ng-change="wwp.updateSuggestedPrice()">
+                        <div><span class="new_sub_proy">Medio</span><span class="new_proy"><b>$$</b></span></div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 jmpa__item-card">
+                      <div id="profExpertirse3" class="jmpa__item-card-body jmpa__item-experiencia d-flex align-items-center jmpa__bg-view"
+                           uib-btn-radio="3" ng-model="wwp.currentProject.professionalExpertise" ng-change="wwp.updateSuggestedPrice()">
+                        <div><span class="new_sub_proy">Experto</span><span class="new_proy"><b>$$$</b></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row view_tipo views jmpa_div_off"
+                   ng-show="(wwp.currentProject.workerTypeId === 1 && isNotNullNorUndefinedNorEmpty(wwp.currentProject.professionalExpertise))
+                                        || wwp.currentProject.workerTypeId === 2">
+
+                <input type="hidden" name="jmpa_id_tipo" id="jmpa_id_tipo">
+                <div class="col-xs-12 my-2 mt-md-4">
+                  <div class="jmpa__form-descripcion">
+                    <span>Tipo de proyecto:</span>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 mb-2">
+                <div class="row jmpa_items_row">
+                  <div class="jmpa_box_cell jmpa_items_row_step4 bg_new_icon_tipo">
+                <div class="col-xs-12 col-md-4 jmpa__item-card">
+                  <div id="payMethod1" class="jmpa__item-card-body jmpa__dl jmpa__item-tipo d-flex align-items-center bg_new_icon bgpro_unico jmpa__bg-view"
+                       uib-btn-radio="1" ng-model="wwp.currentProject.paymentMethodId" ng-change="wwp.selectPaymentMethod(1)">
+                       
+                       
+                       
+
+
+                      <div class="row">
+                        <div class="col-xs-9 col-md-12 p-cel">
+                         <span class="new_proy">Proyecto único,</span>
+                        <span class="new_sub_proy">empieza y termina una sola vez</span>
+                        </div>
+                      </div>                       
+
+
+
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-4 jmpa__item-card">
+                  <div id="payMethod2" class="jmpa__item-card-body jmpa__dl jmpa__item-tipo d-flex align-items-center bg_new_icon bgpro_recurrente jmpa__bg-view"
+                       uib-btn-radio="2" ng-model="wwp.currentProject.paymentMethodId" ng-change="wwp.selectPaymentMethod(2)">
+
+                       <div class="row">
+                        <div class="col-xs-9 col-md-12 p-cel">
+                          <span class="new_proy">Proyecto recurrente,</span>
+                        <span class="new_sub_proy">se repite según plazo estimado</span>
+                        </div>
+                      </div>  
+
+
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-4 jmpa__item-card">
+                  <div id="payMethod3" class="jmpa__item-card-body jmpa__item-tipo d-flex align-items-center bg_new_icon bgpro_nolose jmpa__bg-view"
+                       uib-btn-radio="3" ng-model="wwp.currentProject.paymentMethodId" ng-change="wwp.selectPaymentMethod(3)">
+
+                       <div class="row">
+                        <div class="col-xs-9 col-md-12 p-cel">
+                          <span class="new_proy">No lo sé aún,</span>
+                        <span class="new_sub_proy">lo definiré luego</span>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+              </div>
+
+              <div class="row view_plazo views jmpa_div_off" ng-show="wwp.currentProject.paymentMethodId === 2">
+                <input type="hidden" name="jmpa_id_plazo" id="jmpa_id_plazo">
+                <div class="col-xs-12 mb-2 mb-md-0">
+                  <div class="jmpa__form-descripcion">
+                    <span>Plazo estimado:</span>
+                  </div>
+                </div>
+                
+                <div class="col-xs-12 mb-2 ">
+                  <div class="jmpa__form-descripcion jmpa_label"> Indica el tiempo aproximado en el que necesitarás que se repita tu proyecto. Luego podrás precisarlo o
+                    revisarlo con mayor exactitud.</div>
+                 
+                </div>
+
+                <div class="col-xs-12 mb-2 mb-md-0">
+                  <div class="row jmpa_items_row">
+                    <div class="jmpa_box_cell jmpa_items_row_step4">
+                    <div class="col-md-4 jmpa__item-card">
+                      <div id="recurrentMethod2" class="jmpa__item-card-body jmpa__item-plazo d-flex align-items-center jmpa__bg-view"
+                           uib-btn-radio="2" ng-model="wwp.currentProject.recurrentType" ng-click="wwp.selectRecurrentType()">
+                        <span>1 a 7 días</span>
+                      </div>
+                    </div>
+                    <div class="col-md-4 jmpa__item-card">
+                      <div id="recurrentMethod3" class="jmpa__item-card-body jmpa__item-plazo d-flex align-items-center jmpa__bg-view"
+                           uib-btn-radio="3" ng-model="wwp.currentProject.recurrentType" ng-click="wwp.selectRecurrentType()">
+                        <span>8 a 30 días</span>
+                      </div>
+                    </div>
+                    <div class="col-md-4 jmpa__item-card">
+                      <div id="recurrentMethod4" class="jmpa__item-card-body jmpa__item-plazo d-flex align-items-center jmpa__bg-view"
+                           uib-btn-radio="4" ng-model="wwp.currentProject.recurrentType" ng-click="wwp.selectRecurrentType()">
+                        <span>Más de 30 días</span>
+                      </div>
+                    </div></div>
+                  </div>
+                </div>
+
+                
+
+
+              </div>
+
+              <div class="row view_atencion views jmpa_div_off" ng-show="wwp.currentProject.workerTypeId === 3 || wwp.currentProject.workerTypeId === 4">
+
+                <div class="col-xs-12 col-md-6 mt-2 mt-md-4  atencion_a" ng-show="wwp.currentProject.workerTypeId === 3">
+                  <div class="jmpa__form-descripcion">
+                    <span>Atención localizada:</span>
+                  </div>
+                  <div class="jmpa_nivel_descripcion ">
+                    Un Profesional de Rombus, cercano en tu localidad, se contactará para atender y gestionar
+                    personalmente las necesidades del proyecto.
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 mt-2 mt-md-4  atencion_b" ng-show="wwp.currentProject.workerTypeId === 4">
+                  <div class="jmpa__form-descripcion">
+                    <span>Atención central:</span>
+                  </div>
+                  <div class="jmpa_nivel_descripcion  ">
+                    Desde el área directiva de Rombus brindamos atención directa e integral para proyectos corporativos.
+                    Déjanos tus datos y te contactaremos de inmediato.
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 my-2 mt-md-4" >
+                  <div class="row jmpa__inputs-ciudad">
+                    <div class="col-xs-12 mb-2 jmpa_label"><b>Completa los datos de contacto y ubicación de tu proyecto*:</b></div>
+                    <div class="col-xs-12 col-md-6">
+                      <input type="text" class="form-control" placeholder="Nombres" ng-model="wwp.currentProject.contactName">
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <input type="text" class="form-control" placeholder="Apellidos" ng-model="wwp.currentProject.contactLastName">
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <input type="text" class="form-control" placeholder="Correo electrónico" ng-model="wwp.currentProject.contactEmail">
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <input type="text" class="form-control" placeholder="Whatsapp" ng-model="wwp.currentProject.contactPhone">
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <input type="text" class="form-control" placeholder="Ciudad" ng-model="wwp.currentProject.city">
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <!--<input type="text" class="form-control" placeholder="País">-->
+                      <select class="form-control" ng-model="wwp.currentProject.country" rombus-country-picker="name">
+                        <option value="">País</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row view_final views jmpa_div_off" ng-show="wwp.readyToCompelteStep === true" style="position: relative;">
+
+                <div class="jmpa_tooltip toolcel hide" >Si colocas un valor dentro del rango de precio sugerido,  aumentarás la cantidad y calidad de las propuestas.</div>
+
+                <div class="col-xs-9 col-xs-offset-3 col-md-4 col-md-offset-8 mt-2">
+                  <div class="jmpa__form-descripcion mb-2 my-md-2">
+                    <span>Rango de precios sugerido:</span>
+                  </div>
+                  <div class="form-group my-2 my-md-2">
+                    <div class="jmpa__ginfo">
+                      <i class="jmpa__info" ><div style="cursor: pointer;">?</div><div class="jmpa_tooltip hide" >Si colocas un valor dentro del rango de precio sugerido,  aumentarás la cantidad y calidad de las propuestas.</div></i>
+                      <div class="jmpa_dolar">
+                        <input name="sugerido" type="text" class="form-control"
+                               ng-model="wwp.currentProject.suggestedPrice" disabled>
+                        <span class="symbol-dolar">$</span>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="jmpa__form-descripcion my-md-2">
+                    <span>Tu presupuesto*:</span>
+                  </div>
+                  <div class="form-group my-2 my-md-2">
+                    <div class="jmpa_dolar">
+                      <input name="jmpa_precio" id="jmpa_precio" type="text" class="form-control" value=""
+                             placeholder="" ng-model="wwp.currentProject.userBudget">
+                      <span class="symbol-dolar">$</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12">
+                  <div class="row mb-2 mt-md-4">
+                    <div class="col-xs-3 col-md-6 ">
+                      <a class="jmpa_volver" ng-click="wwp.previousStep()">&lt;&nbsp;Volver</a>
+                     </div>
+                    <div class="col-xs-9 col-md-6">
+                      <button class="btn jmpa__btn-submit jmpa__bg-tb jmpa__float-right  " type="button"
+                              ng-click="wwp.saveStep4()">¡Terminado! Ir a Resúmen
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  $('#jmpaStep4').fadeIn(800);
+  $('.jmpa__info').click(function(){
+      if($('.jmpa_tooltip').hasClass('hide')){
+        $('.jmpa_tooltip').removeClass('hide');
+      }else{
+        $('.jmpa_tooltip').addClass('hide');
+      }
+      
+  });
+</script>

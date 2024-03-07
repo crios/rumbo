@@ -1,0 +1,40 @@
+<section id="sideBarContractUser">
+  <div class="modal-body row" id="modal-body">
+    <div class="col-sm-12">
+      <button type="button" class="close" aria-label="Close" ng-click="sibaModal.ok()">
+        <span aria-hidden="true" class="modalCloseBtn">&times;</span>
+      </button>
+    </div>
+    <form class="form-horizontal" ng-submit="sibaModal.confirmContract()">
+      <div class="col-sm-12">
+        <p class="text-center">{{'modals.contractText1' | translate}}{{sibaModal.basicInfo.fullName}}{{'modals.contractText2' | translate}}</p>
+      </div>
+      <div class="col-sm-12">
+        <p class="text-center">{{'modals.contractText3' | translate}}</p>
+      </div>
+      <div class="col-sm-12 center-block">
+        <textarea maxlength="300" placeholder="Mensaje - hasta 300 caracteres " ng-model="sibaModal.message" required></textarea>
+      </div>
+      <div class="col-sm-12">
+        <div class="col-sm-6 labelCol"><label for="sibaModalUserName">{{'modals.textName' | translate}}:</label></div>
+        <div class="col-sm-6 inputCol">
+          <input id="sibaModalUserName" type="text" ng-model="sibaModal.userName"
+                 ng-disabled="sibaModal.isLogged === true" required>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="col-sm-6 labelCol"><label for="sibaModalEmail">  {{'modals.textEmail' | translate}}:</label></div>
+        <div class="col-sm-6 inputCol">
+          <input id="sibaModalEmail" type="text" ng-model="sibaModal.userMail"
+                 ng-disabled="sibaModal.isLogged === true" required>
+        </div>
+      </div>
+      <div class="col-sm-12 modalFooterBtn">
+        <center>
+          <button class="btn btn-primary" type="submit">{{'btn.confirm' | translate}}</button>
+          <button class="btn btn-default" type="button" ng-click="sibaModal.ok()">{{'btn.cancel' | translate}}</button>
+        </center>
+      </div>
+    </form>
+  </div>
+</section>

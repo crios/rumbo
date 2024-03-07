@@ -1,0 +1,57 @@
+<section id="contactUsModal">
+  <div class="modal-body row" id="modal-body">
+    <div class="col-sm-12">
+      <button type="button" class="close" aria-label="Close" ng-click="modal.ok()">
+        <span aria-hidden="true" class="modalCloseBtn">&times;</span>
+      </button>
+    </div>
+    <div class="col-xs-12">
+      <h3 class="text-center modalTitle">Contacto</h3>
+    </div>
+    <form ng-submit="modal.sendEmail(mensaje)">
+      <div class="col-xs-12 col-sm-6">
+        <div class="form-group">
+          <input type="text" class="form-control" id="nombreCompleto" placeholder="Nombre y Apellido *" ng-model="mensaje.fullName" required>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="form-group">
+          <input type="text" class="form-control" id="empresa" placeholder="Empresa u organización" ng-model="mensaje.company">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="form-group">
+          <input type="text" class="form-control" id="ciudad" placeholder="Ciudad / País" ng-model="mensaje.location">
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="form-group">
+          <input type="email" class="form-control" id="Email" placeholder="Email *" ng-model="mensaje.email" required>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group">
+          <select ng-if="shouldChangeReason === true" name="" class="form-control" ng-model="mensaje.reason" required>
+            <option value="">{{'contactView.queryType' | translate}} *</option>
+            <option value="Solicitar asesoramiento">{{'contactView.queryType1' | translate}}</option>
+            <option value="Espacios Rombus/Quiero ser Coworking">{{'contactView.queryType2' | translate}}</option>
+            <option value="Oficinas Rombus/Quiero ser Representante">{{'contactView.queryType3' | translate}}</option>
+            <option value="Postular a Staff Corporativo/Project Manager">{{'contactView.queryType4' | translate}}</option>
+            <option value="Institucional/Prensa">{{'contactView.queryType5' | translate}}</option>
+          </select>
+          <input ng-if="shouldChangeReason !== true" type="text" class="form-control" id="reason" ng-model="mensaje.reason" readonly required>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group">
+          <textarea cols="30" rows="10" class="form-control" placeholder="Mensaje" ng-model="mensaje.query" required></textarea>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="form-group">
+          <button type="submit" class="btn btn-block btn-primario text-uppercase">{{'btn.send' | translate}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

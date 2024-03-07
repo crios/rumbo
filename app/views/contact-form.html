@@ -1,0 +1,70 @@
+<section class="conocerte  wow fadeIn" id="conocerte" ng-controller="ContactCtrl as cont">
+    <div class="container">
+      <article class="row">
+        <div class="col-xs-12">
+          <h3 class="text-center seccion__titulos">Nos interesa conocerte</h3>
+          <p class="text-center seccion__descripciones seccion__descripciones--conocenos margin-top">{{'home.contactText1' | translate}}</p>
+        </div> <!-- End Nuestra Organización -->
+      </article>
+      <article class="row margin-top">
+        <form ng-submit="cont.sendEmail(mensaje)">
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="nombreCompleto" placeholder="Nombre y Apellido *" ng-model="mensaje.fullName" required>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="empresa" placeholder="Empresa u organización" ng-model="mensaje.company">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="ciudad" placeholder="Ciudad / País" ng-model="mensaje.location">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+              <input type="email" class="form-control" id="Email" placeholder="Email *" ng-model="mensaje.email" required>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <select name="" class="form-control" ng-model="mensaje.reason" required>
+                <option value="">{{'contactView.queryType' | translate}} *</option>
+                <option value="Solicitar asesoramiento">{{'contactView.queryType1' | translate}}</option>
+                <option value="Espacios Rombus/Quiero ser Coworking">{{'contactView.queryType2' | translate}}</option>
+                <option value="Oficinas Rombus/Quiero ser Representante">{{'contactView.queryType3' | translate}}</option>
+                <option value="Postular a Staff Corporativo/Project Manager">{{'contactView.queryType4' | translate}}</option>
+                <option value="Institucional/Prensa">{{'contactView.queryType5' | translate}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <textarea cols="30" rows="10" class="form-control" placeholder="Mensaje" ng-model="mensaje.query" required></textarea>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="form-group">
+              <button type="submit" class="btn  btn-block btn-primario text-uppercase">{{'btn.send' | translate}}</button>
+            </div>
+          </div>
+        </form>
+      </article> <!-- Formulario de contacto -->
+      <article class="row text-center informacionEmpresa">
+        <div class="col-xs-12 col-sm-6">
+          <i class="fa fa-map-marker icono-medium text-primary"></i>
+          <span class="informacionEmpresa__item margin-top">Rombus Central</span>
+          <span class="informacionEmpresa__item">Buenos Aires, Argentina</span>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <i class="fa fa-envelope icono-medium text-primary"></i>
+          <span class="informacionEmpresa__item margin-top">Envíanos un email</span>
+          <span class="informacionEmpresa__item">
+              <a href="mailto:info@rombusglobal.com">info@rombusglobal.com</a>
+          </span>
+        </div>
+      </article> <!-- Ubicación- Correo -->
+    </div>
+  </section> <!-- End Conocerte -->

@@ -1,0 +1,48 @@
+<div class="jmpa_nuevomenu">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <a ng-click="changeViewWithSpecElement('','')"><img class="jmpa_nm_logo" src="../images/logo_rombus.jpg" alt="Rombus Global"></a>
+      </div>
+      <div class="col-xs-6 col-md-8">         
+          <ul class="jmpa_view_pc">
+            <li ><a style="margin-right: 0px;"><span>¿Ya tienes una Cuenta?</span></a></li>
+          </ul>
+          <a style="margin-right: 0px;" ng-click="changeViewWithSpecElement('login','')" class="jmpa_btn_menu_publicar jmpa_view_pc">Ingresa aquí</a>
+          
+
+          <div class="jmpa_user_logueado">
+            <a onclick="openMenuCell()" class="jmpa_hamburguesa jmpa_view_cell">
+              <i></i><i></i><i></i>
+            </a>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="jpa_menu_user_cell"  style="display: none;">
+    <div class="jmpa_btn_publica_cell" ng-if="header.userLogged === true">
+      <a ng-click="changeViewWithSpecElement('project-wizard/step1','')" class="jmpa_btn_menu_publicar">Publicar Proyecto</a>
+    </div>
+    <ul ng-class="{'cell_invitado': header.userLogged === true }">
+      <li class="litienecuenta" ng-if="header.userLogged != true"><a ng-click="changeViewWithSpecElement('login','')">¿Ya tienes una cuenta?</a></li>
+    </ul>
+    <div class="jmpa_btn_publica_cell" ng-if="header.userLogged != true">
+      <a ng-click="changeViewWithSpecElement('login','')" class="jmpa_btn_menu_publicar">Ingresa aquí</a>
+    </div>
+  </div>
+</div>
+<script>
+  function openMenu(){
+    if($('.jpa_menu_user').css('display') == 'none'){$('.jpa_menu_user').show();}else{$('.jpa_menu_user').hide();}
+  }
+  function openMenuCell(){
+    if($('.jpa_menu_user_cell').css('display') == 'none'){
+      $('.jpa_menu_user_cell').show();$('.jmpa_hamburguesa').addClass('closeh');
+    }
+    else{
+      $('.jpa_menu_user_cell').hide();$('.jmpa_hamburguesa').removeClass('closeh');
+    }    
+  }
+</script>

@@ -1,0 +1,22 @@
+<section id="emblemasMembership" ng-controller="EmblemasMembershipCtrl as embMemb">
+  <div class="row">
+    <h5>{{'sideBar.membership' | translate}}</h5>
+  </div>
+  <div class="row">
+    <div class="col-xs-4" ng-mouseenter="embMemb.notifyMouseEnter('reg')" ng-mouseleave="embMemb.notifyMouseLeave('reg')" ng-click="embMemb.notifyClick('reg')">
+      <img ng-show="membershipModel.reg === true || embMemb.tempReg === true" src="../../images/membresia-registrado.svg" class="img-responsive img-controlled" />
+      <img ng-show="membershipModel.reg === false && embMemb.tempReg !== true" src="../../images/membresia-registrado-gris.svg" class="img-responsive img-controlled" />
+      <img ng-show="membershipModel.reg === true" src="../../images/indicador-membresia.png" class="center-block selectedArrow" />
+    </div>
+    <div class="col-xs-4" ng-mouseenter="embMemb.notifyMouseEnter('acr')" ng-mouseleave="embMemb.notifyMouseLeave('acr')" ng-click="embMemb.notifyClick('acr')">
+      <img ng-show="membershipModel.acr === true || embMemb.tempAcr === true" src="../../images/membresia-acreditado.svg" class="img-responsive img-controlled" />
+      <img ng-show="membershipModel.acr === false && embMemb.tempAcr !== true" src="../../images/membresia-acreditado-gris.svg" class="img-responsive img-controlled" />
+      <img ng-show="membershipModel.acr === true" src="../../images/indicador-membresia.png" class="center-block selectedArrow" />
+    </div>
+    <div class="col-xs-4" ng-mouseenter="embMemb.notifyMouseEnter('pre')" ng-mouseleave="embMemb.notifyMouseLeave('pre')" ng-click="embMemb.notifyClick('pre')">
+      <img ng-show="membershipModel.pre === true || embMemb.tempPre === true" src="../../images/membresia-premium.svg" class="img-responsive img-controlled" />
+      <img ng-show="membershipModel.pre === false && embMemb.tempPre !== true" src="../../images/membresia-premium-gris.svg" class="img-responsive img-controlled" />
+      <img ng-show="membershipModel.pre === true" src="../../images/indicador-membresia.png" class="center-block selectedArrow" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel--interna slide portfolios--marginTop">
+  <!-- Wrapper for Slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <!-- Set the first background image using inline CSS below. -->
+      <div class="fill" style="background-image:url('../../images/userSamples/sample7/Altosol-1B-1920x1080.jpg');"></div>
+    </div>
+  </div>
+</header>
+<main class="main" style="background-color: #ffffff;">
+  <section class="porftoliosImages container-fluid">
+    <article class="portfoliosImages__top row no-gutter">
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample7/Altosol-2-960x1340.jpg" class="img-responsive">
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder portfolioBorder--Top">
+          <img src="../../images/userSamples/sample7/Altosol-3-960x670.jpg" class="img-responsive">
+        </figure>
+        <figure class="portfoliosBorder portfolioBorder--Top">
+          <img src="../../images/userSamples/sample7/Altosol-4-960x670.jpg" class="img-responsive">
+        </figure>
+      </div>
+    </article>
+    <!-- Add the extra clearfix for only the required viewport -->
+    <div class="clearfix visible-xs-block"></div>
+  </section>
+  <section class="container porftoliosInformation">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3><strong>NOVOMEGA </strong> / PRODUCTO</h3>
+        <h4>ALTOSOL <br> Oliva Gourmet</h4>
+        <strong class="porftoliosInformation__description">Aceite de Oliva Virgen Extra y Blends</strong>
+        <div class="porftoliosInformation__perfil d-none d-sm-block">
+          <!--<figure>
+            <img src="../../images/userSamples/icono_argentina.png" class="img-responsive img-circle">
+            <figcaption>
+              <h5>Florencia Schmidt</h5>
+              <a href="#">Autor / Ver Perfil</a>
+            </figcaption>
+          </figure>-->
+        </div>
+      </div>
+      <div class="col-sm-6 margin-top--small">
+        <p>Novomega presentó Altosol, su línea de Aceites de Oliva Virgen Extra gourmet en un exclusivo y novedoso envase Mini Cava autoexpendedor.</p>
+        <p>Diseñamos la identidad de producto, a partir de su imagen marcaria y familia de Blends, implementamos la estrategia de comunicación y venta, incluyendo una oferta promocional mediante una campaña landing.</p>
+        <p>Para constatar nivel de aceptación y respuesta, preparamos una investigación de mercado dirigida a un nicho de consumidores expertos en aceite de oliva, a los cuales se les ofreció la posibilidad de probar el producto y contarnos su experiencia mediante un completo cuestionario post prueba. A cambio se les obsequió una Mini Cava sin cargo. <br>
+          El resultado del sondeo arrojo reveladores resultados que condujeron la estrategia y le permitieron al cliente planificar mejor sus esfuerzos comerciales y logísticos.
+        </p>
+
+
+      </div>
+    </div>
+    <!-- Only information Author Mobile -->
+    <div class="row d-sm-none">
+      <div class="col-xs-12">
+        <div class="porftoliosInformation__perfil">
+          <!--<figure>
+            <img src="../../images/userSamples/icono_argentina.png" class="img-responsive img-circle">
+            <figcaption>
+              <h5>Florencia Schmidt</h5>
+              <a href="#">Autor / Ver Perfil</a>
+            </figcaption>
+          </figure>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid portfolio-footer">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="hide-on-desktop">Proveemos soluciones profesionales<br/> para tu empresa</p>
+        <p class="hide-on-mobile">Proveemos soluciones profesionales para tu empresa</p>
+        <button ng-click="changeViewWithSpecElement('project-wizard/step1','')" class="start-now-button">Publica tu proyecto</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer ng-include="'views/footer.html'"></footer>

@@ -1,0 +1,181 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav><!--<img src="images/fondo_login.png" class="hidden-xs img-responsive" style="z-index:-10" />-->
+<section id="perfil">
+  <div class="container tab-container">
+      <div class="hidden-xs row" style="padding-top: 0px;">
+		    <div class="tab-perfil">
+            <h4>{{'profileView.userProfile' | translate}}</h4>
+        </div>
+      </div>
+      <div class="row flexbox migris">
+          <section class="flexbox__sidebar dashboard__sidebar " id="profileSideBar" ng-include="'views/profile/sideBar.html'"></section>
+          <div class="col-sm-7 flexbox__information dashboard__information perfil__sidebar">
+            <ng-switch on="prof.modeExtract">
+              <div ng-switch-when="0" class="row extracto">
+                  <div>
+                  <div class="col-sm-12 cabeza">
+                    <h4>{{'profileView.extractTitle' | translate}}</h4>
+
+                    <div class="editar">
+                      <a ng-click="prof.toggleExtract()" class="fa fa-pencil"></a>
+                    </div>
+                    <hr>
+                  </div>
+                  <div class="col-sm-11 cuerpo3">
+                    <textarea ta-expandable ta-Min-Height="50" class="extractDetails noBorderTextArea textarea-grande" ng-model="prof.extract" readonly></textarea>
+                  </div>
+                </div>
+              </div>
+              <div ng-switch-when="1" class="row extracto">
+                <div class="col-sm-12 cabeza">
+                  <h4>{{'profileView.extractTitle' | translate}}</h4>
+                  <div class="editar">
+                    <a ng-click="prof.saveExtract()" class="fa fa-floppy-o"></a>
+                    <label class="pull-right caracteres">{{prof.tempExtract.length}}/1500</label>
+                  </div>
+                  <hr>
+                </div>
+                <div class="cuerpo3">
+                  <textarea ta-expandable ta-Min-Height="50" ng-model="prof.tempExtract" class="extractDetails" maxlength="1500"></textarea>
+                </div>
+              </div>
+            </ng-switch>
+            <ng-switch on="prof.modePortfolio">
+              <div ng-switch-when="0" class="row portfolio hidden-xs hidden-sm">
+                <div class="cabeza">
+                  <h4>{{'profileView.portfolioTitle' | translate}}</h4>
+                  <div class="editar">
+                    <a ng-if="prof.portfolioItems.length !== 0" ng-click="prof.togglePortfolio()" class="fa fa-pencil"></a>
+                    <a ng-if="prof.portfolioItems.length === 0" class="fake"> </a>
+                  </div>
+                  <hr class="marginBottom-none">
+                </div>
+                <div class="cuerpo2 portfolio-items row">
+                  <div ng-repeat="item in prof.portfolioItems">
+                    <ng-switch on="item.typeName">
+                      <div ng-switch-when="Image" class="col-xs-6 col-md-3 portfolio-item" ng-style="{'background-image': 'url(' + item.preview + ')'}"
+                          style="background-size: cover;" ng-click="prof.showPortfolioItem(item)">
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                      <div ng-switch-when="Video" class="col-xs-6 col-md-3 portfolio-item video" ng-click="prof.showPortfolioItem(item)">
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                      <div ng-switch-when="Audio" class="col-xs-6 col-md-3 portfolio-item audio" ng-click="prof.showPortfolioItem(item)">
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                      <div ng-switch-when="Other" class="col-xs-6 col-md-3 portfolio-item other" ng-click="prof.showPortfolioItem(item)">
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                    </ng-switch>
+                  </div>
+                  <div class="col-xs-6 col-md-3 portfolio-item portfolio-item-agregar" ng-if="prof.portfolioItems.length < prof.maxAmountItems">
+                    <div class="over">
+                      <a ng-click="prof.addPortfolio()" class="fa fa-plus"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div ng-switch-when="1" class="row portfolio hidden-xs">
+                <div class="cabeza">
+                  <h4>{{'profileView.portfolioTitle' | translate}}</h4>
+                  <div class="editar">
+                    <a ng-click="prof.togglePortfolio()" class="fa fa-floppy-o"></a>
+                  </div>
+                  <hr>
+                </div>
+                <div class="cuerpo2 portfolio-items row">
+                  <div ng-repeat="item in prof.portfolioItems">
+                    <ng-switch on="item.typeName">
+                      <div ng-switch-when="Image" class="col-sm-3 portfolio-item edit" ng-style="{'background-image': 'url(' + item.preview + ')'}" style="background-size: cover;">
+                        <a ng-click="prof.deletePortfolio(item)" class="fa fa-trash new-position"></a>
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                      <div ng-switch-when="Video" class="col-sm-3 portfolio-item edit video">
+                        <a ng-click="prof.deletePortfolio(item)" class="fa fa-trash new-position"></a>
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                      <div ng-switch-when="Audio" class="col-sm-3 portfolio-item edit audio">
+                        <a ng-click="prof.deletePortfolio(item)" class="fa fa-trash new-position"></a>
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                      <div ng-switch-when="Other" class="col-sm-3 portfolio-item edit other" >
+                        <a ng-click="prof.deletePortfolio(item)" class="fa fa-trash new-position"></a>
+                        <p class="portfolioTitle">{{item.title}}</p>
+                      </div>
+                    </ng-switch>
+                  </div>
+                  <div class="col-xs-3 portfolio-item portfolio-item-agregar" ng-if="prof.portfolioItems.length < prof.maxAmountItems">
+                    <div class="over">
+                      <a ng-click="prof.addPortfolio()" class="fa fa-plus"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-switch>
+            <div class="row aptitudes">
+              <div class="cabeza">
+                <h4>{{'profileView.skillsTitle' | translate}}</h4>
+                <div class="editar">
+                  <a ng-click="prof.toggleSkills()" class="fa fa-pencil"></a>
+                </div>
+                <hr class="marginBottom-none">
+              </div>
+              <div ng-include="'views/platform/skillsViewOnly.html'" class="aptitudes-items">
+              </div>
+            </div>
+            <ng-switch on="prof.modeCv">
+              <div ng-switch-when="0" class="row cv">
+                <div class="cabeza menoslarge">
+                  <h4>{{'profileView.cvTitle' | translate}}</h4>
+                  <div class="editar">
+                    <a ng-click="prof.toggleCv()" class="fa fa-pencil"></a>
+                  </div>
+                  <hr >
+                </div>
+                <div class="cuerpo4">
+                  <uib-tabset active="active" class="cv-tabs">
+                    <uib-tab index="0" heading="{{'profileView.cvExperience' | translate}}" select="prof.tabSelected()">
+                      <textarea ta-expandable readonly class="noBorderTextArea" ng-model="prof.cvExperiencia"></textarea>
+                    </uib-tab>
+                    <uib-tab index="1" heading="{{'profileView.cvFormation' | translate}}" select="prof.tabSelected()">
+                      <textarea ta-expandable readonly class="noBorderTextArea" ng-model="prof.cvFormacion"></textarea>
+                    </uib-tab>
+                    <uib-tab index="2" heading="{{'profileView.cvCertification' | translate}}" select="prof.tabSelected()">
+                      <textarea ta-expandable readonly class="noBorderTextArea" ng-model="prof.cvCertificacion"></textarea>
+                    </uib-tab>
+                  </uib-tabset>
+                </div>
+              </div>
+              <div ng-switch-when="1" class="row cv">
+                <div class="cabeza menoslarge" >
+                  <h4>{{'profileView.cvTitle' | translate}}</h4>
+                  <div class="editar">
+                    <a ng-click="prof.saveCv()" class="fa fa-floppy-o"></a>
+                  </div>
+                  <hr>
+                </div>
+                <div class="cuerpo4 relative">
+                  <ng-switch on="active">
+                    <label ng-switch-when="0" class="pull-right counterLbl counterLbl--cv">{{prof.tempExperiencia.length}}/2000</label>
+                    <label ng-switch-when="1" class="pull-right counterLbl counterLbl--cv">{{prof.tempFormacion.length}}/2000</label>
+                    <label ng-switch-when="2" class="pull-right counterLbl counterLbl--cv">{{prof.tempCertificacion.length}}/2000</label>
+                  </ng-switch>
+                  <uib-tabset active="active" class="cv-tabs">
+                    <uib-tab index="0" heading="{{'profileView.cvExperience' | translate}}" select="prof.tabSelected()" >
+                      <textarea ta-expandable ng-model="prof.tempExperiencia" maxlength="2000"></textarea>
+                    </uib-tab>
+                    <uib-tab index="1" heading="{{'profileView.cvFormation' | translate}}" select="prof.tabSelected()">
+                      <textarea ta-expandable ng-model="prof.tempFormacion" maxlength="2000"></textarea>
+                    </uib-tab>
+                    <uib-tab index="2" heading="{{'profileView.cvCertification' | translate}}" select="prof.tabSelected()">
+                      <textarea ta-expandable ng-model="prof.tempCertificacion" maxlength="2000"></textarea>
+                    </uib-tab>
+                  </uib-tabset>
+                </div>
+              </div>
+            </ng-switch>
+          </div>
+      </div>
+  </div>
+</section>
+<!--<section id="emblemas" ng-include="'views/platform/emblemas.html'"></section>-->
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

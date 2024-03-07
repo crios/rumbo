@@ -1,0 +1,181 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav><!--<img src="images/fondo_login.png" class="hidden-xs img-responsive" style="z-index:-10" />-->
+<section id="perfil">
+  <div class="container tab-container">
+      <div class="hidden-xs row" style="padding-top: 0px;">
+		    <div class="tab-perfil">
+            <h4>{{'profileView.userProfile' | translate}}</h4>
+        </div>
+      </div>
+      <div class="row flexbox migris">
+          <section class="flexbox__sidebar dashboard__sidebar " id="profileSideBar" ng-include="'views/profile-company/sideBar.html'"></section>
+          <div class="col-sm-7 flexbox__information dashboard__information perfil__sidebar">
+            <div class="extracto wrapper">
+              <ng-switch on="comProf.modeExtract">
+                <div ng-switch-when="0" class="box">
+                  <div class="box-header">
+                    <h4 class="section-title">{{'profileView.extractTitle' | translate}}</h4>
+                    <a ng-click="comProf.toggleExtract()"><i class="fa fa-pencil"></i></a>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="cuerpo3">
+                    <textarea ta-expandable ta-Min-Height="50" class="extractDetails no-resize borderless" ng-model="comProf.companyInfo.extract" readonly></textarea>
+                  </div>
+                </div>
+                <div ng-switch-when="1" class="box">
+                  <div class="box-header">
+                    <h4 class="section-title">{{'profileView.extractTitle' | translate}}</h4>
+                    <div>
+                      <label class="caracteres">{{comProf.tempExtract.length}}/1500</label>
+                      <a ng-click="comProf.saveExtract()"><i class="fa fa-floppy-o"></i></a>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="cuerpo3">
+                    <textarea ta-expandable ta-Min-Height="50" ng-model="comProf.tempExtract" class="extractDetailsEdit" maxlength="1500"></textarea>
+                  </div>
+                </div>
+              </ng-switch>
+            </div>
+
+            <div class="extracto wrapper">
+              <ng-switch on="comProf.modeCompanyInfo">
+                <div ng-switch-when="0" class="box">
+                  <div class="box-header">
+                    <h4 class="section-title">Mi empresa</h4>
+                    <a ng-click="comProf.toggleCompanyInfo()"><i class="fa fa-pencil"></i></a>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="cuerpo3 company__edit">
+                    <figure class="company__edit--image" ng-show="comProf.companyInfo.logo === null || comProf.companyInfo.logo === undefined">
+  <!--                    <img src="https://via.placeholder.com/252" class="img-responsive" alt="">-->
+                      <div class="company__edit--gray"></div>
+                      <div class="company__edit--action">
+                        <a ng-click="comProf.uploadLogo()">
+                          <span class="fz-2rem">Logo</span>
+                          <span class="fz-1rem">Subir imagen</span>
+                        </a>
+                      </div>
+                    </figure>
+                    <figure class="company__edit--image" ng-show="comProf.companyInfo.logo !== null && comProf.companyInfo.logo !== undefined">
+                      <img ng-src="{{comProf.companyInfo.logo}}" class="img-responsive" alt="">
+                    </figure>
+                    <div class="company__edit--information">
+                      <ul>
+                        <li><span ng-hide="isNotNullNorUndefinedNorEmpty(comProf.companyInfo.name)">Nombre: </span><span class="brave">{{comProf.companyInfo.name}}</span></li>
+                        <li><span ng-hide="isNotNullNorUndefinedNorEmpty(comProf.companyInfo.industry)">Actividad/Industria: </span><span>{{comProf.companyInfo.industry}}</span></li>
+                        <li>
+                          <span ng-hide="comProf.companyInfo.city !== undefined || comProf.companyInfo.country !== undefined">Ubicación: </span>
+                          <span ng-show="comProf.companyInfo.city !== undefined || comProf.companyInfo.country !== undefined">
+                            {{comProf.companyInfo.city}}, {{comProf.companyInfo.country}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div ng-switch-when="1" class="box">
+                  <div class="box-header">
+                    <h4 class="section-title">Mi empresa</h4>
+                    <a ng-click="comProf.saveCompanyInfo()"><i class="fa fa-save"></i></a>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="cuerpo3 company__edit">
+                    <figure class="company__edit--image" ng-show="comProf.companyInfo.logo === null || comProf.companyInfo.logo === undefined">
+                      <img src="https://via.placeholder.com/252" class="img-responsive" alt="">
+                      <div class="company__edit--action">
+                        <a ng-click="comProf.uploadLogo()">
+                          <span class="fz-2rem text-black">Logo</span>
+                          <span class="fz-1rem text-black">Subir imagen</span>
+                        </a>
+                      </div>
+                    </figure>
+                    <figure class="company__edit--image" ng-show="comProf.companyInfo.logo !== null && comProf.companyInfo.logo !== undefined">
+                      <img ng-src="{{comProf.companyInfo.logo}}" class="img-responsive" alt="">
+                    </figure>
+                    <div class="company__edit--information">
+                      <ul>
+                        <li>
+                          <label>Nombre de la empresa:</label>
+                          <input type="text" ng-model="comProf.tempName" class="form-control"/></li>
+                        <li>
+                          <label>Actividad/Industria:</label>
+                          <input type="text" ng-model="comProf.tempIndustry" class="form-control"/></li>
+                        <li>
+                          <label>Ciudad:</label>
+                          <input type="text" ng-model="comProf.tempCity" class="form-control"/></li>
+                        <li>
+                          <label>País:</label>
+                          <select class="inputEdit--new inputEdit--new--especialidad" ng-model="comProf.tempCountry" rombus-country-picker="name">
+                            <option value="">{{'profileView.selectCountry' | translate}}</option>
+                          </select>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </ng-switch>
+            </div>
+            
+            <div class="extracto wrapper">
+              <div class="box">
+                <div class="section-header">
+                  <h4 class="title">Mis Proyectos</h4>
+                  <a class="new-project" ng-click="changeViewWithSpecElement('project-wizard/step1','')">Publicar nuevo proyecto</a>
+                </div>
+                <div class="divider"></div>
+                <div class="box-list">
+                  <ul>
+                    <li ng-repeat="pj in comProf.projectList  | orderBy: 'sortValue'">
+                      <span class="ellipsis project-title">
+                        <i ng-class="{ 'dot user__especialidadBoton--estrategia': pj.specialtyId === 2,
+                            'dot user__especialidadBoton--creatividad':  pj.specialtyId === 3,
+                            'dot user__especialidadBoton--desarrollo': pj.specialtyId === 4,
+                            'dot user__especialidadBoton--posicionamiento': pj.specialtyId === 5,
+                            'dot user__especialidadBoton--difusion': pj.specialtyId === 6}"></i>
+                        <span class="hide-on-mobile">{{pj.title}}</span>
+                        <a ng-click="comProf.loadProjectDetails(pj)" class="hide-on-desktop">{{pj.title}}</a>
+                      </span>
+                      <div class="project-details">
+                        <a ng-click="comProf.loadProjectDetails(pj)" class="see-file">Ver ficha</a>
+                        <p ng-class="{	'project-status draft': pj.status === 1,
+                                'project-status open': pj.status === 2,
+                                'project-status assigned': pj.status === 3,
+                                'project-status rejected': pj.status === 4,
+                                'project-status closed': pj.status === 5,
+                                'project-status cancelled': pj.status === 6
+                              }"
+                        >
+                        <span ng-if="pj.status === 1">Borrador</span>
+                        <span ng-if="pj.status === 2">Abierto</span>
+                        <span ng-if="pj.status === 3">Asignado</span>
+                        <span ng-if="pj.status === 4">Rechazado</span>
+                        <span ng-if="pj.status === 5">Cerrado</span>
+                        <span ng-if="pj.status === 6" >Cancelado</span>
+                        </p>
+                        <div class="icons">
+                          <div class="icon-container">
+                            <a ng-click="comProf.editProject(pj)" ng-if="pj.status !== 3 && pj.status !== 4">
+                              <i class="fa fa-pencil"></i>
+                            </a>
+                          </div>
+                          <div class="icon-container">
+                            <a ng-click="comProf.deleteProject(pj)" ng-if="pj.status !== 3">
+                              <i class="fa fa-times light"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <button class="primary-button-block hide-on-desktop" ng-click="changeViewWithSpecElement('project-wizard/step1','')">
+                    Publicar nuevo proyecto
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+  </div>
+</section>
+<footer id="footer" ng-include="'views/footer.html'" ></footer>

@@ -1,0 +1,67 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel--interna slide portfolios--marginTop">
+  <!-- Wrapper for Slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <!-- Set the first background image using inline CSS below. -->
+      <div class="fill" style="background-image:url('../../images/userSamples/sample1/hmandt-1-1920x1080.jpg');"></div>
+    </div>
+  </div>
+</header>
+<main class="main" style="background-color: #ffffff;">
+  <section class="porftoliosImages container-fluid">
+    <article class="portfoliosImages__top row no-gutter">
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder  portfolioBorder--Right">
+          <img src="../../images/userSamples/sample1/hmandt-2-960x670.jpg" class="img-responsive">
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder">
+          <img src="../../images/userSamples/sample1/HMANDT-3-960x670.jpg" class="img-responsive">
+        </figure>
+      </div>
+    </article>
+    <!-- Add the extra clearfix for only the required viewport -->
+    <div class="clearfix visible-xs-block"></div>
+    <article class="portfoliosImages__top row no-gutter">
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample1/HMANDT-4-960x670.jpg" class="img-responsive">
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder portfolioBorder--Top ">
+          <img src="../../images/userSamples/sample1/HMANDT-5-960x670.jpg" class="img-responsive">
+        </figure>
+      </div>
+    </article>
+  </section>
+  <section class="container porftoliosInformation">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3><strong>HMANDT </strong> / BRANDING</h3>
+        <h4 class="maxWidth">Hotel Marketing and Technology</h4>
+        <strong class="porftoliosInformation__description">Identidad, Web Landing</strong>
+        
+      </div>
+      <div class="col-sm-6 margin-top--small">
+        <p>HMandT es una empresa de servicios turísticos con base en Ontario-Canadá, dedicada al marketing de hoteles y su instalación en motores de reserva.<br>
+        Realizamos la creación de su identidad marcaria, apelando a atributos de clara significación: el mundo y la estrella mirados desde una ventanilla o pantalla.</p>
+        <p>En base a una alianza como Affiliate Partner de Booking.com y Rentalcars.com, surgió la necesidad de diseñar su página de presentación, incluyendo las ofertas y destinos preferidos para el alojamiento, traslados y viajes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid portfolio-footer">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="hide-on-desktop">Proveemos soluciones profesionales<br/> para tu empresa</p>
+        <p class="hide-on-mobile">Proveemos soluciones profesionales para tu empresa</p>
+        <button ng-click="changeViewWithSpecElement('project-wizard/step1','')" class="start-now-button">Publica tu proyecto</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer ng-include="'views/footer.html'"></footer>

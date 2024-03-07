@@ -1,0 +1,44 @@
+<section id="pictureModal">
+  <div class="col-sm-12 hidden__rombus">
+    <button type="button" class="close" aria-label="Close" ng-click="profPicture.cancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body row" id="modal-body">
+    <div class="header">
+      <h3 class="text-uppercase titulos--modales text-center">{{'modals.profPicTitle' | translate}}</h3>
+      <h6 class="descripciones--modales">{{'modals.profPicTitle2' | translate}}<br> {{'modals.profPicTitle3' | translate}}<br> {{'modals.profPicTitle4' | translate}}4 MB </h6>
+    </div>
+    <div class="col-sm-12 pictureRow upload foto__upload" >
+      <strong class="label-upload-picture">{{'modals.uploadFile' | translate}}</strong>
+      <input type="file" id="fileInput" class="fileInput fileInput--modificado" onchange="angular.element(this).scope().fileNameChanged(this)"/>
+    </div>
+      <div class="col-sm-4 info">
+        <strong class="editarTitle">
+          {{'modals.profPicText1' | translate}}
+        </strong>
+        <span class="editarBody">{{'modals.profPicText2' | translate}}</span>
+        <span class="editarBody">{{'modals.profPicText3' | translate}}</span>
+        <strong class="editarTitle">
+           {{'modals.profPicPreview' | translate}}:
+        </strong>
+        <div><img class="img-responsive" ng-src="{{myCroppedImage}}" /></div>
+      </div>
+      <div class="col-sm-8" style="margin-bottom: 30px;">
+        <div class="cropArea">
+          <img-crop image="myImage" result-image="myCroppedImage" area-type="square"></img-crop>
+        </div>
+      </div>
+    </div>
+      <div class="row margin-bottom">
+          <form ng-submit="profPicture.saveItem()">
+              <div class="buttons mis-botones">
+                <input type="submit" value="{{'btn.save' | translate}}" class="btn btn-primary " />
+                <!-- <input type="button" value="{{'btn.cancel' | translate}}" ng-click="profPicture.cancel()" class="btn btn-default" /> -->
+                <input type="button" value="Cancelar" ng-click="profPicture.cancel()" class="btn btn-default " />
+              </div>
+            </form>
+      </div>
+
+
+</section>

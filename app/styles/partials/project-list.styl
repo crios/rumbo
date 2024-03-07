@@ -1,0 +1,184 @@
+/*
+* Project list
+*/
+
+/*
+* Mobile Design
+*/
+.extracto
+  .project-title
+    white-space none
+    max-width 100%
+    overflow hidden
+    text-overflow hidden
+    display inline-block
+    margin-bottom 1rem
+    color #5a5a5a !important
+    font-family 'Open Sans', sans-serif
+    font-size 1.5rem
+    a
+      color #5a5a5a !important
+      font-family 'Open Sans', sans-serif
+      font-size 1.6rem
+      line-height 2rem
+  .box
+    background-color #ffffff
+    padding 20px 15px
+    .section-header
+      display flex
+      justify-content space-between
+      margin-top 1rem
+    .title
+      font-size 1.6rem
+      color #bbbbbbff
+      text-transform uppercase
+      font-weight bold
+      margin 0
+      line-height 2rem
+      font-family 'Open Sans', sans-serif
+    .new-project
+      display none
+    p
+      margin-bottom 30px
+    &-item
+      display block
+      margin-bottom 30px
+      img
+        display block
+      ul
+        padding: 0
+        display flex
+        flex-direction column
+        justify-content space-between
+        margin-left 30px
+      li
+        list-style-type none
+      span
+        font-weight 400
+    &-list
+      li
+        &:hover
+          background-color rgb(250, 250, 250)
+          .button-secondary
+            background-color #00a2c2
+            color #ffffff
+        display block
+        align-items center
+        list-style-type none
+        padding 1rem 1.2rem 0.5rem 1.2rem
+        justify-content space-between
+        height 100%
+        -webkit-box-shadow 0px -1px 6px 0px rgba(0,0,0,0.07)
+        -moz-box-shadow: 0px -1px 6px 0px rgba(0,0,0,0.07)
+        box-shadow: 0px -1px 6px 0px rgba(0,0,0,0.07)
+        .project-details
+          display flex
+        .see-file
+          display none
+        .project-status
+          padding-top 0.3rem
+          padding-bottom 0.25rem
+          width 9rem
+          display inline-block
+          text-align left
+          color #ffffff
+          text-transform uppercase
+          font-size 1.05rem
+          font-weight 600
+          font-stretch normal
+        .open
+          color #00a2c2
+        .assigned
+          color #269551
+        .draft
+          color #9ba5a7
+        .closed
+          color #1d1d1b
+        .rejected
+          color #e30613
+        .cancelled
+          color: #ff8c00
+      li + li
+        margin-top 1.7rem
+      p
+        margin 0
+        flex 1
+      .specialty-icon
+        width 12px
+        height 12px
+        border-radius 50px
+        margin-right 22px
+      .icons
+          display inline-block
+      .icon-container
+        display inline-block
+        width 2rem
+        text-align right
+        i
+          font-size 1.8rem
+          color #939798
+
+
+/*
+* Desktop Design
+*/
+@media screen and (min-width: 768px)
+  .ellipsis
+    white-space nowrap
+    width: 42rem
+    overflow hidden
+    text-overflow ellipsis
+    display inline-block
+  .extracto
+    .project-title
+      display block
+      margin-bottom 0
+    .box
+      padding 20px 30px
+      .new-project
+        text-transform uppercase
+        color #24a4b4
+        font-weight bold
+        font-size 1.5rem
+        display inline-block
+      &-item
+        display flex
+      &-list
+        li
+          padding 0 1.2rem
+          display flex
+          height 4.5rem
+          .project-details
+            flex none
+            display inline-block
+          .see-file
+            font-size 1rem
+            color #939798 !important
+            margin-right 0.7rem
+            display inline-block
+          .project-status
+            border-radius 3rem
+            text-align center
+          .open
+            background-color #00a2c2
+            color #ffffff
+          .assigned
+            background-color #269551
+            color #ffffff
+          .draft
+            background-color #9ba5a7
+            color #ffffff
+          .closed
+            background-color #1d1d1b
+            color #ffffff
+          .rejected
+            background-color #e30613
+            color #ffffff
+          .cancelled
+            color: #ffffff
+            background-color: #ff8c00;
+
+        p
+          display inline-block
+        .icon-container
+          width 2.8rem

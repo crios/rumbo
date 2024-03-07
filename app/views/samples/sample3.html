@@ -1,0 +1,124 @@
+<nav ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel--interna slide portfolios--marginTop">
+  <!-- Wrapper for Slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <!-- Set the first background image using inline CSS below. -->
+      <div class="fill" style="background-image:url('../../images/userSamples/sample3/Superpollo-1-1920x1080.jpg');"></div>
+    </div>
+  </div>
+</header>
+<main class="main" style="background-color: #ffffff;">
+  <section class="porftoliosImages container-fluid">
+    <article class="portfoliosImages__top row no-gutter">
+      <div class="col-sm-6">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample3/SuperPollo-2-960x1340.jpg" class="img-responsive"/>
+        </figure>
+      </div>
+      <div class="col-sm-6">
+        <div class="videoYoutube--video portfoliosBorder portfolioBorder--Top">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              width="960"
+              height="670"
+              src="https://youtube.com/embed/EDOg2a8HKo8"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;fullscreen"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+        <figure class="portfoliosBorder portfolioBorder--Top">
+          <img src="../../images/userSamples/sample3/SuperPollo-3-960x670.jpg" class="img-responsive"/>
+        </figure>
+      </div>
+    </article>
+    <!-- Add the extra clearfix for only the required viewport -->
+    <div class="clearfix visible-xs-block"></div>
+    <article class="portfoliosImages__top row no-gutter">
+      <div class="col-sm-4">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample3/SuperPollo-4-960x670.jpg" class="img-responsive"/>
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <figure class="portfoliosBorder portfolioBorder--Top portfolioBorder--Right">
+          <img src="../../images/userSamples/sample3/SuperPollo-5-640x447.jpg" class="img-responsive"/>
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <figure class="portfoliosBorder portfolioBorder--Top ">
+          <img src="../../images/userSamples/sample3/SuperPollo-6-640x447.jpg" class="img-responsive"/>
+        </figure>
+      </div>
+    </article>
+  </section>
+  <section class="container porftoliosInformation">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3><strong>SUPER POLLO</strong> / BRANDING, SOCIAL MEDIA</h3>
+        <h4>De Chile con Amor</h4>
+        <strong class="porftoliosInformation__description">Tutitos a la Chilena Súper Pollo</strong>
+        <div class="porftoliosInformation__perfil d-none d-sm-block">
+          <figure>
+            <img src="../../images/userSamples/icono_chile.png" class="img-responsive img-circle"/>
+            <figcaption>
+              <h5>Matías Torrealba</h5>
+              <!--<a href="#">Autor / Ver Perfil</a>-->
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col-sm-6 margin-top--small">
+        <p>
+          Para potenciar la campaña masiva "Tutitos a la Chilena Súper Pollo" en
+          digital, nos propusimos llevar ese sabor entrañable de las comidas de
+          nuestro país a chilenos de todo el mundo.
+        </p>
+        <p>
+          Creamos un sitio web donde podías postular a un ser querido y
+          participar para que Súper Pollo se encargara de llevarle un plato
+          típico de la gastronomía chilena a cualquier lugar del planeta.
+        </p>
+        <p>
+          Cientos de personas se inscribieron y un mes después viajamos a New York y Toronto, contactamos a dos chef chilenos y
+          grabamos una linda sorpresa.
+          
+          El resultado, en pocos días, fue:
+
+          <ul>
+            <li>Casi medio millón de visualizaciones en Facebook (497.371).</li>
+            <li>10.000 visualizaciones en YouTube.</li>
+          </ul>
+        </p>
+        <p>Y toda una comunidad emocionada y agradecida con nuestra idea.</p>
+      </div>
+    </div>
+    <!-- Only information Author Mobile -->
+    <div class="row d-sm-none">
+      <div class="col-xs-12">
+        <div class="porftoliosInformation__perfil">
+          <figure>
+            <img src="../../images/userSamples/icono_chile.png" class="img-responsive img-circle"/>
+            <figcaption>
+              <h5>Matías Torrealba</h5>
+              <!--<a href="#">Autor / Ver Perfil</a>-->
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid portfolio-footer">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="hide-on-desktop">Proveemos soluciones profesionales<br/> para tu empresa</p>
+        <p class="hide-on-mobile">Proveemos soluciones profesionales para tu empresa</p>
+        <button ng-click="changeViewWithSpecElement('project-wizard/step1','')" class="start-now-button">Publica tu proyecto</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer ng-include="'views/footer.html'"></footer>

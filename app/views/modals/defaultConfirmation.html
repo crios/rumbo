@@ -1,0 +1,12 @@
+<section id="workProjectUserApplicationModal">
+  <div class="modal-body row text-center" id="modal-body">
+    <div class="col-sm-12" style="padding-bottom: 20px">
+      <p>{{modal.message | translate}}</p>
+      <p ng-show="modal.showCannotUndo === true" class="cannotUndo">{{'modals.cannotUndo' | translate}}</p>
+    </div>
+    <div class="col-sm-12 center-block">
+      <button class="btn btn-primary" type="button" ng-click="modal.confirmApplication()">{{'btn.confirm' | translate}}</button>
+      <button class="btn btn-default" type="button" ng-click="modal.cancel()">{{'btn.cancel' | translate}}</button>
+    </div>
+  </div>
+</section>

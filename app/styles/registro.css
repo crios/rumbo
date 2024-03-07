@@ -1,0 +1,184 @@
+.jmpa_specArea { padding: 60px 17px 15px; }
+.jmpa_sa_col_mkt .jmpa_sa_col_body { background-color: rgb(253, 45, 54); }
+.jmpa_sa_col_des .jmpa_sa_col_body { background-color: rgb(255, 130, 13); }
+.jmpa_sa_col_pub .jmpa_sa_col_body { background-color: rgb(19, 167, 96); }
+.jmpa_sa_col_eng .jmpa_sa_col_body { background-color: rgb(172, 27, 153); }
+.jmpa_sa_col { color: rgb(255, 255, 255); padding: 2px; }
+.jmpa_sa_col_body { padding: 10px 5px 12px; text-align: center; font-size: 12px; border-radius: 6px; }
+.jmpa_sa_titulo { font-weight: lighter; margin: 4px 5px 12px 4px; }
+.jmpa_sa_col_body i { background-size: 70px; width: 70px; height: 70px; display: block; margin: auto; background-repeat: no-repeat; background-position: center center; opacity: 0; }
+.jmpa_sa_col_mkt .jmpa_sa_col_body i { background-image: url("../images/rbs_projects/especialidad_marketing.png"); }
+.jmpa_sa_col_des .jmpa_sa_col_body i { background-image: url("../images/rbs_projects/especialidad_diseno.png"); }
+.jmpa_sa_col_pub .jmpa_sa_col_body i { background-image: url("../images/rbs_projects/especialidad_publicidad.png"); }
+.jmpa_sa_col_eng .jmpa_sa_col_body i { background-image: url("../images/rbs_projects/especialidad_programacion.png"); }
+.jmpa_sa_check { width: 16px; height: 16px; border: 2px solid rgb(255, 255, 255); border-radius: 50%; position: relative; margin: 0px auto; cursor: pointer; }
+.jmap_sa_ck_on_body { background-color: rgb(255, 255, 255); width: 10px; height: 10px; border-radius: 50%; margin: 1px; display: none; }
+.jmpa_sa_check.jmpa_sa_ck_on .jmap_sa_ck_on_body { display: block; }
+.jmpa_sa_check input { width: 17px; position: absolute; left: -2px; top: -2px; opacity: 0; height: 17px; cursor: pointer; margin: 0px !important; }
+.jmpa_sa_col_eng i { }
+.jmpa_skill_btn_add { padding: 0px; }
+.jmpa_skill_btn_add .button, .jmpa_skill_btn_add input { border-radius: 0px !important; }
+.jmpa_skill_btn_add input { border: 1px solid rgb(206, 206, 205); }
+.jmpa_skill_title { color: rgb(77, 77, 77); font-size: 16px !important; }
+.jmpa_btn_confirm { background-color: rgb(27, 149, 166) !important; }
+.jmpa_btn_cancel { border: 1px solid rgb(201, 201, 201) !important; color: rgb(87, 87, 86) !important; }
+.jmpa_skill_btn_add .button { background-color: rgb(106, 106, 105); }
+.jmpa_especialidad_caja { margin: 10px 0px 0px; }
+.jmpa_web_configuration { margin-top: 80px; }
+.jmpa_web_configuration span, .jmpa_web_configuration p, .jmpa_web_configuration h4, .jmpa_web_configuration b { color: rgb(109, 110, 113) !important; }
+.jmpa_box_specAreaEdit .jmpa_specArea, .jmpa_box_specAreaView .jmpa_specArea { padding: 50px 30px; margin: 0px !important; }
+.jmpa_especialidad_caja .topEdit { position: absolute; right: 15px; top: 15px; padding: 0px; margin: 0px; }
+.jmpa_especialidad_caja .jmpa_sa_col_body { font-size: 10px; padding: 8px 5px; background-size: 45px; background-position-y: 15px; }
+.jmpa_especialidad_caja .jmpa_sa_titulo { margin: 0px 0px 4px; }
+.jmpa_especialidad_caja .jmap_sa_ck_on_body { width: 8px; height: 8px; margin: 1px !important; }
+.jmpa_especialidad_caja .jmpa_sa_check { border: 2px solid rgb(255, 255, 255); width: 14px; height: 14px; margin: 10px auto 2px; }
+.jmpa_especialidad_caja .jmpa_sa_col_body i { background-size: 50px; height: 50px; margin-bottom: 5px; opacity: 0; }
+.jmpa_especialidad_caja .jmpa_specArea_checks { margin: 15px 0px 0px; }
+.jmpa_web_configuration .fa { color: rgb(36, 164, 180) !important; font-size: 14px !important; }
+.jmpa_web_configuration .profile__name .fa { margin-right: 10px; width: 14px; }
+.jmpa_pencil_ab { position: absolute; right: 35px; top: 50%; margin: 0px; }
+.jmpa_web_configuration .profile__name p { margin: 8px 0px; }
+.jmpa_pencil_edit_especialidad { position: absolute; right: 30px; top: 15px; }
+.jmpa_web_configuration input, .jmpa_web_configuration select { height: 25px; margin-left: 10px; padding: 0px !important; }
+.jmpa_web_configuration .color--gris .profile__name h2 { line-height: 35px; font-size: 30px !important; margin-bottom: 5px !important; }
+.jmpa_web_configuration .user label, #perfil .user label { font-size: 15px; padding: 2px 0px; }
+.jmpa_bloque_datos_personales { padding-bottom: 15px; }
+.jmpa_web_configuration .buttons { margin: 35px -15px 10px !important; }
+section#specAreaModal { padding: 0px 0px 30px; }
+.modal-lg { width: 970px; }
+.jmpa_specArea .jmpa_sa_titulo span {color: rgb(255, 255, 255) !important;}
+.user__especialidadBoton--posicionamiento { background-color: rgb(24, 167, 96); }
+.user__especialidadBoton--creatividad { background-color: rgb(253, 130, 35); }
+.user__especialidadBoton--estrategia { background-color: rgb(253, 45, 54); }
+.user__especialidadBoton--desarrollo { background-color: rgb(172, 27, 153); }
+input.center-block.btn.btn-primary, input.center-block.btn.btn-primary:active { background-color: rgb(0, 164, 196); font-size: 10.4pt; border-radius: 16.5px; border: 0px; padding: 7px 20px; }
+.jmpa_especialidad_caja .jmpa_specArea_checks .jmpa_sa_titulo span {font-size: 9.5pt !important;line-height: 13pt !important;}
+.planmedalla img {
+  width: 110px;
+}
+
+.planmedalla {
+  text-align: center;
+  border-right: 1px solid #dbdbdb !important;
+}
+
+.planmedalla span {
+  display: block;
+  color: #00a4c4 !important;
+  font-weight: lighter;
+  font-size: 11.4pt !important;
+  line-height: 20pt;
+}
+.membershipArea,.funcionArea {
+    float: left;
+    width: calc(33.33%);
+    height: inherit;
+    text-align: center;
+}
+
+
+.planmedalla.addfuncion img {
+    width: 85px;
+    margin-bottom: 6px;
+}
+
+.jmpa_web_configuration b {
+    color: #00a4c4 !important;
+    font-weight: 600;
+}
+#configuration .emblemas {
+    margin: 30px 0px 15px 0px;
+}
+#configuration .emblemas .membershipArea {
+  border: 0px;
+}
+@media (max-width: 768px) {
+  .jmpa_specArea .jmpa_sa_titulo span {
+    text-transform: uppercase;
+    font-size: 10.5pt !important;
+    line-height: 12pt !important;
+}
+.jmpa_especialidad_caja .jmpa_specArea_checks .jmpa_sa_titulo span{
+  
+font-size: 10.5pt !important;
+  
+line-height: 12pt !important;
+}
+  .membershipArea, .funcionArea{
+  }
+  .planmedalla span{
+    
+font-size: 9.4pt !important;
+    
+line-height: 20pt;
+  }
+  .planmedalla.addfuncion img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+.planmedalla.addfuncion  {
+    width: 100%;
+}
+.planmedalla img{
+  
+width: 90px;
+}
+  .modal.fade.ng-isolate-scope.in { max-width: 100%; top: 60px; }
+  .jmpa_specArea { padding: 0px; }
+  .jmpa_sa_col { padding: 1px; }
+  .jmpa_sa_col_body i, .jmpa_sa_check, .jmpa_sa_titulo { float: left; }
+  .jmpa_sa_col_body { min-height: 80px; padding: 20px 15px; line-height: 25px; }
+  .jmpa_sa_check { float: right; margin: 13px 10px 13px 0px; }
+  .jmpa_sa_titulo {margin: 9px 0px 9px 25px;}
+  .jmpa_specArea_checks { margin: 15px -16px; display: block; }
+  .jmpa_block_botones, .jmpa_block_habildiad { margin: auto; padding: 15px !important; }
+  .jmpa_skill_btn_add .button { padding: 8px !important; }
+  .jmpa_web_configuration { margin-top: 0px !important; }
+  .jmpa_web_configuration .profile__name p, .jmpa_web_configuration .profile__name a { font-weight: normal; margin: 2px 0px 0px !important; font-size: 11px !important; }
+  .jmpa_web_configuration .color--gris .profile__name h2 { font-weight: normal; font-size: 14px !important; line-height: 18px !important; }
+  .jmpa_web_configuration .profile__name .fa { margin-right: 2px; width: 9px; font-size: 9px !important; }
+  .jmpa_web_configuration .padding-hidden-left { padding-left: 5px; }
+  .jmpa_box_specAreaEdit .jmpa_specArea, .jmpa_box_specAreaView .jmpa_specArea { padding: 20px 15px; margin: 0px !important; }
+  .jmpa_box_specAreaEdit .jmpa_specArea .jmpa_specArea_checks, .jmpa_box_specAreaView .jmpa_specArea .jmpa_specArea_checks { margin: 15px -16px; }
+  .jmpa_especialidad_caja .jmpa_sa_col_body {min-height: 80px;padding: 22px 15px;line-height: 25px;background-size: 60px;background-position-y: 50%;background-position-x: 15px;}
+  .jmpa_especialidad_caja .jmpa_sa_titulo {font-size: 10.5pt;padding: 5px 0px 5px 25px;}
+  .jmpa_especialidad_caja .jmpa_sa_col_body i { background-size: 50px; height: 23px; }
+  .jmpa_especialidad_caja .jmap_sa_ck_on_body { width: 10px; height: 10px; }
+  .jmpa_especialidad_caja .jmpa_sa_check { width: 16px; height: 16px; margin: 10px auto 2px; }
+  .jmpa_especialidad_caja { border-top: 1px solid rgb(219, 219, 219); margin-top: 15px; }
+  .jmpa_especialidad_caja .espeBox { border: 0px !important; padding: 0px !important; }
+  .jmpa_pencil_edit_especialidad { position: absolute; right: 15px; }
+  .jmpa_web_configuration .descripciones--modales { padding: 0px 20px; }
+  .jmpa_web_configuration .jmpa_skill_title { font-size: 14px !important; }
+  .jmpa_web_configuration .buttons { margin: 10px auto !important; }
+  .jmpa_pencil_ab { margin: 0px -20px 0px 0px; }
+  .jmpa_pencil_correo { position: absolute; right: 15px; top: 30px; margin: 0px; }
+  .jmpa_web_configuration input, .jmpa_web_configuration select { height: 25px; margin-left: 10px; font-size: 12px; padding: 0px !important; }
+  .jmpa_web_configuration .user label, #perfil .user label { margin: 0px; font-size: 12px !important; padding: 4px 0px !important; }
+  .jmpa_web_configuration .configurationbox--lados { padding: 0px 15px 10px; margin: 0px; }
+  .jmpa_bloque_datos_personales { padding-bottom: 5px; }
+  .modal-lg { width: calc(100% - 17px); }
+  .jmpa_sa_col_body { border-radius: 0px; }
+  .jmpa_sa_col_body i { width: 50px; height: 50px; background-size: 40px; }
+}
+@media (max-width: 360px) {
+  .jmpa_especialidad_caja .jmpa_specArea_checks .jmpa_sa_titulo span, .jmpa_specArea .jmpa_sa_titulo span{font-size: 8.5pt !important;line-height: 8pt !important;}
+  .jmpa_especialidad_caja .jmpa_sa_titulo{
+    
+padding: 5px 0px 5px 18px;
+  }
+  .jmpa_especialidad_caja .jmpa_sa_col_body,.bg_new_icon{
+    
+background-size: 50px;
+  }
+  .jmpa_sa_titulo{
+    
+margin: 9px 0px 9px 15px;
+  }
+  .planmedalla span{
+    
+font-size: 8.4pt !important;
+    
+line-height: 20pt;
+  }
+}

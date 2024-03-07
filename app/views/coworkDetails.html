@@ -1,0 +1,205 @@
+<nav scroll ng-include="'views/headerIndex.html'" ng-controller="HeaderCtrl as header"></nav>
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel carousel-fade slide carousel--borderbottom carousel--porftolio jmpa_myCarousel header_staff addcowork addcoworkdeta">
+
+  <div class="bgzonesolutions jmpa_view_pc" style="background-image: url('{{ cwDeta.slideUrl }}');">
+  </div>
+
+  <div class="container jmpa_filter_fix">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+          <div class="jmpa_carousel">
+            <div class="carousel-caption__principal">
+              <h2 class="agencia-slider jmpa_view_pc">Tu oficina<br><span>compartida con</span><br><span>el Mundo</span></h2>                     
+
+              <h4 class="informacion_agencia jmpa_view_pc">Te ofrecemos espacios motivadores para trabajar,<br>capacitarse, conocerse y divertirse. Porque la mejor<br>manera de progresar es hacerlo juntos, te invitamos<br>a ser coworker de Rombus Global.</h4>
+               
+              <div class="tupagotucobro">
+                <div class="jmpa_selector">
+                  <a class="selTitulo" selOpen="selCowork">Ver más espacios de la Red</a>
+                  <ul id="selCowork" class="selOptions" style="display: none;">
+                    <li ng-repeat="cwk in cwDeta.coworks track by cwk.id" ><a ng-click="changeViewWithSpecElement('cowork/'+cwk.id,'')">{{  cwk.name + ' / ' + cwk.city + ', ' + cwk.country  | translate }}</a></li>
+                  </ul>
+                </div>
+              </div>
+               
+              
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="jmp_fondo_cell_sol_slider jmpa_view_cell">
+    <div class="difuminado_cell"></div>
+    <img src="{{ cwDeta.slideUrl }}" alt="" width="100%">
+  </div>
+</header>
+
+<main class="main jp_rhp_main jmpa_home_main addcowork">
+  <section class="jp_rhp_soluciones">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center name_cowork_title">
+            <h1>{{cwDeta.name}}</h1>
+            <p class="name_pais">{{cwDeta.fullLocation}}</p>
+            <p>{{cwDeta.description}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-10">
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="cooservicios">{{'coworkView.services' | translate}}</span>
+            </div>
+          </div>
+          <ng-switch on="cwDeta.serviciosSplit">
+            <div ng-switch-when="1" class="row cowork_sevicios" ng-repeat="serv in cwDeta.servicios">
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="item">
+                  <p>{{serv.description}}</p>
+                </div>
+              </div>
+            </div>
+            <div ng-switch-when="3" class="row cowork_sevicios" ng-repeat="serv in cwDeta.servicios" ng-if="$index % 3 == 0">
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="item">
+                  <p>{{cwDeta.servicios[$index].description}}</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4" ng-if="cwDeta.servicios.length > ($index + 1)">
+                <div class="item">
+                  <p>{{cwDeta.servicios[$index+1].description}}</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4" ng-if="cwDeta.servicios.length > ($index + 2)">
+                <div class="item">
+                  <p>{{cwDeta.servicios[$index+2].description}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-switch> 
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="bg_fotos_cowork">
+  <div class="container">
+      <ng-switch on="cwDeta.imagesSplit" class="row">
+        <div class="coowok_columna_fotos" ng-class="{ 'col-md-3': (cwDeta.images.length % 4 == 0) ,'col-md-4': (cwDeta.images.length % 3 == 0) }" ng-repeat="im in cwDeta.images">
+          <img ng-src="{{cwDeta.images[$index].ref}}" class="img-responsive"/>
+        </div>
+      </ng-switch>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <span class="cooservicios">{{'coworkView.plans' | translate}}</span>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-10">
+
+          <article class="jmpa_coworking__planesBox row">
+            <div class="col-xs-12 col-md-4" ng-repeat="plan in cwDeta.planes">
+              <div class="jmpa_coworking__planesBox--item">
+              <div class="jmpa_coworking__planes--titulo">{{plan.title}}</div>
+              <div class="jmpa_coworking__planes--descripcion">{{plan.description}}</div>
+              <div class="jmpa_coworking__planes--accion text-uppercase">{{plan.price}}</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center plan_add">
+        <div class="col-xs-12 col-md-10">
+
+          <div class="row">
+            <div class="col-md-4">
+               <div class="pla_add_beneficio">
+                <img src="../images/bg_cowork_plan.jpg" class="icon_cowork_plan" alt="" width="60px">
+                <span class="jmpa_view_pc">Beneficio exclusivo para Coworkers de Rombus Global</span>
+                <span class="jmpa_view_cell">Beneficio exclusivo para Coworkers de<br>Rombus Global</span>
+               </div>
+            </div>
+            <div class="col-md-4">
+              <div class="plan_add_descuento">
+                <div class="circulo">
+                  -{{cwDeta.benefit}}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="plan_add_disponible">
+                <p> Descuento sobre precios de lista.<br>Disponibles {{cwDeta.vacants}} vacantes.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="cowo_location_deta">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 coowok_zona_mapa_google">
+        <h3>{{'coworkView.location' | translate}}</h3>
+        <p>{{cwDeta.address}}</p>
+      </div>
+      <div class="col-xs-12 col-sm-6 coowok_zona_form jmpa_view_pc">
+        <h3>Contacto</h3>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 coowok_zona_mapa_google">
+        <div ap-lazy-load="https://maps.google.com/maps/api/js">
+          <ng-map center="{{cwDeta.mapLocation.latitude}}, {{cwDeta.mapLocation.longitude}}" zoom="12">
+            <marker position="[{{cwDeta.mapLocation.latitude}}, {{cwDeta.mapLocation.longitude}}]"> </marker>
+          </ng-map>
+        </div>
+      </div>
+      <div class="col-xs-12 coowok_zona_form jmpa_view_cell">
+        <h3>Contacto</h3>
+      </div> 
+      <div class="col-xs-12 col-sm-6 coowok_zona_form">
+        <form ng-submit="cwDeta.contact(mensaje)">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nombre" ng-model="mensaje.fullName" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="mensaje.email" required>
+          </div>
+          <div class="form-group">
+            <textarea name="" class="form-control" cols="30" rows="10" placeholder="Mensaje" ng-model="mensaje.query"></textarea>
+
+          </div>
+          <button type="submit" class="btnsend">Enviar mensaje</button>
+        </form>
+      </div>      
+    </div>
+
+
+  </div>
+
+</section>
+</main> <!-- End Main -->
+<footer ng-include="'views/footer.html'"></footer>
+<script>
+    $('.selTitulo').on('click',function(){
+    var select = '#'+$(this).attr('selOpen');
+    if($(select).css('display')=='none'){$(select).show();}else{$(select).hide();}
+  });
+</script>

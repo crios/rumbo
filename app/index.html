@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rombus Global</title>
+    <meta name="msapplication-TileColor" content="#0A2125">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#0A2125">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TFCQ3KN');</script>
+    <!-- End Google Tag Manager -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angucomplete-alt/angucomplete-alt.css" />
+    <link rel="stylesheet" href="bower_components/ng-img-crop/compile/minified/ng-img-crop.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styl.css">
+    <link rel="stylesheet" href="styles/proyecto.css">
+    <link rel="stylesheet" href="styles/soluciones.css">
+    <link rel="stylesheet" href="styles/registro.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/home_new.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="rombusYeoApp" class="ng-cloak " id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFCQ3KN"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div id="main" ng-view="" autoscroll="true"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH6BtTYjoqIeQz2U-2JPUi5zFD0IpqpuE" async defer></script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="bower_components/angucomplete-alt/angucomplete-alt.js"></script>
+    <script src="bower_components/ng-img-crop/compile/minified/ng-img-crop.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/wow/dist/wow.js"></script>
+    <script src="bower_components/angular-dynamic-locale/dist/tmhDynamicLocale.js"></script>
+    <script src="bower_components/ng-youtube-embed/build/ng-youtube-embed.min.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="bower_components/angular-slick/dist/slick.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/aos/dist/aos.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/modules/socialLogin.js"></script>
+        <script src="scripts/modules/countryPicker.js"></script>
+        <script src="scripts/modules/codertyLoading.js"></script>
+
+        <script src="scripts/app.js"></script>
+        <script src="scripts/directives/taExpandable.js"></script>
+
+        <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/controllers/footer.js"></script>
+        <script src="scripts/controllers/contact.js"></script>
+        <script src="scripts/controllers/representatives.js"></script>
+        <script src="scripts/controllers/cowork.js"></script>
+        <script src="scripts/controllers/coworkDetails.js"></script>
+        <script src="scripts/controllers/modal.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/register.js"></script>
+        <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/controllers/skills.js"></script>
+        <script src="scripts/controllers/specArea.js"></script>
+        <script src="scripts/controllers/profileConfig.js"></script>
+        <script src="scripts/controllers/portfolio.js"></script>
+        <script src="scripts/controllers/profileSideBar.js"></script>
+        <script src="scripts/controllers/emblemas.js"></script>
+        <script src="scripts/controllers/emblemasFuncion.js"></script>
+        <script src="scripts/controllers/emblemasMembership.js"></script>
+        <script src="scripts/controllers/profilePicture.js"></script>
+        <script src="scripts/controllers/staff.js"></script>
+        <script src="scripts/controllers/contactModal.js"></script>
+        <script src="scripts/controllers/services.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/contactUsModal.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/companyProfile.js"></script>
+        <script src="scripts/controllers/companySideBar.js"></script>
+        <script src="scripts/controllers/uploadLogo.js"></script>
+        <script src="scripts/controllers/wizardProject.js"></script>
+        <script src="scripts/controllers/project.js"></script>
+
+        <script src="scripts/services/contactService.js"></script>
+        <script src="scripts/services/coworkService.js"></script>
+        <script src="scripts/services/modalService.js"></script>
+        <script src="scripts/services/loginService.js"></script>
+        <script src="scripts/services/registerService.js"></script>
+        <script src="scripts/services/profileService.js"></script>
+        <script src="scripts/services/skillService.js"></script>
+        <script src="scripts/services/specAreaService.js"></script>
+        <script src="scripts/services/parameterService.js"></script>
+        <script src="scripts/services/userService.js"></script>
+        <script src="scripts/services/broadcastService.js"></script>
+        <script src="scripts/services/aws3Service.js"></script>
+        <script src="scripts/services/staffService.js"></script>
+        <script src="scripts/services/promoService.js"></script>
+        <script src="scripts/services/backendService.js"></script>
+        <script src="scripts/services/groupService.js"></script>
+        <script src="scripts/services/notificationService.js"></script>
+        <script src="scripts/services/feedService.js"></script>
+        <script src="scripts/services/companyProfileService.js"></script>
+        <script src="scripts/services/wizardProjectService.js"></script>
+        <script src="scripts/services/projectService.js"></script>
+        <!-- endbuild -->
+        <!-- Edit by @marckope 2023 -->
+       <div>prueba</div>
+       
+        
+</body>
+</html>

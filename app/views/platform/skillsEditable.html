@@ -1,0 +1,46 @@
+<div ng-controller="SkillsCtrl as sk">
+  <h4 class="skills--title jmpa_skill_title">{{'skillsView.title' | translate}}</h4>
+  <div class="row form-sinpadding" >
+    <form ng-submit="sk.addSkill(selectedSkill,false)">
+      <div class="jmpa_skill_btn_add jmpa_skill_text col-xs-8 skilleditmio" angucomplete-alt id="ex1" placeholder="AUTOCOMPLETE" pause="100"
+                        selected-object="selectedSkill" local-data="sk.list" search-fields="description"
+                        title-field="description" minlength="1" input-class="input-agregar-skill">
+      </div>
+      <div class="jmpa_skill_btn_add jmpa_skill_btn col-xs-4">
+        <button type="submit" class="button primary btn-agregar-skill">{{'btn.addPlus' | translate}}</button>
+      </div>
+    </form>
+  </div>
+  <div class="container-fluid tags skills">
+    <div class="row">
+      <div ng-repeat="skil in sk.userSkills" class="fluid-skills">
+        <ng-switch on = "skil.type">
+          <div ng-switch-when="mkt" class="tag cmkt">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="des" class="tag cdesign">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="eng" class="tag cdev">
+            <a ng-click="sk.deleteSkill(skil)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="pub" class="tag cpub">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-when="pre" class="tag cpress">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+          <div ng-switch-default class="tag" style="background-color: grey;">
+            <a ng-click="sk.deleteSkill(skil,false)"><i class="fa fa-times"></i></a>
+            <p>{{skil.description}}</p>
+          </div>
+        </ng-switch>
+      </div>
+    </div>
+  </div>
+</div>
